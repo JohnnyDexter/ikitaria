@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Tokyo skyline inspired abstract background">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d6c7b2"/>
+      <stop offset="100%" stop-color="#7a6957"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7eee1"/>
+      <stop offset="100%" stop-color="#d6be9f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <circle cx="1450" cy="280" r="170" fill="url(#sun)" opacity="0.85"/>
+  <path d="M0 720 L220 650 L360 700 L510 620 L700 730 L880 640 L1020 710 L1220 600 L1400 700 L1600 620 L1760 700 L1920 650 L1920 1080 L0 1080 Z" fill="#2f2923" opacity="0.55"/>
+  <path d="M0 770 L210 730 L390 780 L560 720 L760 810 L920 740 L1100 810 L1310 720 L1510 790 L1720 730 L1920 790 L1920 1080 L0 1080 Z" fill="#1e1a16" opacity="0.7"/>
+  <rect x="1160" y="470" width="22" height="260" fill="#2a241f"/>
+  <rect x="1130" y="520" width="84" height="14" fill="#2a241f"/>
+  <rect x="1085" y="580" width="176" height="16" fill="#2a241f"/>
+</svg>
