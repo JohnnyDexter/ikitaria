@@ -179,8 +179,7 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  bbackground: linear-gradient(rgba(0, 0, 0, 0.15),
-rgba(0, 0, 0, 0.25)),
+  background: 
 url("images/5805513934478887111.jpg") center/cover no-repeat;
   z-index: -1;
 }
