@@ -179,13 +179,8 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(15, 14, 13, 0.5), rgba(15, 14, 13, 0.58)),
-    url("images/5805513934478887111.jpg"),
-    url("images/hero-tokyo.svg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: 
+url("images/5805513934478887111.jpg") center/cover no-repeat;
   z-index: -1;
 }
 
