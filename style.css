@@ -262,7 +262,18 @@ url("images/5805513934478887111.jpg") center/cover no-repeat;
   color: var(--light);
   text-align: center;
 }
+.dark-section .column {
+  background: var(--surface);
+  color: var(--text);
+}
 
+.dark-section .column h3 {
+  color: var(--text);
+}
+
+.dark-section .column p {
+  color: var(--muted);
+}
 .dark-section p {
   max-width: 65ch;
   margin: 0.9rem auto 0;
