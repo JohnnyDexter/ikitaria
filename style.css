@@ -421,6 +421,130 @@ img {
   }
 }
 
+/* ── Nav dropdown (inside main-nav) ─────────────────────── */
+.nav-has-dropdown {
+  position: relative;
+}
+
+.nav-has-dropdown .nav-dropdown > summary {
+  cursor: pointer;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+  user-select: none;
+  padding: 0;
+}
+
+.nav-has-dropdown .nav-dropdown > summary::-webkit-details-marker,
+.nav-has-dropdown .nav-dropdown > summary::marker {
+  display: none;
+}
+
+.nav-has-dropdown .nav-dropdown > summary::after {
+  content: " ▾";
+  font-size: 0.75rem;
+}
+
+.nav-has-dropdown .nav-dropdown > summary:hover,
+.nav-has-dropdown .nav-dropdown[open] > summary {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.nav-has-dropdown .nav-dropdown ul {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.4rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem 0;
+  min-width: 11rem;
+  z-index: 20;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--text), transparent 88%);
+}
+
+.nav-has-dropdown .nav-dropdown ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.nav-has-dropdown .nav-dropdown ul li a:hover,
+.nav-has-dropdown .nav-dropdown ul li a:focus-visible {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.nav-has-dropdown .nav-dropdown ul li a.active {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ── Service images ─────────────────────────────────────── */
+.service-image-hero {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Pricing table ──────────────────────────────────────── */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.8rem;
+  font-size: 0.93rem;
+}
+
+.pricing-table thead th {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: var(--serif);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.pricing-table tbody td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.pricing-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing-table .price {
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* Dark-section overrides for pricing table */
+.dark-section .pricing-table thead th {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--light);
+}
+
+.dark-section .pricing-table tbody td {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(248, 246, 242, 0.72);
+}
+
+.dark-section .pricing-table .price {
+  color: var(--light);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
