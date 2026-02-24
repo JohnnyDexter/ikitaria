@@ -421,6 +421,44 @@ img {
   }
 }
 
+/* ── Column card title links ────────────────────────────── */
+.column h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.column h3 a:hover,
+.column h3 a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* ── Free consultation banner ───────────────────────────── */
+.free-consult-banner {
+  background: var(--accent);
+  color: var(--light);
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.free-consult-banner strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.free-consult-banner p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(248, 246, 242, 0.78);
+}
+
 /* ── Nav dropdown (inside main-nav) ─────────────────────── */
 .nav-has-dropdown {
   position: relative;
