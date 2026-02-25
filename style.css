@@ -806,6 +806,9 @@ a.column:hover h3 {
   object-fit: cover;
   display: block;
 }
+.service-image-hero--tall {
+  height: 680px;
+}
 
 /* ── Pricing table ──────────────────────────────────────── */
 .pricing-table {
