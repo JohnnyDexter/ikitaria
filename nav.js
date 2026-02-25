@@ -109,30 +109,22 @@
   }, { threshold: 0.06, rootMargin: '0px 0px -10px 0px' });
 
   var viewH = window.innerHeight;
+  // カード・リスト・テーブルのみアニメーション対象（見出し・テキストは常に表示）
   var sel = [
     '.column',
     '.stat',
-    '.section-intro',
-    '.section h2',
-    '.section h3',
-    '.eyebrow',
-    '.page-header h1',
-    '.page-header .section-intro',
     '.faq-list details',
     '.why-item',
     '.pricing-table',
-    '.free-consult-banner',
     '.service-image-hero',
   ].join(', ');
 
   document.querySelectorAll(sel).forEach(function (el) {
     var top = el.getBoundingClientRect().top;
-    if (top >= viewH * 1.5) {
-      // 1.5画面分より下にある要素のみスクロールアニメーション
+    if (top >= viewH) {
       el.classList.add('rv');
       io.observe(el);
     }
-    // それ以外は常に表示（ヒーロー直下〜画面内は触らない）
   });
 
   // Stagger delay for cards / stats / why-items in the same container
