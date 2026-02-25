@@ -911,10 +911,31 @@ a.column:hover h3 {
   flex-direction: column;
   padding: 2rem;
 }
+
+/* picture要素はデフォルトinlineなので全体をblock化 */
+picture {
+  display: block;
+}
+
+/* area-card内のpicture: 負マージンでカード端まで広げる */
+.area-card > picture {
+  width: calc(100% + 4rem);
+  margin: -2rem -2rem 1.5rem -2rem;
+  height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.area-card > picture .area-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  display: block;
+}
 .area-card-img {
   width: calc(100% + 4rem);
   margin: -2rem -2rem 1.5rem -2rem;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
   display: block;
 }
@@ -1032,6 +1053,114 @@ a.column:hover h3 {
   font-size: 0.8rem;
 }
 
+/* ══════════════════════════════════════════════════════════
+   DESIGN REFINEMENTS — Professional upgrade
+   ══════════════════════════════════════════════════════════ */
+
+/* Body: 少し広いline-heightで読みやすく */
+body {
+  line-height: 1.72;
+}
+
+/* ── Brand title: やや大きく、間隔を統一 ─────────────────── */
+.brand-title {
+  font-size: 2.1rem;
+  letter-spacing: 0.12em;
+}
+
+/* ── Section h2: スケールとトラッキングを強化 ────────────── */
+.section h1,
+.section h2 {
+  font-size: clamp(2rem, 4.8vw, 3.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+/* ── Section intro: 読みやすいサイズ・行間 ───────────────── */
+.section-intro {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  max-width: 62ch;
+}
+
+/* ── Page header: ダーク背景で劇的な見出しに ─────────────── */
+.page-header {
+  border-top: none;
+  border-bottom: none;
+  background: var(--dark);
+  color: var(--light);
+}
+.page-header .container {
+  padding: 4rem 0;
+}
+.page-header h1 {
+  color: var(--light);
+}
+.page-header .section-intro {
+  color: rgba(248, 246, 242, 0.72);
+}
+.page-header .eyebrow {
+  color: rgba(248, 246, 242, 0.45);
+}
+
+/* ── Service hero image: page-headerとの間隔をなくす ─────── */
+.page-header + picture,
+.page-header + .service-image-hero {
+  margin-top: 0;
+}
+
+/* ── Light section CTA: 塗りつぶしでアクション感を強調 ───── */
+.section:not(.dark-section) .cta {
+  background: var(--accent);
+  color: var(--light);
+  border-color: var(--accent);
+}
+.section:not(.dark-section) .cta:hover,
+.section:not(.dark-section) .cta:focus-visible {
+  background: transparent;
+  color: var(--accent);
+}
+
+/* ── Card column: 余白を少し増やして上品に ──────────────── */
+.column {
+  padding: 1.8rem;
+}
+
+/* ── Two-columns内のpicture: ブロック化して幅を保証 ─────── */
+.two-columns > picture,
+.two-columns picture {
+  width: 100%;
+}
+.two-columns picture img {
+  display: block;
+  width: 100%;
+}
+
+/* ── Free consult banner: 余白の洗練 ────────────────────── */
+.free-consult-banner {
+  padding: 1.8rem 2rem;
+}
+
+/* ── Why-list: 区切り線で整然と ──────────────────────────── */
+.why-list {
+  gap: 0;
+}
+.why-item {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.why-item:first-child {
+  border-top: 1px solid var(--line);
+}
+
+/* ── Footer brand: やや大きく存在感を ──────────────────────── */
+.footer-title {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+}
+.footer-grid {
+  padding: 3rem 0;
+}
+
 /* ── Mobile content optimizations (< 44rem) ────────────── */
 @media (max-width: 43.99rem) {
   /* Use dynamic viewport height to avoid browser-chrome jump */
@@ -1061,6 +1190,9 @@ a.column:hover h3 {
 
   /* Area card images: slightly shorter */
   .area-card-img {
+    height: 150px;
+  }
+  .area-card > picture {
     height: 150px;
   }
 
