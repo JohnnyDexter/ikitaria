@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page not found | Ikitaria</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      .not-found {
+        min-height: 72vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+      }
+      .not-found h1 {
+        font-family: var(--serif);
+        font-size: clamp(4rem, 12vw, 8rem);
+        margin: 0;
+        line-height: 1;
+        color: var(--line);
+      }
+      .not-found h2 {
+        font-family: var(--serif);
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        margin: 0.5rem 0 1rem;
+        font-weight: 500;
+      }
+      .not-found p {
+        color: var(--muted);
+        margin-bottom: 2rem;
+      }
+      .lang-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <div class="header-left">
+          <a class="brand" href="/" aria-label="Ikitaria home">
+            <p class="brand-title">IKITARIA</p>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="not-found">
+        <div class="container">
+          <h1>404</h1>
+          <h2>Page not found</h2>
+          <p>The page you are looking for doesn't exist or has been moved.</p>
+          <div class="lang-links">
+            <a class="cta" href="/">IT — Home</a>
+            <a class="cta" href="/en/index.html">EN — Home</a>
+            <a class="cta" href="/ja/index.html">JP — ホーム</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-title">IKITARIA</p>
+          <p class="footer-copy">Italy – Japan</p>
+        </div>
+        <div class="footer-links">
+          <p><a href="mailto:info@ikitaria.com">info@ikitaria.com</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
