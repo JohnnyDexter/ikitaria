@@ -25,6 +25,59 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  // ── Cookie consent banner ──────────────────────────────────────
+  if (!localStorage.getItem('ikitaria_cookie_consent')) {
+    var privacyLinks = { it: 'privacy.html', en: '../privacy.html', ja: '../privacy.html' };
+    var privacyLink = document.querySelector('link[hreflang="' + lang + '"]')
+      ? (lang === 'it' ? 'privacy.html' : '../privacy.html')
+      : 'privacy.html';
+    var cbTexts = {
+      it: {
+        text: 'Utilizziamo cookie per migliorare la tua esperienza di navigazione. Consulta la nostra <a href="' + privacyLink + '">Privacy Policy</a>.',
+        accept: 'Accetto',
+        decline: 'Solo essenziali'
+      },
+      en: {
+        text: 'We use cookies to improve your browsing experience. See our <a href="' + privacyLink + '">Privacy Policy</a>.',
+        accept: 'Accept',
+        decline: 'Essential only'
+      },
+      ja: {
+        text: 'より良い体験のためCookieを使用しています。詳しくは<a href="' + privacyLink + '">プライバシーポリシー</a>をご覧ください。',
+        accept: '同意する',
+        decline: '必須のみ'
+      }
+    };
+    var t = cbTexts[lang] || cbTexts['en'];
+
+    var banner = document.createElement('div');
+    banner.id = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', t.accept);
+    banner.innerHTML =
+      '<div class="cookie-inner">' +
+        '<p class="cookie-text">' + t.text + '</p>' +
+        '<div class="cookie-actions">' +
+          '<button class="cookie-btn-accept" id="cb-accept">' + t.accept + '</button>' +
+          '<button class="cookie-btn-decline" id="cb-decline">' + t.decline + '</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(banner);
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { banner.classList.add('cb-visible'); });
+    });
+
+    function dismissBanner(val) {
+      localStorage.setItem('ikitaria_cookie_consent', val);
+      banner.classList.remove('cb-visible');
+      banner.addEventListener('transitionend', function () { banner.remove(); }, { once: true });
+    }
+
+    document.getElementById('cb-accept').addEventListener('click', function () { dismissBanner('accepted'); });
+    document.getElementById('cb-decline').addEventListener('click', function () { dismissBanner('declined'); });
+  }
+
   // ── Scroll reveal ──────────────────────────────────────────────
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced || !('IntersectionObserver' in window)) return;
