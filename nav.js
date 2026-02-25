@@ -38,7 +38,22 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
   var viewH = window.innerHeight;
-  var sel = '.column, .stat, .section-intro, .section h2, .page-header h1, .faq-list details';
+  var sel = [
+    '.column',
+    '.stat',
+    '.section-intro',
+    '.section h2',
+    '.section h3',
+    '.eyebrow',
+    '.page-header h1',
+    '.page-header .section-intro',
+    '.faq-list details',
+    '.why-item',
+    '.pricing-table',
+    '.free-consult-banner',
+    '.service-image-hero',
+  ].join(', ');
+
   document.querySelectorAll(sel).forEach(function (el) {
     if (el.getBoundingClientRect().top > viewH * 0.85) {
       el.classList.add('rv');
@@ -46,11 +61,11 @@
     }
   });
 
-  // Stagger delay for cards / stats in the same grid
-  ['.three-columns', '.two-columns', '.stats-grid'].forEach(function (gridSel) {
+  // Stagger delay for cards / stats / why-items in the same container
+  ['.three-columns', '.two-columns', '.stats-grid', '.why-list'].forEach(function (gridSel) {
     document.querySelectorAll(gridSel).forEach(function (grid) {
       grid.querySelectorAll('.rv').forEach(function (item, i) {
-        item.style.transitionDelay = (i * 0.07) + 's';
+        item.style.transitionDelay = (i * 0.1) + 's';
       });
     });
   });

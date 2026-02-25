@@ -893,11 +893,39 @@ a.column:hover h3 {
   outline: 0;
 }
 
+/* ── Hero entrance animation ────────────────────────────── */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.8rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero h1 {
+  animation: hero-fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.1s;
+}
+
+.hero-subtitle {
+  animation: hero-fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.3s;
+}
+
+.hero .cta {
+  animation: hero-fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.52s;
+}
+
 /* ── Scroll reveal ──────────────────────────────────────── */
 .rv {
   opacity: 0;
-  transform: translateY(1.2rem);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(1.4rem);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .rv.rv-in {
@@ -1249,6 +1277,14 @@ body {
   }
 
   .rv {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero h1,
+  .hero-subtitle,
+  .hero .cta {
+    animation: none;
     opacity: 1;
     transform: none;
   }
