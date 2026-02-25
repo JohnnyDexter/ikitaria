@@ -1032,6 +1032,73 @@ a.column:hover h3 {
   font-size: 0.8rem;
 }
 
+/* ── Mobile content optimizations (< 44rem) ────────────── */
+@media (max-width: 43.99rem) {
+  /* Use dynamic viewport height to avoid browser-chrome jump */
+  .hero {
+    min-height: 100svh;
+  }
+
+  /* Less gap between subtitle and CTA button */
+  .hero-subtitle {
+    margin-bottom: var(--space-md);
+  }
+
+  /* Shorter hero banner on phones */
+  .service-image-hero {
+    height: 240px;
+  }
+
+  /* Two-column images: reduce inline height on mobile */
+  .two-columns img {
+    height: 220px !important;
+  }
+
+  /* Full-width section images (farm rental, community etc.) */
+  .section img:not(.area-card-img):not(.service-image-hero) {
+    height: 190px !important;
+  }
+
+  /* Area card images: slightly shorter */
+  .area-card-img {
+    height: 150px;
+  }
+
+  /* Page header: less vertical padding */
+  .page-header .container {
+    padding: 2rem 0;
+  }
+
+  /* Pricing table: horizontal scroll */
+  .pricing-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Free consult banner: stack vertically */
+  .free-consult-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* CTAs: full-width for easier tapping */
+  .cta {
+    display: block;
+    text-align: center;
+    min-width: unset;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Keep hero CTA centred within hero-content */
+  .hero-content .cta {
+    max-width: 18rem;
+    margin-inline: auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
