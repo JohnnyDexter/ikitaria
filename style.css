@@ -221,7 +221,7 @@ img {
 
 @keyframes hero-drift {
   from { transform: scale(1);    }
-  to   { transform: scale(1.08); }
+  to   { transform: scale(1.14); }
 }
 
 .hero::before {
@@ -230,7 +230,7 @@ img {
   inset: 0;
   background: url("images/5805513934478887111.jpg") center/cover no-repeat;
   z-index: -2;
-  animation: hero-drift 22s ease-in-out infinite alternate;
+  animation: hero-drift 18s ease-in-out infinite alternate;
   will-change: transform;
 }
 
