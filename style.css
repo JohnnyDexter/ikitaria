@@ -216,6 +216,12 @@ img {
   text-align: center;
   border-bottom: 1px solid var(--line);
   isolation: isolate;
+  overflow: hidden;
+}
+
+@keyframes hero-drift {
+  from { transform: scale(1);    }
+  to   { transform: scale(1.08); }
 }
 
 .hero::before {
@@ -224,6 +230,8 @@ img {
   inset: 0;
   background: url("images/5805513934478887111.jpg") center/cover no-repeat;
   z-index: -2;
+  animation: hero-drift 22s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .hero::after {
@@ -1283,7 +1291,8 @@ body {
 
   .hero h1,
   .hero-subtitle,
-  .hero .cta {
+  .hero .cta,
+  .hero::before {
     animation: none;
     opacity: 1;
     transform: none;
