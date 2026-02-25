@@ -127,18 +127,12 @@
 
   document.querySelectorAll(sel).forEach(function (el) {
     var top = el.getBoundingClientRect().top;
-    if (top >= viewH) {
-      // 完全にビューポート外 → スクロール時にアニメーション
+    if (top >= viewH * 1.5) {
+      // 1.5画面分より下にある要素のみスクロールアニメーション
       el.classList.add('rv');
       io.observe(el);
-    } else if (top > 0) {
-      // ビューポート内 → 即座に表示（アニメーションなし）
-      el.classList.add('rv');
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () { el.classList.add('rv-in'); });
-      });
     }
-    // top <= 0 はすでに画面上部 → 何もしない（常に表示）
+    // それ以外は常に表示（ヒーロー直下〜画面内は触らない）
   });
 
   // Stagger delay for cards / stats / why-items in the same container
