@@ -353,6 +353,71 @@ img {
   gap: 0.7rem;
 }
 
+/* ── Contact form ───────────────────────────────────────── */
+.contact-form {
+  display: grid;
+  gap: 1.2rem;
+  max-width: 42rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 0.62rem 0.8rem;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: 0;
+  border-color: var(--accent);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 8rem;
+  line-height: 1.5;
+}
+
+.btn-submit {
+  display: inline-block;
+  min-width: 11rem;
+  padding: 0.72rem 1.3rem;
+  border: 1px solid var(--accent);
+  color: var(--light);
+  background: var(--accent);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.btn-submit:hover,
+.btn-submit:focus-visible {
+  background: transparent;
+  color: var(--accent);
+  outline: 0;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   background: color-mix(in srgb, var(--bg), white 20%);
@@ -402,6 +467,103 @@ img {
 .faq-list summary:focus-visible {
   outline: 0;
   box-shadow: var(--focus-ring);
+}
+
+@media (min-width: 44rem) {
+  /* Desktop: hide hamburger toggle; force nav always visible */
+  .nav-toggle {
+    display: none !important;
+  }
+
+  /* Override browser's built-in details hiding so nav shows on desktop */
+  .nav-hamburger > .main-nav {
+    display: block !important;
+  }
+}
+
+@media (max-width: 43.99rem) {
+  .header-grid {
+    flex-wrap: wrap;
+    gap: 0.5rem 0;
+  }
+
+  .header-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-hamburger {
+    position: relative;
+  }
+
+  .nav-toggle {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.3rem 0.5rem;
+    font-size: 1.2rem;
+    color: var(--muted);
+    user-select: none;
+  }
+
+  .nav-toggle::-webkit-details-marker,
+  .nav-toggle::marker {
+    display: none;
+  }
+
+  .nav-toggle:hover {
+    color: var(--text);
+  }
+
+  /* Nav hidden by default on mobile */
+  .nav-hamburger:not([open]) > .main-nav {
+    display: none;
+  }
+
+  /* Nav shown as full-width dropdown when open */
+  .nav-hamburger[open] > .main-nav {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.4rem);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--text), transparent 88%);
+    z-index: 30;
+    min-width: 14rem;
+    padding: 0.4rem 0;
+  }
+
+  .nav-hamburger[open] .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-hamburger[open] .main-nav > ul > li > a,
+  .nav-hamburger[open] .main-nav > ul > li > .nav-dropdown > summary {
+    display: block;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Sub-dropdown (services) inside hamburger */
+  .nav-hamburger[open] .nav-has-dropdown {
+    position: static;
+  }
+
+  .nav-hamburger[open] .nav-dropdown ul {
+    position: static;
+    border: none;
+    border-top: 1px solid var(--line);
+    box-shadow: none;
+    padding: 0.2rem 0 0.2rem 1rem;
+    min-width: unset;
+  }
+
+  /* Move lang-dropdown to top-right of header on mobile */
+  .lang-dropdown {
+    position: absolute;
+    right: 0;
+    top: 0.75rem;
+  }
 }
 
 @media (min-width: 52rem) {

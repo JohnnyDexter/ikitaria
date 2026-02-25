@@ -12,14 +12,26 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-  </head>
+  
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" hreflang="it" href="https://ikitaria.com/chi-siamo.html" />
+  <link rel="alternate" hreflang="en" href="https://ikitaria.com/en/about.html" />
+  <link rel="alternate" hreflang="ja" href="https://ikitaria.com/ja/about.html" />
+  <link rel="alternate" hreflang="x-default" href="https://ikitaria.com/chi-siamo.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Chi Siamo | Ikitaria" />
+  <meta property="og:description" content="Origine, fondatori e principi operativi di Ikitaria." />
+  <meta property="og:url" content="https://ikitaria.com/chi-siamo.html" />
+  <meta property="og:image" content="https://ikitaria.com/images/5805513934478887111.jpg" />
+  <meta property="og:locale" content="it_IT" />
+</head>
   <body>
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
     <header class="site-header">
       <div class="container header-grid">
         <div class="header-left">
           <a class="brand" href="index.html" aria-label="Ikitaria home"><p class="brand-title">IKITARIA</p></a>
-          <nav class="main-nav" aria-label="Navigazione principale">
+          <details class="nav-hamburger"><summary class="nav-toggle" aria-label="Apri menu">☰</summary><nav class="main-nav" aria-label="Navigazione principale">
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="chi-siamo.html">Chi Siamo</a></li>
@@ -27,7 +39,7 @@
               <li><a href="faq.html">FAQ</a></li>
               <li><a href="contact.html">Contatti</a></li>
             </ul>
-          </nav>
+          </nav></details>
         </div>
         <details class="lang-dropdown" aria-label="Selettore lingua">
           <summary>IT</summary>
@@ -95,5 +107,6 @@
     </main>
 
     <footer class="site-footer"><div class="container footer-grid"><div><p class="footer-title">IKITARIA</p><p class="footer-copy">Italy – Japan</p><p class="footer-copy">Strategic Cultural &amp; Business Advisory</p></div><div class="footer-links"><p><a href="mailto:info@ikitaria.com">info@ikitaria.com</a></p><p><a href="https://www.instagram.com/ikitaria/">Instagram</a></p></div></div></footer>
-  </body>
+    <script src="nav.js"></script>
+</body>
 </html>

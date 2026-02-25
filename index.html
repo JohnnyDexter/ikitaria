@@ -15,7 +15,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-  </head>
+  
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" hreflang="it" href="https://ikitaria.com/index.html" />
+  <link rel="alternate" hreflang="en" href="https://ikitaria.com/en/index.html" />
+  <link rel="alternate" hreflang="ja" href="https://ikitaria.com/ja/index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://ikitaria.com/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ikitaria | Connect the Dots" />
+  <meta property="og:description" content="Ikitaria connette Italia e Giappone con advisory strategico culturale e business-oriented." />
+  <meta property="og:url" content="https://ikitaria.com/index.html" />
+  <meta property="og:image" content="https://ikitaria.com/images/5805513934478887111.jpg" />
+  <meta property="og:locale" content="it_IT" />
+</head>
   <body>
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
 
@@ -25,7 +37,7 @@
           <a class="brand" href="index.html" aria-label="Ikitaria home">
             <p class="brand-title">IKITARIA</p>
           </a>
-          <nav class="main-nav" aria-label="Navigazione principale">
+          <details class="nav-hamburger"><summary class="nav-toggle" aria-label="Apri menu">☰</summary><nav class="main-nav" aria-label="Navigazione principale">
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="chi-siamo.html">Chi Siamo</a></li>
@@ -33,7 +45,7 @@
               <li><a href="faq.html">FAQ</a></li>
               <li><a href="contact.html">Contatti</a></li>
             </ul>
-          </nav>
+          </nav></details>
         </div>
         <details class="lang-dropdown" aria-label="Selettore lingua">
           <summary>IT</summary>
@@ -89,22 +101,12 @@
       <section class="section" aria-labelledby="perche-title">
         <div class="container">
           <h2 id="perche-title">Perché Ikitaria</h2>
-          <div class="faq-list">
-            <details open>
-              <summary>Presenza operativa in Italia e Giappone</summary>
-            </details>
-            <details open>
-              <summary>Competenze complementari integrate</summary>
-            </details>
-            <details open>
-              <summary>Network verificato</summary>
-            </details>
-            <details open>
-              <summary>Approccio selettivo</summary>
-            </details>
-            <details open>
-              <summary>Visione di medio-lungo periodo</summary>
-            </details>
+          <div class="two-columns">
+            <article class="column"><p>Presenza operativa in Italia e Giappone</p></article>
+            <article class="column"><p>Competenze complementari integrate</p></article>
+            <article class="column"><p>Network verificato</p></article>
+            <article class="column"><p>Approccio selettivo</p></article>
+            <article class="column"><p>Visione di medio-lungo periodo</p></article>
           </div>
           <p class="section-intro">Iniziamo una conversazione.</p>
           <a class="cta" href="contact.html">Contattaci</a>
@@ -125,5 +127,6 @@
         </div>
       </div>
     </footer>
-  </body>
+    <script src="nav.js"></script>
+</body>
 </html>
