@@ -277,7 +277,8 @@ img {
 }
 
 .hero-news > .eyebrow {
-  color: rgba(248, 246, 242, 0.4);
+  color: #c8a864;
+  letter-spacing: 0.18em;
 }
 
 .hero-news-title {
@@ -294,6 +295,21 @@ img {
   border-top: 1px solid rgba(248, 246, 242, 0.1);
 }
 
+.news-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.news-pub-date {
+  font-size: 0.65rem;
+  color: rgba(248, 246, 242, 0.28);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
 .news-tag {
   display: inline-block;
   font-size: 0.65rem;
@@ -305,11 +321,21 @@ img {
   border-radius: 2px;
 }
 
+.news-tag--upcoming {
+  background: rgba(200, 168, 100, 0.18);
+  color: #c8a864;
+}
+
+.news-tag--done {
+  background: rgba(248, 246, 242, 0.05);
+  color: rgba(248, 246, 242, 0.28);
+}
+
 .news-date {
   display: block;
   font-size: 0.78rem;
   color: rgba(248, 246, 242, 0.38);
-  margin-top: 0.6rem;
+  margin-top: 0.4rem;
   letter-spacing: 0.03em;
 }
 
