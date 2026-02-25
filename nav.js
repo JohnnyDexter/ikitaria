@@ -65,17 +65,35 @@
     document.body.appendChild(banner);
 
     requestAnimationFrame(function () {
-      requestAnimationFrame(function () { banner.classList.add('cb-visible'); });
+      requestAnimationFrame(function () {
+        banner.classList.add('cb-visible');
+        document.body.style.paddingBottom = banner.offsetHeight + 'px';
+      });
     });
 
     function dismissBanner(val) {
       localStorage.setItem('ikitaria_cookie_consent', val);
       banner.classList.remove('cb-visible');
+      document.body.style.paddingBottom = '';
       banner.addEventListener('transitionend', function () { banner.remove(); }, { once: true });
     }
 
     document.getElementById('cb-accept').addEventListener('click', function () { dismissBanner('accepted'); });
     document.getElementById('cb-decline').addEventListener('click', function () { dismissBanner('declined'); });
+  }
+
+  // ── Footer copyright ───────────────────────────────────────────
+  var year = new Date().getFullYear();
+  var copyrightTexts = { it: '© ' + year + ' Ikitaria', en: '© ' + year + ' Ikitaria', ja: '© ' + year + ' Ikitaria' };
+  var footerBrand = document.querySelector('.footer-grid > div:first-child');
+  if (footerBrand) {
+    var cr = document.createElement('p');
+    cr.className = 'footer-copy';
+    cr.style.marginTop = '1rem';
+    cr.style.fontSize = '0.75rem';
+    cr.style.color = 'rgba(248,246,242,0.2)';
+    cr.textContent = copyrightTexts[lang] || '© ' + year + ' Ikitaria';
+    footerBrand.appendChild(cr);
   }
 
   // ── Scroll reveal ──────────────────────────────────────────────
@@ -88,7 +106,7 @@
       entry.target.classList.add('rv-in');
       io.unobserve(entry.target);
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  }, { threshold: 0.06, rootMargin: '0px 0px -10px 0px' });
 
   var viewH = window.innerHeight;
   var sel = [
@@ -108,10 +126,19 @@
   ].join(', ');
 
   document.querySelectorAll(sel).forEach(function (el) {
-    if (el.getBoundingClientRect().top > viewH * 0.85) {
+    var top = el.getBoundingClientRect().top;
+    if (top >= viewH) {
+      // 完全にビューポート外 → スクロール時にアニメーション
       el.classList.add('rv');
       io.observe(el);
+    } else if (top > 0) {
+      // ビューポート内 → 即座に表示（アニメーションなし）
+      el.classList.add('rv');
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { el.classList.add('rv-in'); });
+      });
     }
+    // top <= 0 はすでに画面上部 → 何もしない（常に表示）
   });
 
   // Stagger delay for cards / stats / why-items in the same container
