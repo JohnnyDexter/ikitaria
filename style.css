@@ -433,6 +433,29 @@ img {
   text-underline-offset: 0.2em;
 }
 
+/* ── Fully-clickable column card (a.column) ─────────────── */
+a.column {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 180ms ease;
+}
+
+a.column:hover,
+a.column:focus-visible {
+  border-color: var(--accent);
+  outline: 0;
+}
+
+a.column h3 {
+  text-decoration: none;
+}
+
+a.column:hover h3 {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 /* ── Free consultation banner ───────────────────────────── */
 .free-consult-banner {
   background: var(--accent);
