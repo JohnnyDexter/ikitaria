@@ -209,8 +209,7 @@ img {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 360px;
+  position: relative;
   min-height: 100svh;
   border-bottom: 1px solid var(--line);
 }
@@ -220,7 +219,7 @@ img {
   to   { transform: scale(1.14); }
 }
 
-/* ── Hero left: image + text ────────────────────────────── */
+/* ── Hero left: image + text (full width) ───────────────── */
 .hero-main {
   position: relative;
   display: grid;
@@ -228,6 +227,7 @@ img {
   text-align: center;
   isolation: isolate;
   overflow: hidden;
+  min-height: 100svh;
 }
 
 .hero-main::before {
@@ -255,16 +255,24 @@ img {
 .hero-content {
   color: var(--light);
   padding: 2rem 1.5rem;
+  padding-right: calc(360px + 2rem);
 }
 
-/* ── Hero right: news panel ─────────────────────────────── */
+/* ── Hero right: news panel (overlay on hero image) ──────── */
 .hero-news {
-  background: var(--dark);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 360px;
+  background: rgba(21, 19, 17, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: var(--light);
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
-  border-left: 1px solid rgba(248, 246, 242, 0.08);
+  border-left: 1px solid rgba(248, 246, 242, 0.12);
   overflow-y: auto;
 }
 
@@ -1297,15 +1305,19 @@ body {
 
 /* ── Mobile content optimizations (< 44rem) ────────────── */
 @media (max-width: 43.99rem) {
-  /* Hero: single column on mobile */
+  /* Hero: news panel stacks below on mobile */
   .hero {
-    grid-template-columns: 1fr;
     min-height: unset;
   }
   .hero-main {
     min-height: 100svh;
   }
   .hero-news {
+    position: static;
+    width: auto;
+    background: var(--dark);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     border-left: none;
     border-top: 1px solid rgba(248, 246, 242, 0.1);
     padding: 2rem 1.5rem;
@@ -1365,6 +1377,11 @@ body {
     min-width: unset;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  /* Reset hero-content padding on mobile */
+  .hero-content {
+    padding-right: 1.5rem;
   }
 
   /* Keep hero CTA centred within hero-content */
