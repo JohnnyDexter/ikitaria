@@ -956,12 +956,6 @@ a.column:hover h3 {
   color: var(--muted);
 }
 
-@media (min-width: 52rem) {
-  .why-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.6rem;
-  }
-}
 
 /* ── Active nav link ────────────────────────────────────── */
 .main-nav a.active,
