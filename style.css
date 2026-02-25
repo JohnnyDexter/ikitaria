@@ -265,7 +265,7 @@ img {
   right: 0;
   bottom: 0;
   width: 360px;
-  background: rgba(21, 19, 17, 0.78);
+  background: rgba(21, 19, 17, 0.55);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: var(--light);
