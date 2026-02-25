@@ -121,7 +121,7 @@
 
   document.querySelectorAll(sel).forEach(function (el) {
     var top = el.getBoundingClientRect().top;
-    if (top >= viewH) {
+    if (top >= viewH * 2) {
       el.classList.add('rv');
       io.observe(el);
     }
