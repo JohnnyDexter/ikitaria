@@ -879,6 +879,64 @@ a.column:hover h3 {
   color: var(--light);
 }
 
+/* ── Back-to-top button ─────────────────────────────────── */
+#back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  background: var(--accent);
+  color: var(--light);
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: var(--sans);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, background 180ms ease;
+  z-index: 50;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#back-to-top:hover,
+#back-to-top:focus-visible {
+  background: var(--text);
+  outline: 0;
+}
+
+/* ── Scroll reveal ──────────────────────────────────────── */
+.rv {
+  opacity: 0;
+  transform: translateY(1.2rem);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.rv.rv-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Active nav link ────────────────────────────────────── */
+.main-nav a.active,
+.main-nav a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ── Footer legal link ──────────────────────────────────── */
+.footer-legal {
+  margin-top: 0.8rem !important;
+  font-size: 0.8rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -888,7 +946,13 @@ a.column:hover h3 {
   .lang-switch a,
   .footer-links a,
   .cta,
-  summary {
+  summary,
+  .rv {
     transition: none;
+  }
+
+  .rv {
+    opacity: 1;
+    transform: none;
   }
 }
