@@ -911,6 +911,13 @@ a.column:hover h3 {
   flex-direction: column;
   padding: 2rem;
 }
+.area-card-img {
+  width: calc(100% + 4rem);
+  margin: -2rem -2rem 1.5rem -2rem;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
 
 .area-number {
   display: block;
