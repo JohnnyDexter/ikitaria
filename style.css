@@ -35,7 +35,10 @@ body {
   font-family: var(--sans);
   line-height: 1.6;
   color: var(--text);
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='900'><filter id='m'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.004' numOctaves='4' seed='7' result='noise'/><feColorMatrix type='saturate' values='0' in='noise' result='g'/><feComponentTransfer in='g'><feFuncR type='table' tableValues='0.74 0.90 0.95 0.88 0.96'/><feFuncG type='table' tableValues='0.70 0.86 0.92 0.84 0.93'/><feFuncB type='table' tableValues='0.64 0.81 0.87 0.79 0.88'/></feComponentTransfer></filter><rect width='100%25' height='100%25' filter='url(%23m)'/></svg>");
+  background-size: cover;
+  background-attachment: fixed;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
