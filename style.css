@@ -1441,10 +1441,6 @@ html {
   justify-content: center;
 }
 
-.section:not(.dark-section) {
-  background: rgba(248, 244, 238, 0.82);
-}
-
 .site-footer {
   scroll-snap-align: start;
   scroll-snap-stop: always;
