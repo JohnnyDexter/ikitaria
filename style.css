@@ -1437,11 +1437,8 @@ html {
   scroll-snap-stop: always;
   min-height: 100svh;
   display: flex;
-  align-items: center;
-}
-
-.section > .container {
-  width: 100%;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .site-footer {
