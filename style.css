@@ -36,7 +36,7 @@ body {
   line-height: 1.6;
   color: var(--text);
   background-color: var(--bg);
-  background-image: url("images/marble-bg.jpg");
+  background-image: url("images/marble-bg.webp");
   background-size: cover;
   background-attachment: fixed;
   text-rendering: optimizeLegibility;
@@ -1439,6 +1439,10 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.section:not(.dark-section) {
+  background: rgba(248, 244, 238, 0.82);
 }
 
 .site-footer {
