@@ -72,7 +72,7 @@ img {
 }
 
 .site-header {
-  background: color-mix(in srgb, var(--bg), white 18%);
+  background: rgba(245, 240, 232, 0.55);
   border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
