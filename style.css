@@ -1420,6 +1420,45 @@ body {
   }
 }
 
+/* ══════════════════════════════════════════════════════════
+   FULL-PAGE SCROLL SNAP
+   ══════════════════════════════════════════════════════════ */
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.hero {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+.section > .container {
+  width: 100%;
+}
+
+.site-footer {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 43.99rem) {
+  html { scroll-snap-type: none; }
+  .section { min-height: unset; display: block; }
+  .site-footer { min-height: unset; display: block; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
