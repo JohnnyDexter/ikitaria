@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /privacy.html
+Disallow: /en/privacy.html
+Disallow: /ja/privacy.html
+Disallow: /thanks.html
+Disallow: /en/thanks.html
+Disallow: /ja/thanks.html
 
 Sitemap: https://ikitaria.com/sitemap.xml
