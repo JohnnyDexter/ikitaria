@@ -1580,3 +1580,343 @@ html {
   }
 }
 
+
+/* ══════════════════════════════════════════════════════════
+   FRONTEND DESIGN UPGRADE — Wabi-sabi Luxury Editorial
+   Cormorant Garamond + Outfit · Gold accents · Grain texture
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Updated font & colour tokens ────────────────────────── */
+:root {
+  --serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --sans:  "Outfit", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --gold:       #c8a864;
+  --gold-faint: rgba(200, 168, 100, 0.10);
+  --gold-glow:  rgba(200, 168, 100, 0.22);
+  --shadow-card: 0 8px 36px rgba(21, 19, 17, 0.11);
+  --shadow-lift: 0 20px 56px rgba(21, 19, 17, 0.15);
+}
+
+/* ── Subtle grain texture overlay (CSS-only) ─────────────── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='280' height='280' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* ── Header: gold gradient border bottom ─────────────────── */
+.site-header {
+  border-bottom: none;
+  position: relative;
+}
+.site-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    rgba(200, 168, 100, 0.55) 0%,
+    rgba(200, 168, 100, 0.12) 45%,
+    transparent 75%
+  );
+}
+
+/* ── Brand: serif, extra tracking ────────────────────────── */
+.brand-title {
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  letter-spacing: 0.24em;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ── Nav: active = gold underline ────────────────────────── */
+.main-nav a.active,
+.main-nav a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 400;
+}
+.main-nav a.active::after,
+.main-nav a[aria-current="page"]::after {
+  width: 100%;
+  background: var(--gold);
+  opacity: 0.8;
+}
+
+/* ── Eyebrow: gold ───────────────────────────────────────── */
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 0.24em;
+}
+.dark-section .eyebrow {
+  color: rgba(200, 168, 100, 0.75);
+}
+.hero-news > .eyebrow {
+  letter-spacing: 0.22em;
+}
+
+/* ── Hero: italic display type + gold CTA ────────────────── */
+.hero h1 {
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 48px rgba(21, 19, 17, 0.5);
+}
+.hero-subtitle {
+  letter-spacing: 0.14em;
+  font-size: clamp(0.78rem, 1.8vw, 0.92rem);
+  opacity: 0.75;
+}
+.hero .cta {
+  border-color: rgba(200, 168, 100, 0.55);
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.hero .cta:hover,
+.hero .cta:focus-visible {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+
+/* ── Section h2: italic Cormorant, gold line ─────────────── */
+.section h2 {
+  font-style: italic;
+  font-weight: 500;
+}
+.section h2::before {
+  background: var(--gold);
+  opacity: 0.65;
+  width: 2.4rem;
+  height: 1.5px;
+}
+.dark-section h2::before {
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+/* ── Section-intro: slightly larger, more air ────────────── */
+.section-intro {
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+/* ── CTA: uppercase, tracked, gold on light bg ───────────── */
+.cta {
+  letter-spacing: 0.09em;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.section:not(.dark-section) .cta {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.section:not(.dark-section) .cta:hover,
+.section:not(.dark-section) .cta:focus-visible {
+  background: var(--accent);
+  color: var(--light);
+}
+
+/* ── Column cards: gold left accent on hover ─────────────── */
+.column {
+  transition: transform 260ms cubic-bezier(0.22,1,0.36,1),
+              box-shadow 260ms cubic-bezier(0.22,1,0.36,1),
+              border-color 180ms ease;
+}
+a.column:hover,
+a.column:focus-visible {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Area cards: image zoom + gold link ──────────────────── */
+.area-card > picture {
+  overflow: hidden;
+}
+.area-card > picture .area-card-img {
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.area-card:hover > picture .area-card-img,
+.area-card:focus-visible > picture .area-card-img {
+  transform: scale(1.07);
+}
+.area-link {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: rgba(200, 168, 100, 0.45);
+}
+.area-card:hover .area-link,
+.area-card:focus-visible .area-link {
+  color: var(--gold);
+}
+
+/* ── Page header: dark + gold top bar + italic h1 ─────────── */
+.page-header {
+  position: relative;
+}
+.page-header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 5rem; height: 2px;
+  background: var(--gold);
+}
+.page-header h1 {
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* ── Pricing table: gold prices, hover row tint ───────────── */
+.pricing-table thead th {
+  font-style: italic;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.pricing-table .price {
+  color: var(--gold);
+  font-weight: 500;
+}
+.dark-section .pricing-table .price {
+  color: var(--gold);
+}
+.pricing-table tbody tr {
+  transition: background 150ms ease;
+}
+.pricing-table tbody tr:hover td {
+  background: var(--gold-faint);
+}
+.dark-section .pricing-table tbody tr:hover td {
+  background: rgba(200, 168, 100, 0.07);
+}
+
+/* ── FAQ: gold left-border when open, italic summary ─────── */
+.faq-list details {
+  transition: border-left-color 180ms ease;
+  border-left: 2px solid transparent;
+}
+.faq-list details[open] {
+  border-left-color: var(--gold);
+}
+.faq-list summary {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.08rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  list-style: none;
+}
+.faq-list summary::marker,
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+.faq-list summary::after {
+  content: " +";
+  font-style: normal;
+  font-weight: 400;
+  color: var(--gold);
+  float: right;
+  transition: transform 220ms ease;
+}
+.faq-list details[open] summary::after {
+  content: " −";
+}
+
+/* Dark section FAQ */
+.dark-section .faq-list details {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-left: 2px solid transparent;
+}
+.dark-section .faq-list details[open] {
+  border-left-color: var(--gold);
+}
+.dark-section .faq-list summary {
+  color: var(--light);
+}
+.dark-section .faq-list p {
+  color: rgba(248, 246, 242, 0.6);
+}
+
+/* ── Contact form: gold focus ring ───────────────────────── */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: 0;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-faint);
+}
+.btn-submit {
+  background: var(--dark);
+  border-color: var(--dark);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 400;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+.btn-submit:hover,
+.btn-submit:focus-visible {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+  outline: 0;
+}
+
+/* ── Free consult banner: gold border treatment ──────────── */
+.free-consult-banner {
+  background: var(--gold-faint);
+  border: 1px solid rgba(200, 168, 100, 0.35);
+  color: var(--text);
+}
+.dark-section .free-consult-banner {
+  background: rgba(200, 168, 100, 0.07);
+  border-color: rgba(200, 168, 100, 0.28);
+  color: var(--light);
+}
+
+/* ── Why-list numbers: gold ──────────────────────────────── */
+.why-number {
+  color: var(--gold);
+  opacity: 0.75;
+}
+
+/* ── Footer brand: italic + gold gradient ────────────────── */
+.footer-title {
+  font-style: italic;
+  font-weight: 500;
+  background: linear-gradient(
+    135deg,
+    var(--light) 55%,
+    color-mix(in srgb, var(--gold), white 45%) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Back-to-top: gold outline style ─────────────────────── */
+#back-to-top {
+  background: transparent;
+  border: 1px solid rgba(200, 168, 100, 0.35);
+  color: var(--gold);
+}
+#back-to-top:hover,
+#back-to-top:focus-visible {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+  outline: 0;
+}
