@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../style.css?v=4" />
+    <link rel="stylesheet" href="../style.css?v=5" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="alternate" hreflang="it" href="https://ikitaria.com/shop.html" />
     <link rel="alternate" hreflang="en" href="https://ikitaria.com/en/shop.html" />
@@ -32,155 +32,200 @@
 
     <main id="content">
 
-      <section class="page-header">
-        <div class="container">
-          <h1>ショップ</h1>
-          <p class="section-intro">農場からの商品、文化体験、プロフェッショナルアドバイザリー — Ikitariaのすべてをご覧ください。ご注文やお問い合わせは下のボタンから、または<a href="contact.html">直接ご連絡ください</a>。</p>
-        </div>
+      <!-- ── HERO ───────────────────────────────────────────────────── -->
+      <section class="shop-hero" aria-label="Ikitaria ショップ">
+        <p class="eyebrow" style="color:var(--gold); letter-spacing:0.25em;">IKITARIA</p>
+        <h1>ショップ</h1>
+        <p class="shop-hero-sub">農場からの商品、文化体験、プロフェッショナルアドバイザリー — Ikitariaのすべてをご覧ください。</p>
       </section>
 
-      <!-- ── 01 生産事業 ─────────────────────────────────────────── -->
-      <section id="production" class="section" aria-labelledby="production-title">
-        <div class="container">
-          <p class="eyebrow">01 — 生産事業</p>
-          <h2 id="production-title">農場の商品</h2>
+      <!-- ── JUMP NAV ────────────────────────────────────────────────── -->
+      <nav class="shop-jumps" aria-label="ショップセクション">
+        <a href="#production" class="shop-jump">
+          <span class="shop-jump-num">01</span>
+          <span class="shop-jump-name">生産事業</span>
+        </a>
+        <a href="#brand" class="shop-jump">
+          <span class="shop-jump-num">02</span>
+          <span class="shop-jump-name">ブランド事業</span>
+        </a>
+        <a href="#btob" class="shop-jump">
+          <span class="shop-jump-num">03</span>
+          <span class="shop-jump-name">支援事業</span>
+        </a>
+      </nav>
 
-          <div class="two-columns" style="align-items:start; gap:2.5rem; margin-top:2rem;">
-            <div>
-              <h3>エクストラバージンオリーブオイル</h3>
-              <p>イタリアの丘陵地帯で有機栽培し、手摘みしたオリーブを伝統的なコールドプレス製法で搾油。フルーティな香りと、まろやかでバランスのとれた風味のオイルです。</p>
-              <table class="pricing-table">
-                <thead><tr><th>商品</th><th>容量</th><th>価格</th></tr></thead>
-                <tbody>
-                  <tr><td>有機EVO</td><td>250 ml</td><td class="price">€18</td></tr>
-                  <tr><td>有機EVO</td><td>500 ml</td><td class="price">€30</td></tr>
-                  <tr><td>ギフトセット（2本）</td><td>250 ml × 2</td><td class="price">€42</td></tr>
-                </tbody>
-              </table>
-              <p style="margin-top:0.8rem; font-size:0.88rem; color:var(--muted);">イタリア・日本へ発送可能。ご注文はお問い合わせから。</p>
-              <a class="cta" href="contact.html?subject=生産事業" style="margin-top:1.2rem;">オリーブオイルを注文する</a>
+      <!-- ══════════════════════════════════════════════════════════════
+           01 — 生産事業
+           ══════════════════════════════════════════════════════════════ -->
+      <div id="production">
+
+        <!-- オリーブオイル -->
+        <article class="product-slide" aria-labelledby="oil-title">
+          <span class="product-slide-bg-num" aria-hidden="true">01</span>
+          <div class="product-slide-inner">
+            <div class="product-slide-info">
+              <div class="status-badge s-available"><span class="status-dot"></span>在庫あり</div>
+              <span class="product-slide-cat">01 — 生産事業</span>
+              <h2 class="product-slide-name" id="oil-title">エクストラバージン<br>オリーブオイル</h2>
+              <p class="product-slide-desc">イタリアの丘陵地帯で有機栽培し、手摘みしたオリーブを伝統的なコールドプレス製法で搾油。フルーティな香りとまろやかな風味。イタリア・日本へ発送可能。</p>
+              <div class="product-slide-footer">
+                <div class="product-prices">
+                  <div class="price-row"><span>有機EVO 250 ml</span><span class="price-val">€18</span></div>
+                  <div class="price-row"><span>有機EVO 500 ml</span><span class="price-val">€30</span></div>
+                  <div class="price-row"><span>ギフトセット 250 ml × 2</span><span class="price-val">€42</span></div>
+                </div>
+                <a class="shop-cta" href="contact.html?subject=生産事業">オリーブオイルを注文する</a>
+              </div>
             </div>
-            <picture><source srcset="../images/olive-oil.webp" type="image/webp"><img width="600" height="360" src="../images/olive-oil.jpg" alt="有機エクストラバージンオリーブオイル" style="width:100%;height:360px;object-fit:cover;" loading="lazy"></picture>
-          </div>
-
-          <div class="two-columns" style="align-items:start; gap:2.5rem; margin-top:3.5rem;">
-            <picture><source srcset="../images/matcha.webp" type="image/webp"><img width="600" height="360" src="../images/matcha.jpeg" alt="Ikitaria 抹茶" style="width:100%;height:360px;object-fit:cover;" loading="lazy"></picture>
-            <div>
-              <h3>抹茶</h3>
-              <p>自社農場産の抹茶。鮮やかな緑色、豊かな香り、甘みと渋みのバランスのとれた味わい。茶道にも料理にも最適です。リアルタイム土壌モニタリングとAI解析を活用した農業で栽培。</p>
-              <table class="pricing-table">
-                <thead><tr><th>商品</th><th>容量</th><th>価格</th></tr></thead>
-                <tbody>
-                  <tr><td>薄茶用 抹茶</td><td>30 g</td><td class="price">€23 / ¥3,500</td></tr>
-                  <tr><td>薄茶用 抹茶</td><td>50 g</td><td class="price">€36 / ¥5,500</td></tr>
-                  <tr><td>濃茶用 プレミアム抹茶</td><td>30 g</td><td class="price">€64 / ¥9,800</td></tr>
-                </tbody>
-              </table>
-              <a class="cta" href="contact.html?subject=生産事業" style="margin-top:1.2rem;">抹茶を注文する</a>
+            <div class="product-slide-visual">
+              <picture><source srcset="../images/olive-oil.webp" type="image/webp"><img width="600" height="380" src="../images/olive-oil.jpg" alt="有機エクストラバージンオリーブオイル" loading="lazy"></picture>
             </div>
           </div>
+        </article>
 
-          <div style="margin-top:3.5rem;">
-            <h3>農場レンタル</h3>
-            <p class="section-intro">自社農場を農業・文化ハブとして開放しています。コーポレートイベント、チームビルディング、文化的リトリート、テーマワークショップに最適な自然環境です。</p>
-            <picture><source srcset="../images/farm-house.webp" type="image/webp"><img width="1200" height="300" src="../images/farm-house.jpeg" alt="農場のパノラマ" style="width:100%;height:280px;object-fit:cover;margin:1.5rem 0;" loading="lazy"></picture>
-            <div class="two-columns">
-              <article class="column">
+        <!-- 抹茶 -->
+        <article class="product-slide" aria-labelledby="matcha-title">
+          <span class="product-slide-bg-num" aria-hidden="true">02</span>
+          <div class="product-slide-inner reverse">
+            <div class="product-slide-info">
+              <div class="status-badge s-available"><span class="status-dot"></span>在庫あり</div>
+              <span class="product-slide-cat">01 — 生産事業</span>
+              <h2 class="product-slide-name" id="matcha-title">抹茶</h2>
+              <p class="product-slide-desc">自社農場産の抹茶。鮮やかな緑色、豊かな香り、甘みと渋みのバランスのとれた味わい。茶道にも料理にも最適。リアルタイム土壌モニタリングで栽培。</p>
+              <div class="product-slide-footer">
+                <div class="product-prices">
+                  <div class="price-row"><span>薄茶用 30 g</span><span class="price-val">€23 / ¥3,500</span></div>
+                  <div class="price-row"><span>薄茶用 50 g</span><span class="price-val">€36 / ¥5,500</span></div>
+                  <div class="price-row"><span>濃茶用 プレミアム 30 g</span><span class="price-val">€64 / ¥9,800</span></div>
+                </div>
+                <a class="shop-cta" href="contact.html?subject=生産事業">抹茶を注文する</a>
+              </div>
+            </div>
+            <div class="product-slide-visual">
+              <picture><source srcset="../images/matcha.webp" type="image/webp"><img width="600" height="380" src="../images/matcha.jpeg" alt="Ikitaria 抹茶" loading="lazy"></picture>
+            </div>
+          </div>
+        </article>
+
+        <!-- 農場レンタル -->
+        <div class="farm-rental-block">
+          <div style="max-width:1208px; margin:0 auto;">
+            <span class="product-slide-cat">01 — 生産事業</span>
+            <h2 class="product-slide-name" style="margin-bottom:16px;">農場レンタル</h2>
+            <p class="product-slide-desc">自社農場を農業・文化ハブとして開放。コーポレートイベント、チームビルディング、文化的リトリート、テーマワークショップに最適です。</p>
+            <picture><source srcset="../images/farm-house.webp" type="image/webp"><img class="farm-img" width="1200" height="260" src="../images/farm-house.jpeg" alt="農場のパノラマ" loading="lazy"></picture>
+            <div class="farm-options">
+              <div class="farm-option">
                 <h4>半日プラン</h4>
                 <p>4時間 — ガイド付きツアー、オリーブ収穫体験または抹茶体験。最大20名まで。</p>
-                <p style="margin-top:0.8rem;font-weight:600;">€500〜</p>
-              </article>
-              <article class="column">
+                <span class="farm-option-price">€500〜</span>
+              </div>
+              <div class="farm-option">
                 <h4>一日プラン</h4>
                 <p>農場を一日貸し切り。伝統的なランチと選択可能なアクティビティの組み合わせを含む。</p>
-                <p style="margin-top:0.8rem;font-weight:600;">€900〜</p>
-              </article>
+                <span class="farm-option-price">€900〜</span>
+              </div>
             </div>
-            <a class="cta" href="contact.html?subject=生産事業" style="margin-top:1.5rem;">農場を予約する</a>
+            <a class="shop-cta" href="contact.html?subject=生産事業">農場を予約する</a>
           </div>
         </div>
-      </section>
 
-      <!-- ── 02 ブランド事業 ──────────────────────────────────────── -->
-      <section id="brand" class="section dark-section" aria-labelledby="brand-title">
-        <div class="container">
-          <p class="eyebrow">02 — ブランド事業</p>
-          <h2 id="brand-title">イベント＆プロダクト</h2>
+      </div><!-- /production -->
 
-          <div style="margin-top:2rem;">
-            <h3>文化体験イベント</h3>
-            <p>東京とミラノで本物の文化体験を。少人数・高品質 — イタリア家庭料理、茶道、スペシャルナイト。</p>
-            <table class="pricing-table" style="margin-top:1rem;">
-              <thead><tr><th>イベント</th><th>開催地</th><th>価格</th></tr></thead>
-              <tbody>
-                <tr><td>イタリア家庭料理 プレミアムセッション</td><td>東京 / 2026</td><td class="price">¥15,000〜 / 人</td></tr>
-                <tr><td>抹茶セッション</td><td>ミラノ / 2026年9月</td><td class="price">€75〜 / 人</td></tr>
-                <tr><td>ブランドオープニングパーティー</td><td>2026年9月</td><td class="price">招待制</td></tr>
-                <tr><td>プライベート / 法人イベント</td><td>要相談</td><td class="price">見積もり</td></tr>
-              </tbody>
-            </table>
-            <div style="margin-top:1.2rem; display:flex; gap:1rem; flex-wrap:wrap;">
-              <a class="cta" href="events.html">イベント詳細</a>
-              <a class="cta" href="contact.html?subject=ブランド事業">参加登録</a>
+      <hr class="shop-section-divider">
+
+      <!-- ══════════════════════════════════════════════════════════════
+           02 — ブランド事業
+           ══════════════════════════════════════════════════════════════ -->
+      <div id="brand">
+
+        <!-- 文化体験イベント -->
+        <article class="product-slide" aria-labelledby="events-title">
+          <span class="product-slide-bg-num" aria-hidden="true">03</span>
+          <div class="product-slide-inner">
+            <div class="product-slide-info">
+              <div class="status-badge s-order"><span class="status-dot"></span>参加登録受付中</div>
+              <span class="product-slide-cat">02 — ブランド事業</span>
+              <h2 class="product-slide-name" id="events-title">文化体験<br>イベント</h2>
+              <p class="product-slide-desc">東京とミラノで本物の文化体験を。少人数・高品質 — イタリア家庭料理、茶道、スペシャルナイト。</p>
+              <div class="product-slide-footer">
+                <div class="product-prices">
+                  <div class="price-row"><span>イタリア家庭料理 — 東京 2026</span><span class="price-val">¥15,000〜</span></div>
+                  <div class="price-row"><span>抹茶セッション — ミラノ 2026年9月</span><span class="price-val">€75〜</span></div>
+                  <div class="price-row"><span>ブランドオープニングパーティー — 2026年9月</span><span class="price-val">招待制</span></div>
+                </div>
+                <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                  <a class="shop-cta" href="events.html">イベント詳細</a>
+                  <a class="shop-cta" href="contact.html?subject=ブランド事業">参加登録</a>
+                </div>
+              </div>
+            </div>
+            <div class="product-slide-visual">
+              <picture><source srcset="../images/brand-hero.webp" type="image/webp"><img width="600" height="380" src="../images/brand-hero.jpeg" alt="Ikitaria 文化体験イベント" loading="lazy"></picture>
             </div>
           </div>
+        </article>
 
-          <div style="margin-top:3.5rem;">
-            <h3>限定版プロダクト</h3>
-            <p>イタリアの産業文化と日本の哲学を融合した限定品。各アイテムにはナンバリングが施され、それぞれのストーリーが込められています — 単なる商品ではなく、真の文化的物語を持つオブジェです。</p>
-            <table class="pricing-table" style="margin-top:1rem;">
-              <thead><tr><th>商品</th><th>備考</th><th>価格</th></tr></thead>
-              <tbody>
-                <tr><td>Ikitaria Blend — Small</td><td>限定版</td><td class="price">€55〜 / ¥8,500〜</td></tr>
-                <tr><td>Ikitaria Blend — Special</td><td>ナンバリング入り、化粧箱付き</td><td class="price">€115〜 / ¥18,000〜</td></tr>
-                <tr><td>キュレーテッドギフトセット</td><td>抹茶 + オリーブオイル</td><td class="price">€90〜 / ¥14,000〜</td></tr>
-              </tbody>
-            </table>
-            <a class="cta" href="contact.html?subject=ブランド事業" style="margin-top:1.2rem;">在庫を確認する</a>
+        <!-- 限定版プロダクト -->
+        <article class="product-slide" aria-labelledby="le-title">
+          <span class="product-slide-bg-num" aria-hidden="true">04</span>
+          <div class="product-slide-inner reverse">
+            <div class="product-slide-info">
+              <div class="status-badge s-limited"><span class="status-dot"></span>Limited Edition</div>
+              <span class="product-slide-cat">02 — ブランド事業</span>
+              <h2 class="product-slide-name" id="le-title">限定版<br>プロダクト</h2>
+              <p class="product-slide-desc">イタリアの産業文化と日本の哲学を融合した限定品。各アイテムにはナンバリングが施され、それぞれのストーリーが込められています。</p>
+              <div class="product-slide-footer">
+                <div class="product-prices">
+                  <div class="price-row"><span>Ikitaria Blend — Small</span><span class="price-val">€55〜 / ¥8,500〜</span></div>
+                  <div class="price-row"><span>Ikitaria Blend — Special（ナンバリング入り）</span><span class="price-val">€115〜 / ¥18,000〜</span></div>
+                  <div class="price-row"><span>キュレーテッドギフトセット（抹茶＋オイル）</span><span class="price-val">€90〜 / ¥14,000〜</span></div>
+                </div>
+                <a class="shop-cta" href="contact.html?subject=ブランド事業">在庫を確認する</a>
+              </div>
+            </div>
+            <div class="product-slide-visual">
+              <picture><source srcset="../images/biz-hero.webp" type="image/webp"><img width="600" height="380" src="../images/biz-hero.jpeg" alt="Ikitaria 限定版プロダクト" loading="lazy"></picture>
+            </div>
           </div>
-        </div>
-      </section>
+        </article>
 
-      <!-- ── 03 支援事業 ──────────────────────────────────────────── -->
-      <section id="btob" class="section" aria-labelledby="btob-title">
-        <div class="container">
-          <p class="eyebrow">03 — 支援事業</p>
-          <h2 id="btob-title">クロスカントリー・アドバイザリー</h2>
-          <p class="section-intro">アジアとヨーロッパをまたぐビジネスを展開する企業向けに、市場調査・商業代理・現地同行サポートを提供します。</p>
+      </div><!-- /brand -->
 
-          <div class="three-columns" style="margin-top:1.5rem;">
-            <article class="column">
+      <hr class="shop-section-divider">
+
+      <!-- ══════════════════════════════════════════════════════════════
+           03 — 支援事業
+           ══════════════════════════════════════════════════════════════ -->
+      <section id="btob" style="background:#080808; border-top:1px solid rgba(255,255,255,0.05);">
+        <div class="shop-section-header" style="padding-bottom:56px;">
+          <span class="product-slide-cat">03 — 支援事業</span>
+          <h2 class="product-slide-name" style="margin-bottom:16px;">クロスカントリー<br>アドバイザリー</h2>
+          <p class="product-slide-desc">アジアとヨーロッパをまたぐビジネスを展開する企業向けに、市場調査・商業代理・現地同行サポートを提供します。初回相談無料 — 60分。</p>
+          <div class="btob-services">
+            <div class="btob-service">
               <h3>市場調査</h3>
               <p>ターゲット市場の詳細分析 — 競合・消費者・流通チャネル・業界トレンド。アクションにつながる構造化されたレポートを提供します。</p>
-            </article>
-            <article class="column">
+            </div>
+            <div class="btob-service">
               <h3>商業代理</h3>
               <p>日本またはイタリアにおける現地代理人として、選定されたパートナーとの商業関係・交渉・フォローアップを担当します。</p>
-            </article>
-            <article class="column">
+            </div>
+            <div class="btob-service">
               <h3>現地同行サポート</h3>
               <p>商談ミッション、展示会、パートナーミーティングへの現地同行。文化的・ロジスティクス面での通訳も提供。</p>
-            </article>
+            </div>
           </div>
-
-          <div class="free-consult-banner" style="margin-top:2rem;">
-            <div><strong>初回相談無料 — 60分</strong><p>コミットメントなしでプロジェクトをお聞かせください。開始前に費用も契約も発生しません。</p></div>
-            <a class="cta" href="contact.html?subject=支援事業">相談を予約する</a>
+          <div style="display:flex; flex-direction:column; gap:8px; border-top:1px solid rgba(255,255,255,0.08); padding-top:2rem; margin-top:2.5rem;">
+            <div class="price-row"><span>初回相談（60分ビデオ通話）</span><span class="price-val">無料</span></div>
+            <div class="price-row"><span>市場調査 — ベーシック（2〜3週間）</span><span class="price-val">€2,500〜</span></div>
+            <div class="price-row"><span>市場調査 — エクステンデッド（4〜6週間）</span><span class="price-val">€5,000〜</span></div>
+            <div class="price-row"><span>現地同行（1日、日本）</span><span class="price-val">€330〜 / ¥50,000〜</span></div>
+            <div class="price-row"><span>東京ポップアップ出展（共同スタンド）</span><span class="price-val">¥80,000〜</span></div>
           </div>
-
-          <table class="pricing-table" style="margin-top:1.5rem;">
-            <thead><tr><th>サービス</th><th>形式</th><th>参考価格</th></tr></thead>
-            <tbody>
-              <tr><td>初回相談</td><td>60分ビデオ通話</td><td class="price">無料</td></tr>
-              <tr><td>市場調査 — ベーシック</td><td>レポート、2〜3週間</td><td class="price">€2,500〜</td></tr>
-              <tr><td>市場調査 — エクステンデッド</td><td>レポート + インタビュー、4〜6週間</td><td class="price">€5,000〜</td></tr>
-              <tr><td>商業代理</td><td>月額リテイナー + コミッション</td><td class="price">要相談</td></tr>
-              <tr><td>現地同行（1日）</td><td>日本での現地サポート</td><td class="price">€330〜 / ¥50,000〜</td></tr>
-              <tr><td>東京ポップアップ出展</td><td>共同スタンド、Ikitariaイベント</td><td class="price">¥80,000〜</td></tr>
-            </tbody>
-          </table>
-          <p class="section-intro" style="margin-top:1.5rem;">すべてのプロジェクトは対話から始まります。あなたの目標をお聞かせください。</p>
-          <a class="cta" href="contact.html?subject=支援事業">対話を始める</a>
+          <p style="font-size:0.82rem; color:rgba(255,255,255,0.3); margin:1.5rem 0;">すべてのプロジェクトは対話から始まります。あなたの目標をお聞かせください。</p>
+          <a class="shop-cta" href="contact.html?subject=支援事業">無料相談を予約する</a>
         </div>
       </section>
 
