@@ -2067,8 +2067,7 @@ a.column:focus-visible {
   position: relative;
   z-index: 1;
 }
-.product-slide-inner.reverse { direction: rtl; }
-.product-slide-inner.reverse > * { direction: ltr; }
+.product-slide-inner.reverse .product-slide-visual { order: -1; }
 .product-slide-info {}
 .product-slide-visual {
   display: flex;
@@ -2275,7 +2274,7 @@ a.column:focus-visible {
 /* Responsive shop */
 @media (max-width: 900px) {
   .product-slide-inner { grid-template-columns: 1fr; gap: 36px; padding: 56px 32px; }
-  .product-slide-inner.reverse { direction: ltr; }
+  .product-slide-inner.reverse .product-slide-visual { order: 0; }
   .product-slide-visual img { height: 260px; }
   .shop-section-header { padding: 48px 32px 0; }
   .farm-rental-block { padding: 56px 32px; }
