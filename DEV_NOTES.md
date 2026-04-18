@@ -116,6 +116,24 @@
 
 ---
 
+## セッション 4 — 全体白統一リデザイン
+**変更: `style.css?v=15` → `v=16`**
+
+### ユーザーからの指示
+- トップページの黒・白背景混在を解消し、白で統一する
+
+### 実施内容
+- `style.css` の以下のスタイルを白/ライトベースに変更:
+  - `.hero-news`: `background: var(--dark)` → `var(--surface)` / テキスト色オーバーライド全更新
+  - `.dark-section`: `background: linear-gradient(#151311...)` → `var(--surface)` / `color: var(--light)` → `var(--text)`
+  - `.dark-section` 内部オーバーライド全更新（column・FAQ・pricing・free-consult-banner・cta）
+  - `.site-footer`: 大理石テクスチャ暗背景 → `var(--surface)` / テキスト・グラデーション全更新
+  - `.area-number`: 白系透明色 → 黒系透明色（白背景での視認性確保）
+- 全33 HTML ファイルの `style.css?v=15` → `v=16` 一括更新
+- Shopページは独自クラス使用のため影響なし
+
+---
+
 ## ⚠️ 未完了 / 要作業
 
 ### Formspree ID 設定（最重要）
