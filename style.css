@@ -30,7 +30,7 @@
   --shadow-lift: 0 20px 56px rgba(21, 19, 17, 0.15);
 
   /* Focus ring */
-  --focus-ring: 0 0 0 2px color-mix(in srgb, var(--light), transparent 35%),
+  --focus-ring: 0 0 0 2px color-mix(in srgb, var(--bg), transparent 10%),
                 0 0 0 4px color-mix(in srgb, var(--accent), transparent 42%);
 }
 
@@ -694,9 +694,7 @@ body::after {
   margin-bottom: 0.55rem;
 }
 
-.dark-section .eyebrow {
-  color: var(--gold);
-}
+/* .dark-section .eyebrow — same as base rule, kept for explicitness */
 
 /* ── Section headings ─────────────────────────────────────── */
 .section h1,
@@ -782,15 +780,12 @@ body::after {
   color: var(--light);
 }
 
-/* Dark section / banner / hero CTAs */
-.dark-section .cta,
+/* Banner CTAs (dark-section is now light, so .section:not(.dark-section) rules apply) */
 .free-consult-banner .cta {
   border-color: var(--accent);
   color: var(--accent);
 }
 
-.dark-section .cta:hover,
-.dark-section .cta:focus-visible,
 .free-consult-banner .cta:hover,
 .free-consult-banner .cta:focus-visible {
   background: var(--accent);
