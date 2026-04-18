@@ -250,8 +250,8 @@ img {
   inset: 0;
   background: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--dark), transparent 70%) 0%,
-    color-mix(in srgb, var(--dark), transparent 35%) 100%
+    color-mix(in srgb, var(--dark), transparent 45%) 0%,
+    color-mix(in srgb, var(--dark), transparent 15%) 100%
   );
   z-index: -1;
 }
