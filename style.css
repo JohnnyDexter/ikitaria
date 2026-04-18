@@ -77,7 +77,7 @@ img {
   border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 200;
   backdrop-filter: blur(8px);
 }
 
@@ -272,7 +272,7 @@ img {
   grid-template-columns: 180px repeat(3, 1fr);
   grid-template-rows: auto auto;
   gap: 0 3rem;
-  border-top: 1px solid rgba(248, 246, 242, 0.12);
+  border-bottom: 1px solid rgba(248, 246, 242, 0.12);
 }
 
 .hero-news > .eyebrow {
@@ -617,6 +617,7 @@ img {
   background: var(--dark);
   border-top: none;
   position: relative;
+  z-index: 1;
 }
 .site-footer::before {
   content: "";
@@ -1637,7 +1638,6 @@ body::after {
 /* ── Header: gold gradient border bottom ─────────────────── */
 .site-header {
   border-bottom: none;
-  position: relative;
 }
 .site-header::after {
   content: "";
