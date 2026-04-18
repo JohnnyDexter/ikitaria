@@ -676,6 +676,29 @@ body::after {
   border-top: 1px solid var(--line);
 }
 
+/* Thin gold hairline at top of each section */
+.section::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(200, 168, 100, 0.35) 0%,
+    transparent 60%
+  );
+  margin-bottom: 0;
+}
+
+/* Suppress hairline when section directly follows hero-news (already has border) */
+.hero-news + .section::before {
+  display: none;
+}
+
+/* Suppress hairline when dark-section already provides border-top */
+.dark-section + .section::before {
+  display: none;
+}
+
 /* Dark section — now light */
 .dark-section {
   background: var(--surface);
@@ -1749,6 +1772,7 @@ a.column:hover h3 {
   margin: 0 auto;
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
@@ -1764,6 +1788,14 @@ a.column:hover h3 {
   letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--gold);
+}
+
+.cat-header-sub {
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-left: auto;
+  white-space: nowrap;
 }
 
 /* ══════════════════════════════════════════════════════════
