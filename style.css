@@ -73,12 +73,13 @@ img {
 }
 
 .site-header {
-  background: transparent;
+  background: rgba(245, 242, 236, 0.96);
   border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
   z-index: 200;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .header-grid {
@@ -265,6 +266,7 @@ img {
 .hero-news {
   position: relative;
   width: 100%;
+  scroll-snap-align: start;
   background: rgba(21, 19, 17, 0.97);
   color: var(--light);
   padding: 2.5rem max(2rem, 6vw);
