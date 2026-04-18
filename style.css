@@ -1974,8 +1974,8 @@ a.column:focus-visible {
 .s-available .status-dot { background: #7dc99a; }
 .s-limited { color: var(--gold); }
 .s-limited .status-dot { background: var(--gold); }
-.s-order { color: rgba(255,255,255,0.3); }
-.s-order .status-dot { background: rgba(255,255,255,0.2); }
+.s-order { color: var(--muted); }
+.s-order .status-dot { background: var(--muted); }
 
 /* ── Price rows ──────────────────────────────────────────── */
 .product-prices { display: flex; flex-direction: column; gap: 8px; }
@@ -1984,8 +1984,8 @@ a.column:focus-visible {
   justify-content: space-between;
   align-items: baseline;
   font-size: 0.81rem;
-  color: rgba(255,255,255,0.38);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
   padding-bottom: 6px;
 }
 .price-row:last-child { border-bottom: none; padding-bottom: 0; }
@@ -2002,7 +2002,7 @@ a.column:focus-visible {
 .shop-cta {
   display: inline-block;
   background: transparent;
-  border: 1px solid rgba(200,168,100,0.45);
+  border: 1px solid var(--gold);
   color: var(--gold);
   padding: 12px 28px;
   font-size: 0.7rem;
@@ -2014,7 +2014,7 @@ a.column:focus-visible {
   cursor: pointer;
   font-family: var(--sans);
 }
-.shop-cta:hover { background: var(--gold); color: #080808; border-color: var(--gold); }
+.shop-cta:hover { background: var(--gold); color: var(--bg); border-color: var(--gold); }
 
 /* ── Horizontal wrapper ──────────────────────────────────── */
 .shop-h-wrapper {
@@ -2229,9 +2229,9 @@ a.column:focus-visible {
 
 /* ── Overview / intro banner ─────────────────────────────── */
 .shop-overview {
-  background: #080808;
+  background: var(--bg);
   padding: 88px 80px 72px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--line);
 }
 .shop-overview-inner {
   max-width: 1200px;
@@ -2252,13 +2252,13 @@ a.column:focus-visible {
   font-family: var(--serif);
   font-size: clamp(2.8rem, 5vw, 5.4rem);
   font-weight: 300;
-  color: #fff;
+  color: var(--text);
   line-height: 1.05;
   margin: 0 0 22px;
 }
 .shop-ov-desc {
   font-size: 0.87rem;
-  color: rgba(255,255,255,0.32);
+  color: var(--muted);
   line-height: 2;
   max-width: 480px;
 }
@@ -2277,7 +2277,7 @@ a.column:focus-visible {
 .shop-opening-flag {
   font-size: 0.58rem;
   letter-spacing: 0.3em;
-  color: rgba(255,255,255,0.22);
+  color: var(--muted);
   text-transform: uppercase;
 }
 .shop-opening-date {
@@ -2290,10 +2290,10 @@ a.column:focus-visible {
 /* ── Category section ────────────────────────────────────── */
 .shop-cat-section {
   padding: 80px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  background: #080808;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
 }
-.shop-cat-section.shop-cat-alt { background: #0a0a0c; }
+.shop-cat-section.shop-cat-alt { background: var(--surface); }
 .shop-cat-inner { max-width: 1200px; margin: 0 auto; }
 .shop-cat-head {
   display: flex;
@@ -2305,7 +2305,7 @@ a.column:focus-visible {
   font-family: var(--serif);
   font-size: 0.66rem;
   letter-spacing: 0.22em;
-  color: rgba(255,255,255,0.18);
+  color: var(--muted);
 }
 .shop-cat-name {
   font-size: 0.62rem;
@@ -2319,15 +2319,15 @@ a.column:focus-visible {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2px;
-  background: rgba(255,255,255,0.06);
+  background: var(--line);
 }
 .shop-product-card {
-  background: #080808;
+  background: var(--bg);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
-.shop-cat-alt .shop-product-card { background: #0a0a0c; }
+.shop-cat-alt .shop-product-card { background: var(--surface); }
 .shop-product-img-wrap { overflow: hidden; }
 .shop-product-img {
   width: 100%;
@@ -2354,19 +2354,19 @@ a.column:focus-visible {
   font-family: var(--serif);
   font-size: clamp(1.7rem, 2.4vw, 2.8rem);
   font-weight: 300;
-  color: #fff;
+  color: var(--text);
   line-height: 1.1;
   margin: 0 0 12px;
 }
 .shop-product-desc {
   font-size: 0.84rem;
-  color: rgba(255,255,255,0.38);
+  color: var(--muted);
   line-height: 2;
   margin: 0 0 24px;
   flex: 1;
 }
 .shop-product-foot {
-  border-top: 1px solid rgba(255,255,255,0.07);
+  border-top: 1px solid var(--line);
   padding-top: 20px;
   display: flex;
   flex-direction: column;
@@ -2392,18 +2392,18 @@ a.column:focus-visible {
   font-family: var(--serif);
   font-size: clamp(1.9rem, 3vw, 3.6rem);
   font-weight: 300;
-  color: #fff;
+  color: var(--text);
   line-height: 1.1;
   margin: 0 0 14px;
 }
 .shop-feature-desc {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.38);
+  color: var(--muted);
   line-height: 2;
   margin: 0 0 30px;
 }
 .shop-feature-foot {
-  border-top: 1px solid rgba(255,255,255,0.07);
+  border-top: 1px solid var(--line);
   padding-top: 22px;
   display: flex;
   flex-direction: column;
