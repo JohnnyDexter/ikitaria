@@ -213,7 +213,6 @@ img {
 .hero {
   position: relative;
   min-height: 100svh;
-  border-bottom: 1px solid var(--line);
 }
 
 @keyframes hero-drift {
@@ -2363,8 +2362,8 @@ a.column:focus-visible {
 .hero-news .news-item p      { color: rgba(248, 246, 242, 0.55); }
 .hero-news .news-item-link   { color: var(--light); opacity: 0.50; }
 
-/* ── Light sections: warm divider between adjacent sections ─ */
-.section + .section {
+/* ── Section divider: only when transitioning dark→light ─── */
+.dark-section + .section:not(.dark-section) {
   border-top: 1px solid var(--line);
 }
 
