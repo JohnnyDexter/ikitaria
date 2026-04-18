@@ -116,6 +116,26 @@
 
 ---
 
+## セッション 5 — デザイン改善 + ショップカテゴリー再設計
+**変更: `style.css?v=16` → `v=17`**
+
+### 実施内容
+- h2見出しサイズ引き上げ（clamp 3.2→4rem）、font-weight 500→400（serif優雅さ向上）
+- eyebrowレタースペーシング拡大（0.24→0.32em）
+- hero-newsタイトル強化（1.1→1.4rem）、eyebrow 0.22→0.36em、border-bottom opacity 0.18→0.35
+- hero-news-title の `color: var(--light)` バグを `var(--text)` に修正
+- why-number 拡大（clamp 2.8→3.6rem）、opacity 0.75→0.90
+- footer-title 拡大（clamp 5.5→6.5rem）
+- セクション境界ゴールドヘアライン追加（`.section::before`）
+- `.cat-header-sub` CSS新規追加
+- ショップカテゴリー名3言語で更新:
+  EN: Taste / Experience / Advisory
+  IT: Gusto / Esperienza / Advisory
+  JA: テイスト / 体験 / アドバイザリー
+- 全33 HTML v=16→v=17
+
+---
+
 ## セッション 4 — 全体白統一リデザイン
 **変更: `style.css?v=15` → `v=16`**
 
