@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=7" />
+    <link rel="stylesheet" href="style.css?v=8" />
     <style>html{scroll-snap-type:none}.site-footer{min-height:unset;display:block}</style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="alternate" hreflang="it" href="https://ikitaria.com/shop.html" />
@@ -32,21 +32,11 @@
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "Matcha Ikitaria",
-        "description": "Matcha coltivato nella fattoria giapponese di Ikitaria. Disponibile in versione Usucha (30g, 50g) e Koicha Premium (30g).",
+        "description": "Matcha coltivato nella fattoria giapponese di Ikitaria.",
         "brand": {"@type": "Brand", "name": "Ikitaria"},
         "offers": [
-          {"@type": "Offer", "priceCurrency": "EUR", "price": "23", "priceSpecification": {"@type": "UnitPriceSpecification", "name": "Usucha 30g"}, "availability": "https://schema.org/InStock", "url": "https://ikitaria.com/contact.html?subject=Matcha"},
-          {"@type": "Offer", "priceCurrency": "EUR", "price": "64", "priceSpecification": {"@type": "UnitPriceSpecification", "name": "Koicha Premium 30g"}, "availability": "https://schema.org/InStock", "url": "https://ikitaria.com/contact.html?subject=Matcha"}
+          {"@type": "Offer", "priceCurrency": "EUR", "price": "23", "priceSpecification": {"@type": "UnitPriceSpecification", "name": "Usucha 30g"}, "availability": "https://schema.org/InStock", "url": "https://ikitaria.com/contact.html?subject=Matcha"}
         ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Supporto BtoB Ikitaria — Advisory Cross-Country",
-        "description": "Ricerca di mercato, rappresentanza commerciale e accompagnamento locale per imprese che operano tra Italia e Giappone.",
-        "provider": {"@type": "Organization", "@id": "https://ikitaria.com/#organization"},
-        "areaServed": [{"@type": "Country", "name": "Italy"}, {"@type": "Country", "name": "Japan"}],
-        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "name": "Prima consulenza gratuita 60 minuti", "url": "https://ikitaria.com/contact.html?subject=Supporto+BtoB"}
       }
     ]</script>
     <meta property="og:type" content="website" />
@@ -66,102 +56,99 @@
 
     <main id="contenuto">
 
-      <div class="shop-h-wrapper" id="shop-h-wrapper">
-
-        <!-- ── 01 Olio EVO ─────────────────────────────────────────── -->
-        <article class="h-slide" aria-labelledby="olio-title">
-          <span class="slide-bg-num" aria-hidden="true">01</span>
-          <span class="slide-counter" aria-hidden="true">01 / 06</span>
-          <div class="h-slide-inner">
-            <div class="h-slide-info">
-              <div class="h-slide-meta">
-                <div class="status-badge s-available"><span class="status-dot"></span>Disponibile</div>
-                <span class="slide-cat">01 — Produzione</span>
-              </div>
-              <h2 class="slide-name" id="olio-title">Olio Extravergine<br>d'Oliva</h2>
-              <p class="slide-desc">Olive coltivate biologicamente e raccolte a mano sulle nostre colline italiane. Pressatura a freddo con metodo tradizionale per un olio dal profumo fruttato e dal gusto rotondo ed equilibrato. Spedizione in Italia e in Giappone.</p>
-              <div class="slide-footer">
-                <div class="product-prices">
-                  <div class="price-row"><span>EVO Biologico 250 ml</span><span class="price-val">€18</span></div>
-                  <div class="price-row"><span>EVO Biologico 500 ml</span><span class="price-val">€30</span></div>
-                  <div class="price-row"><span>Gift Set 250 ml × 2</span><span class="price-val">€42</span></div>
-                </div>
-                <a class="shop-cta" href="contact.html?subject=Olio+EVO">Ordina olio</a>
-              </div>
+      <!-- ── OVERVIEW ──────────────────────────────────────────────── -->
+      <section class="shop-overview" aria-label="Shop Ikitaria">
+        <div class="shop-overview-inner">
+          <div>
+            <span class="shop-ov-eyebrow">IKITARIA</span>
+            <h1 class="shop-ov-title">Shop</h1>
+            <p class="shop-ov-desc">Prodotti biologici dalla nostra fattoria, esperienze culturali autentiche tra Italia e Giappone, e spazi per eventi e workshop. Il nostro negozio fisico apre prossimamente a Tokyo e Milano.</p>
+          </div>
+          <div class="shop-opening-list" aria-label="Aperture negozi">
+            <div class="shop-opening-item">
+              <span class="shop-opening-flag">Tokyo — Japan</span>
+              <span class="shop-opening-date">Apertura 2026</span>
             </div>
-            <div class="h-slide-visual">
-              <picture><source srcset="images/olive-oil.webp" type="image/webp"><img width="600" height="380" src="images/olive-oil.jpg" alt="Olio extravergine d'oliva biologico" loading="lazy"></picture>
+            <div class="shop-opening-item">
+              <span class="shop-opening-flag">Milano — Italy</span>
+              <span class="shop-opening-date">Set. 2026</span>
             </div>
           </div>
-          <span class="shop-scroll-hint">Scorri</span>
-        </article>
+        </div>
+      </section>
 
-        <!-- ── 02 Matcha ───────────────────────────────────────────── -->
-        <article class="h-slide" aria-labelledby="matcha-title">
-          <span class="slide-bg-num" aria-hidden="true">02</span>
-          <span class="slide-counter" aria-hidden="true">02 / 06</span>
-          <div class="h-slide-inner">
-            <div class="h-slide-info">
-              <div class="h-slide-meta">
-                <div class="status-badge s-available"><span class="status-dot"></span>Disponibile</div>
-                <span class="slide-cat">01 — Produzione</span>
-              </div>
-              <h2 class="slide-name" id="matcha-title">Matcha</h2>
-              <p class="slide-desc">Dal nostro campo giapponese. Colore verde vivace, aroma intenso e sapore equilibrato tra dolcezza e amaro. Ideale per la cerimonia del te e in cucina. Coltivazione con monitoraggio del suolo in tempo reale.</p>
-              <div class="slide-footer">
-                <div class="product-prices">
-                  <div class="price-row"><span>Cerimonia Usucha 30 g</span><span class="price-val">€23 / ¥3,500</span></div>
-                  <div class="price-row"><span>Cerimonia Usucha 50 g</span><span class="price-val">€36 / ¥5,500</span></div>
-                  <div class="price-row"><span>Premium Koicha 30 g</span><span class="price-val">€64 / ¥9,800</span></div>
-                </div>
-                <a class="shop-cta" href="contact.html?subject=Matcha">Ordina matcha</a>
-              </div>
-            </div>
-            <div class="h-slide-visual">
-              <picture><source srcset="images/matcha.webp" type="image/webp"><img width="600" height="380" src="images/matcha.jpeg" alt="Matcha Ikitaria" loading="lazy"></picture>
-            </div>
+      <!-- ── 01 PRODUZIONE ─────────────────────────────────────────── -->
+      <section class="shop-cat-section" id="produzione" aria-labelledby="cat-produzione">
+        <div class="shop-cat-inner">
+          <div class="shop-cat-head">
+            <span class="shop-cat-num">01</span>
+            <span class="shop-cat-name" id="cat-produzione">Produzione</span>
           </div>
-        </article>
+          <div class="shop-products-grid">
 
-        <!-- ── 03 Noleggio Fattoria ────────────────────────────────── -->
-        <article class="h-slide" aria-labelledby="fattoria-title">
-          <span class="slide-bg-num" aria-hidden="true">03</span>
-          <span class="slide-counter" aria-hidden="true">03 / 06</span>
-          <div class="h-slide-inner">
-            <div class="h-slide-info">
-              <div class="h-slide-meta">
-                <div class="status-badge s-order"><span class="status-dot"></span>Su richiesta</div>
-                <span class="slide-cat">01 — Produzione</span>
+            <!-- Olio EVO -->
+            <article class="shop-product-card" aria-labelledby="olio-title">
+              <div class="shop-product-img-wrap">
+                <picture><source srcset="images/olive-oil.webp" type="image/webp"><img class="shop-product-img" width="600" height="260" src="images/olive-oil.jpg" alt="Olio extravergine d'oliva biologico Ikitaria" loading="lazy"></picture>
               </div>
-              <h2 class="slide-name" id="fattoria-title">Noleggio<br>Fattoria</h2>
-              <p class="slide-desc">La nostra fattoria e disponibile come hub agri-culturale. Ideale per eventi aziendali, team building, ritiri culturali e workshop tematici.</p>
-              <div class="slide-footer">
-                <div class="product-prices">
-                  <div class="price-row"><span>Mezza Giornata (4 ore, fino a 20 pers.)</span><span class="price-val">Da €500</span></div>
-                  <div class="price-row"><span>Giornata Intera (esclusiva, pranzo incluso)</span><span class="price-val">Da €900</span></div>
+              <div class="shop-product-body">
+                <div class="shop-product-meta">
+                  <div class="status-badge s-available"><span class="status-dot"></span>Disponibile</div>
                 </div>
-                <a class="shop-cta" href="contact.html?subject=Noleggio+Fattoria">Prenota la fattoria</a>
+                <h2 class="shop-product-title" id="olio-title">Olio Extravergine<br>d'Oliva</h2>
+                <p class="shop-product-desc">Olive coltivate biologicamente e raccolte a mano sulle colline italiane. Pressatura a freddo con metodo tradizionale per un olio dal profumo fruttato e dal gusto rotondo ed equilibrato. Spedizione in Italia e Giappone.</p>
+                <div class="shop-product-foot">
+                  <div class="product-prices">
+                    <div class="price-row"><span>EVO Biologico 250 ml</span><span class="price-val">€18</span></div>
+                    <div class="price-row"><span>EVO Biologico 500 ml</span><span class="price-val">€30</span></div>
+                    <div class="price-row"><span>Gift Set 250 ml × 2</span><span class="price-val">€42</span></div>
+                  </div>
+                  <a class="shop-cta" href="contact.html?subject=Olio+EVO">Ordina olio</a>
+                </div>
               </div>
-            </div>
-            <div class="h-slide-visual">
-              <picture><source srcset="images/farm-house.webp" type="image/webp"><img width="600" height="380" src="images/farm-house.jpeg" alt="Panorama della fattoria Ikitaria" loading="lazy"></picture>
-            </div>
-          </div>
-        </article>
+            </article>
 
-        <!-- ── 04 Eventi Culturali ─────────────────────────────────── -->
-        <article class="h-slide" aria-labelledby="eventi-title">
-          <span class="slide-bg-num" aria-hidden="true">04</span>
-          <span class="slide-counter" aria-hidden="true">04 / 06</span>
-          <div class="h-slide-inner">
-            <div class="h-slide-info">
-              <div class="h-slide-meta">
+            <!-- Matcha -->
+            <article class="shop-product-card" aria-labelledby="matcha-title">
+              <div class="shop-product-img-wrap">
+                <picture><source srcset="images/matcha.webp" type="image/webp"><img class="shop-product-img" width="600" height="260" src="images/matcha.jpeg" alt="Matcha Ikitaria" loading="lazy"></picture>
+              </div>
+              <div class="shop-product-body">
+                <div class="shop-product-meta">
+                  <div class="status-badge s-available"><span class="status-dot"></span>Disponibile</div>
+                </div>
+                <h2 class="shop-product-title" id="matcha-title">Matcha</h2>
+                <p class="shop-product-desc">Dal nostro campo giapponese. Colore verde vivace, aroma intenso e sapore equilibrato tra dolcezza e amaro. Ideale per la cerimonia del te e in cucina. Coltivazione con monitoraggio del suolo in tempo reale.</p>
+                <div class="shop-product-foot">
+                  <div class="product-prices">
+                    <div class="price-row"><span>Cerimonia Usucha 30 g</span><span class="price-val">€23 / ¥3,500</span></div>
+                    <div class="price-row"><span>Cerimonia Usucha 50 g</span><span class="price-val">€36 / ¥5,500</span></div>
+                    <div class="price-row"><span>Premium Koicha 30 g</span><span class="price-val">€64 / ¥9,800</span></div>
+                  </div>
+                  <a class="shop-cta" href="contact.html?subject=Matcha">Ordina matcha</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 02 EVENTI CULTURALI ────────────────────────────────────── -->
+      <section class="shop-cat-section shop-cat-alt" id="eventi" aria-labelledby="cat-eventi">
+        <div class="shop-cat-inner">
+          <div class="shop-cat-head">
+            <span class="shop-cat-num">02</span>
+            <span class="shop-cat-name" id="cat-eventi">Brand — Eventi Culturali</span>
+          </div>
+          <div class="shop-feature-grid">
+            <div class="shop-feature-text">
+              <div class="shop-feature-meta">
                 <div class="status-badge s-order"><span class="status-dot"></span>Su registrazione</div>
-                <span class="slide-cat">02 — Brand</span>
               </div>
-              <h2 class="slide-name" id="eventi-title">Eventi<br>Culturali</h2>
-              <p class="slide-desc">Esperienze autentiche a Tokyo e Milano. Piccoli gruppi, alta qualita — cucina casalinga italiana, cerimonia del te, serate speciali.</p>
-              <div class="slide-footer">
+              <h2 class="shop-feature-title">Eventi<br>Culturali</h2>
+              <p class="shop-feature-desc">Esperienze autentiche a Tokyo e Milano. Piccoli gruppi, alta qualita — cucina casalinga italiana, cerimonia del te, serate speciali.</p>
+              <div class="shop-feature-foot">
                 <div class="product-prices">
                   <div class="price-row"><span>Cucina Casalinga — Tokyo 2026</span><span class="price-val">Da ¥15,000</span></div>
                   <div class="price-row"><span>Sessione Matcha — Milano Set. 2026</span><span class="price-val">Da €75</span></div>
@@ -173,87 +160,45 @@
                 </div>
               </div>
             </div>
-            <div class="h-slide-visual">
-              <picture><source srcset="images/brand-hero.webp" type="image/webp"><img width="600" height="380" src="images/brand-hero.jpeg" alt="Evento culturale Ikitaria" loading="lazy"></picture>
+            <div class="shop-feature-visual">
+              <picture><source srcset="images/brand-hero.webp" type="image/webp"><img class="shop-feature-img" width="600" height="400" src="images/brand-hero.jpeg" alt="Evento culturale Ikitaria" loading="lazy"></picture>
             </div>
           </div>
-        </article>
-
-        <!-- ── 05 Limited Edition ─────────────────────────────────── -->
-        <article class="h-slide" aria-labelledby="le-title">
-          <span class="slide-bg-num" aria-hidden="true">05</span>
-          <span class="slide-counter" aria-hidden="true">05 / 06</span>
-          <div class="h-slide-inner">
-            <div class="h-slide-info">
-              <div class="h-slide-meta">
-                <div class="status-badge s-limited"><span class="status-dot"></span>Limited Edition</div>
-                <span class="slide-cat">02 — Brand</span>
-              </div>
-              <h2 class="slide-name" id="le-title">Prodotti<br>Limited Edition</h2>
-              <p class="slide-desc">Edizioni limitate che mescolano la cultura industriale italiana con la filosofia giapponese. Ogni pezzo e numerato e raccontato — non una semplice merce, ma un oggetto con una storia reale.</p>
-              <div class="slide-footer">
-                <div class="product-prices">
-                  <div class="price-row"><span>Ikitaria Blend — Small</span><span class="price-val">Da €55 / ¥8,500</span></div>
-                  <div class="price-row"><span>Ikitaria Blend — Special (numerato)</span><span class="price-val">Da €115 / ¥18,000</span></div>
-                  <div class="price-row"><span>Gift Set Curato (Matcha + Olio)</span><span class="price-val">Da €90 / ¥14,000</span></div>
-                </div>
-                <a class="shop-cta" href="contact.html?subject=Prodotto+Limited+Edition">Richiedi disponibilita</a>
-              </div>
-            </div>
-            <div class="h-slide-visual">
-              <picture><source srcset="images/biz-hero.webp" type="image/webp"><img width="600" height="380" src="images/biz-hero.jpeg" alt="Prodotto Limited Edition Ikitaria" loading="lazy"></picture>
-            </div>
-          </div>
-        </article>
-
-        <!-- ── 06 Advisory BtoB ───────────────────────────────────── -->
-        <article class="h-slide" aria-labelledby="btob-title">
-          <span class="slide-bg-num" aria-hidden="true">06</span>
-          <span class="slide-counter" aria-hidden="true">06 / 06</span>
-          <div class="h-slide-inner">
-            <div class="h-slide-info">
-              <div class="h-slide-meta">
-                <div class="status-badge s-available"><span class="status-dot"></span>Prima call gratuita</div>
-                <span class="slide-cat">03 — Supporto BtoB</span>
-              </div>
-              <h2 class="slide-name" id="btob-title">Advisory<br>Cross-Country</h2>
-              <p class="slide-desc">Ricerca di mercato, rappresentanza commerciale e accompagnamento locale per imprese che operano tra Asia ed Europa. Prima consulenza gratuita — 60 minuti.</p>
-              <div class="slide-footer">
-                <div class="product-prices">
-                  <div class="price-row"><span>Consulenza iniziale (60 min)</span><span class="price-val">Gratuita</span></div>
-                  <div class="price-row"><span>Ricerca di mercato — Base (2-3 sett.)</span><span class="price-val">Da €2,500</span></div>
-                  <div class="price-row"><span>Ricerca di mercato — Estesa (4-6 sett.)</span><span class="price-val">Da €5,000</span></div>
-                  <div class="price-row"><span>Accompagnamento locale (giornata, Giappone)</span><span class="price-val">Da €330 / ¥50,000</span></div>
-                </div>
-                <a class="shop-cta" href="contact.html?subject=Supporto+BtoB">Prenota una call gratuita</a>
-              </div>
-            </div>
-            <div class="h-slide-visual">
-              <picture><source srcset="images/brand-hero.webp" type="image/webp"><img width="600" height="380" src="images/brand-hero.jpeg" alt="Advisory BtoB Ikitaria" loading="lazy"></picture>
-            </div>
-          </div>
-        </article>
-
-      </div><!-- /shop-h-wrapper -->
-
-      <nav class="shop-h-nav" id="shop-h-nav" aria-label="Navigazione prodotti">
-        <button class="h-nav-btn" id="h-prev" aria-label="Prodotto precedente">&#8592;</button>
-        <div class="h-dots">
-          <button class="h-dot active" aria-label="Olio EVO"></button>
-          <button class="h-dot" aria-label="Matcha"></button>
-          <button class="h-dot" aria-label="Noleggio Fattoria"></button>
-          <button class="h-dot" aria-label="Eventi Culturali"></button>
-          <button class="h-dot" aria-label="Limited Edition"></button>
-          <button class="h-dot" aria-label="Advisory BtoB"></button>
         </div>
-        <button class="h-nav-btn" id="h-next" aria-label="Prodotto successivo">&#8594;</button>
-        <span class="h-counter" id="h-counter">01 / 06</span>
-      </nav>
+      </section>
+
+      <!-- ── 03 NOLEGGIO FATTORIA ───────────────────────────────────── -->
+      <section class="shop-cat-section" id="fattoria" aria-labelledby="cat-fattoria">
+        <div class="shop-cat-inner">
+          <div class="shop-cat-head">
+            <span class="shop-cat-num">03</span>
+            <span class="shop-cat-name" id="cat-fattoria">Produzione — Noleggio Fattoria</span>
+          </div>
+          <div class="shop-feature-grid reverse">
+            <div class="shop-feature-text">
+              <div class="shop-feature-meta">
+                <div class="status-badge s-order"><span class="status-dot"></span>Su richiesta</div>
+              </div>
+              <h2 class="shop-feature-title">Noleggio<br>Fattoria</h2>
+              <p class="shop-feature-desc">La nostra fattoria e disponibile come hub agri-culturale. Ideale per eventi aziendali, team building, ritiri culturali e workshop tematici tra le colline italiane.</p>
+              <div class="shop-feature-foot">
+                <div class="product-prices">
+                  <div class="price-row"><span>Mezza Giornata (4 ore, fino a 20 pers.)</span><span class="price-val">Da €500</span></div>
+                  <div class="price-row"><span>Giornata Intera (esclusiva, pranzo incluso)</span><span class="price-val">Da €900</span></div>
+                </div>
+                <a class="shop-cta" href="contact.html?subject=Noleggio+Fattoria">Prenota la fattoria</a>
+              </div>
+            </div>
+            <div class="shop-feature-visual">
+              <picture><source srcset="images/farm-house.webp" type="image/webp"><img class="shop-feature-img" width="600" height="400" src="images/farm-house.jpeg" alt="Fattoria Ikitaria" loading="lazy"></picture>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </main>
 
     <footer class="site-footer"><div class="container footer-grid"><div><p class="footer-title">IKITARIA</p><p class="footer-copy">Italy – Japan</p><p class="footer-copy">Strategic Cultural &amp; Business Advisory</p></div><nav class="footer-links" aria-label="Footer navigation"><p><a href="chi-siamo.html">Chi Siamo</a></p><p><a href="shop.html">Shop</a></p><p><a href="eventi.html">Eventi</a></p></nav><div class="footer-links"><p><a href="mailto:info@ikitaria.com">info@ikitaria.com</a></p><p><a href="https://www.instagram.com/ikitaria/">Instagram</a></p><p class="footer-legal"><a href="privacy.html">Privacy Policy</a></p></div></div></footer>
     <script src="nav.js"></script>
-    <script src="shop.js"></script>
   </body>
 </html>
