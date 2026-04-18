@@ -515,7 +515,7 @@ body::after {
   grid-template-columns: 180px repeat(3, 1fr);
   grid-template-rows: auto auto;
   gap: 0 3rem;
-  border-bottom: 1px solid rgba(200, 168, 100, 0.18);
+  border-bottom: 1px solid rgba(200, 168, 100, 0.35);
 }
 
 /* Gold hairline on top */
@@ -536,7 +536,7 @@ body::after {
 
 .hero-news > .eyebrow {
   color: var(--gold);
-  letter-spacing: 0.22em;
+  letter-spacing: 0.36em;
   grid-column: 1;
   grid-row: 1;
   align-self: end;
@@ -544,9 +544,9 @@ body::after {
 
 .hero-news-title {
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 500;
-  color: var(--light);
+  color: var(--text);
   margin: 0.3rem 0 0;
   line-height: 1.2;
   grid-column: 1;
@@ -1004,11 +1004,11 @@ a.column:hover h3 {
 
 .why-number {
   font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
   font-weight: 600;
   line-height: 1;
   color: var(--gold);
-  opacity: 0.75;
+  opacity: 0.90;
   flex-shrink: 0;
   min-width: 2.4rem;
   letter-spacing: -0.04em;
@@ -1382,7 +1382,7 @@ a.column:hover h3 {
 .footer-title {
   margin: 0 0 0.6rem;
   font-family: var(--serif);
-  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
