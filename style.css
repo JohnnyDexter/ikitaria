@@ -2350,27 +2350,28 @@ picture.about-slide-hero img {
   display: flex;
   justify-content: center;
   gap: 0.6rem;
-  padding: 0 6vw 2.5rem;
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+  padding-bottom: 2.5rem;
   flex-wrap: wrap;
 }
 
 .biz-tab-btn {
-  background: rgba(23, 23, 23, 0.08);
+  background: rgba(255, 255, 255, 0.55);
   border: none;
   border-radius: 2px;
-  padding: 0.7rem 2.2rem;
+  padding: 0.8rem 2.4rem;
   font-family: var(--sans);
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .biz-tab-btn:hover {
-  background: rgba(23, 23, 23, 0.14);
-  color: var(--text);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .biz-tab-btn.active {
@@ -2380,9 +2381,9 @@ picture.about-slide-hero img {
 
 .biz-tab-panel {
   display: none;
-  padding: 0 6vw 2rem;
-  max-width: 960px;
-  margin: 0 auto;
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+  padding-bottom: 2rem;
   box-sizing: border-box;
 }
 
