@@ -42,6 +42,7 @@
 }
 
 html {
+  font-size: 17px;
   scroll-behavior: smooth;
   scroll-padding-top: 4.5rem;
 }
@@ -590,7 +591,7 @@ body::after {
 }
 
 .news-pub-date {
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   color: var(--muted);
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -598,8 +599,8 @@ body::after {
 
 .news-tag {
   display: inline-block;
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   background: rgba(23, 23, 23, 0.06);
   color: var(--muted);
@@ -635,7 +636,7 @@ body::after {
 }
 
 .news-item p {
-  font-size: 0.83rem;
+  font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.65;
   margin: 0 0 0.8rem;
@@ -643,7 +644,7 @@ body::after {
 
 .news-item-link {
   display: inline-block;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--text);
   text-decoration: none;
   letter-spacing: 0.05em;
@@ -708,9 +709,9 @@ body::after {
 /* ── Eyebrow label ────────────────────────────────────────── */
 .eyebrow {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--gold);
   opacity: 1;
@@ -760,9 +761,9 @@ body::after {
   padding: 0.72rem 1.3rem;
   border: 1px solid var(--text);
   color: var(--text);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 400;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
 }
@@ -934,9 +935,9 @@ a.column:hover h3 {
 
 .area-number {
   display: block;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   color: rgba(23, 23, 23, 0.25);
   margin-bottom: 1rem;
 }
@@ -1590,8 +1591,8 @@ a.column:hover h3 {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 0.63rem;
-  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -1621,7 +1622,7 @@ a.column:hover h3 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  font-size: 0.81rem;
+  font-size: 0.88rem;
   color: var(--muted);
   border-bottom: 1px solid var(--line);
   padding-bottom: 6px;
@@ -1648,8 +1649,8 @@ a.column:hover h3 {
   border: 1px solid var(--gold);
   color: var(--gold);
   padding: 12px 28px;
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 500;
   text-decoration: none;
@@ -1683,8 +1684,8 @@ a.column:hover h3 {
 }
 
 .shop-ov-eyebrow {
-  font-size: 0.6rem;
-  letter-spacing: 0.32em;
+  font-size: 0.72rem;
+  letter-spacing: 0.26em;
   color: var(--gold);
   display: block;
   margin-bottom: 20px;
@@ -1700,7 +1701,7 @@ a.column:hover h3 {
 }
 
 .shop-ov-desc {
-  font-size: 0.87rem;
+  font-size: 0.95rem;
   color: var(--muted);
   line-height: 2;
   max-width: 480px;
@@ -1721,8 +1722,8 @@ a.column:hover h3 {
 }
 
 .shop-opening-flag {
-  font-size: 0.58rem;
-  letter-spacing: 0.3em;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
   color: var(--muted);
   text-transform: uppercase;
 }
@@ -1755,21 +1756,21 @@ a.column:hover h3 {
 
 .cat-header-num {
   font-family: var(--serif);
-  font-size: 0.65rem;
-  letter-spacing: 0.22em;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
   color: var(--muted);
 }
 
 .cat-header-name {
-  font-size: 0.62rem;
-  letter-spacing: 0.26em;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
 }
 
 .cat-header-sub {
-  font-size: 0.58rem;
-  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
   color: var(--muted);
   margin-left: auto;
   white-space: nowrap;
@@ -1842,16 +1843,16 @@ a.column:hover h3 {
 /* Text column */
 .slide-num {
   font-family: var(--serif);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
   color: var(--muted);
   display: block;
   margin-bottom: 14px;
 }
 
 .slide-label {
-  font-size: 0.6rem;
-  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
   display: block;
@@ -1868,7 +1869,7 @@ a.column:hover h3 {
 }
 
 .slide-desc {
-  font-size: 0.86rem;
+  font-size: 0.93rem;
   color: var(--muted);
   line-height: 2;
   margin: 0 0 28px;
@@ -1910,8 +1911,8 @@ a.column:hover h3 {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.58rem;
-  letter-spacing: 0.28em;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
   z-index: 10;
@@ -2340,8 +2341,8 @@ picture.about-slide-hero img {
   border-radius: 2px;
   padding: 0.8rem 2.4rem;
   font-family: var(--sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text);
   cursor: pointer;
