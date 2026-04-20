@@ -1721,6 +1721,27 @@ a.column:hover h3 {
 @media (max-width: 900px) {
   .shop-sidebar { display: none; }
   .slide-scroll-hint { display: none; }
+
+  /* Overview — サイドバー分の左余白を解除 */
+  .shop-overview { padding: 52px 24px 44px; }
+  .shop-overview-inner { grid-template-columns: 1fr; gap: 36px; }
+
+  /* Cat-header — 同上 */
+  .cat-header { padding: 28px 24px; }
+
+  /* GSAP セクション — 縦積みに切り替え */
+  .h-section { height: auto; overflow: visible; }
+  .h-track { flex-direction: column; }
+  .h-slide { min-width: 100%; }
+
+  /* スライド内コンテンツ — シングルカラム */
+  .slide-inner {
+    grid-template-columns: 1fr;
+    padding: 44px 24px 52px;
+    gap: 28px;
+  }
+  .slide-desc { max-width: 100%; }
+  .slide-visual { height: 220px; }
 }
 
 /* ══════════════════════════════════════════════════════════
