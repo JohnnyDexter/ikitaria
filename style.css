@@ -1665,6 +1665,95 @@ a.column:hover h3 {
 }
 
 /* ══════════════════════════════════════════════════════════
+   SHOP — Category map (orientation overview)
+   ══════════════════════════════════════════════════════════ */
+
+.shop-map {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.shop-map-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.shop-map-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2.8rem 2.5rem 2.2rem;
+  border-right: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.shop-map-card:last-child {
+  border-right: none;
+}
+
+.shop-map-card:hover {
+  background: var(--bg);
+}
+
+.shop-map-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.shop-map-card:hover::after {
+  opacity: 1;
+}
+
+.shop-map-num {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 1.2rem;
+  font-family: var(--serif);
+}
+
+.shop-map-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  font-weight: 400;
+  margin: 0 0 0.9rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.shop-map-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.8;
+  flex: 1;
+  margin: 0 0 1.6rem;
+}
+
+.shop-map-arrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.shop-map-card:hover .shop-map-arrow {
+  color: var(--gold);
+}
+
+/* ══════════════════════════════════════════════════════════
    SHOP — Overview banner
    ══════════════════════════════════════════════════════════ */
 
@@ -1740,40 +1829,40 @@ a.column:hover h3 {
    ══════════════════════════════════════════════════════════ */
 
 .cat-header {
-  background: var(--bg);
-  border-top: 1px solid var(--line);
-  padding: 28px 80px;
+  background: #ece4d5;
+  border-top: 2px solid rgba(200, 168, 100, 0.4);
+  padding: 36px 80px;
 }
 
 .cat-header-inner {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 20px;
 }
 
 .cat-header-num {
   font-family: var(--serif);
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   letter-spacing: 0.18em;
   color: var(--muted);
 }
 
 .cat-header-name {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  letter-spacing: -0.01em;
+  color: var(--text);
+  font-weight: 400;
 }
 
 .cat-header-sub {
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
   color: var(--muted);
   margin-left: auto;
-  white-space: nowrap;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -2260,6 +2349,20 @@ a.column:hover h3 {
 
   .cat-header {
     padding: 24px;
+  }
+
+  .shop-map-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-map-card {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 1.8rem 1.5rem;
+  }
+
+  .shop-map-card:last-child {
+    border-bottom: none;
   }
 }
 
