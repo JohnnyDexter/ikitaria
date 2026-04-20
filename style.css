@@ -660,7 +660,7 @@ body::after {
    ══════════════════════════════════════════════════════════ */
 
 .section {
-  padding: clamp(4rem, 9vw, 7rem) 0;
+  padding: clamp(5rem, 10vw, 8.5rem) 0;
 }
 
 /* Alternating light backgrounds */
@@ -671,9 +671,9 @@ body::after {
   background: var(--surface);
 }
 
-/* Thin divider when transitioning dark→light */
+/* Dark→light transition: contrast is sufficient, no extra border */
 .dark-section + .section:not(.dark-section) {
-  border-top: 1px solid var(--line);
+  border-top: none;
 }
 
 /* Thin gold hairline at top of each section */
@@ -699,11 +699,10 @@ body::after {
   display: none;
 }
 
-/* Dark section — now light */
+/* Dark section */
 .dark-section {
-  background: var(--surface);
-  color: var(--text);
-  text-align: center;
+  background: var(--dark);
+  color: var(--light);
 }
 
 /* ── Eyebrow label ────────────────────────────────────────── */
@@ -723,12 +722,12 @@ body::after {
 /* ── Section headings ─────────────────────────────────────── */
 .section h1,
 .section h2 {
-  margin: 0 0 1rem;
+  margin: 0 0 1.2rem;
   font-family: var(--serif);
   font-size: clamp(2.4rem, 5.5vw, 4rem);
   font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
 }
 
 /* Gold decorative bar before h2 */
@@ -738,22 +737,25 @@ body::after {
   width: 3rem;
   height: 2px;
   background: var(--gold);
-  opacity: 0.65;
-  margin-bottom: 0.8rem;
+  opacity: 0.7;
+  margin-bottom: 1rem;
 }
 
 .dark-section h2::before {
   background: var(--gold);
-  opacity: 0.65;
-  margin-inline: auto;
+  opacity: 0.7;
 }
 
 /* ── Section intro ────────────────────────────────────────── */
 .section-intro {
-  font-size: 1.05rem;
-  line-height: 1.9;
-  max-width: 62ch;
+  font-size: 1.08rem;
+  line-height: 1.92;
+  max-width: 60ch;
   color: var(--muted);
+}
+
+.dark-section .section-intro {
+  color: rgba(248, 246, 242, 0.62);
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -823,15 +825,15 @@ body::after {
 .three-columns,
 .two-columns {
   display: grid;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 /* ── Column cards ─────────────────────────────────────────── */
 .column {
   background: var(--surface);
   border: 1px solid var(--line);
-  padding: 1.8rem;
-  box-shadow: 0 2px 20px rgba(21, 19, 17, 0.07);
+  padding: 2rem;
+  box-shadow: 0 4px 28px rgba(21, 19, 17, 0.09);
   transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
               box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1),
               border-color 180ms ease;
@@ -879,8 +881,8 @@ a.column:hover,
 a.column:focus-visible {
   border-color: var(--gold);
   outline: 0;
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
 }
 
 a.column:hover h3 {
@@ -890,18 +892,44 @@ a.column:hover h3 {
 
 /* Dark section column overrides */
 .dark-section .column {
-  background: var(--bg);
-  color: var(--text);
-  border-color: var(--line);
+  background: rgba(248, 246, 242, 0.05);
+  color: var(--light);
+  border-color: rgba(248, 246, 242, 0.12);
+  box-shadow: none;
 }
 
 .dark-section .column p {
-  color: var(--muted);
+  color: rgba(248, 246, 242, 0.58);
 }
 
 .dark-section .column h3,
 .dark-section .column h4 {
-  color: var(--text);
+  color: var(--light);
+}
+
+.dark-section a.column:hover,
+.dark-section a.column:focus-visible {
+  border-color: var(--gold);
+  background: rgba(248, 246, 242, 0.08);
+  box-shadow: 0 12px 40px rgba(21, 19, 17, 0.4);
+}
+
+/* Dark section area-card specifics */
+.dark-section .area-number {
+  color: rgba(248, 246, 242, 0.2);
+}
+
+/* Dark section CTA */
+.dark-section .cta {
+  border-color: rgba(248, 246, 242, 0.45);
+  color: var(--light);
+}
+
+.dark-section .cta:hover,
+.dark-section .cta:focus-visible {
+  background: var(--light);
+  border-color: var(--light);
+  color: var(--dark);
 }
 
 /* Two-column picture helpers */
@@ -1072,16 +1100,16 @@ a.column:hover h3 {
 }
 
 .page-header .container {
-  padding: 4rem 0;
+  padding: 5.5rem 0 5rem;
 }
 
 .page-header h1 {
   margin: 0 0 0.6rem;
   font-family: var(--serif);
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
   color: var(--light);
 }
 
