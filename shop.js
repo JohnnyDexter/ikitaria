@@ -1,4 +1,42 @@
 (function () {
+  // ── Sidebar TOC: set header height CSS var + active section detection ──
+  var headerEl = document.querySelector(".site-header");
+  if (headerEl) {
+    document.documentElement.style.setProperty(
+      "--header-h",
+      headerEl.offsetHeight + "px",
+    );
+  }
+
+  var sidebarItems = Array.from(
+    document.querySelectorAll(".shop-sidebar-item[data-section]"),
+  );
+  if (sidebarItems.length) {
+    var sectionIds = ["produzione", "brand", "btob"];
+    var anchors = sectionIds
+      .map(function (id) {
+        return document.getElementById(id);
+      })
+      .filter(Boolean);
+
+    function updateSidebar() {
+      var scrollMid = window.scrollY + window.innerHeight * 0.45;
+      var active = anchors[0];
+      anchors.forEach(function (el) {
+        if (el.getBoundingClientRect().top + window.scrollY <= scrollMid) {
+          active = el;
+        }
+      });
+      sidebarItems.forEach(function (item) {
+        item.classList.toggle("active", item.dataset.section === active.id);
+      });
+    }
+
+    window.addEventListener("scroll", updateSidebar, { passive: true });
+    updateSidebar();
+  }
+  // ──────────────────────────────────────────────────────────────────────
+
   if (!document.querySelector(".h-section")) return;
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined")
     return;

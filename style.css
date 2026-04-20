@@ -1665,6 +1665,64 @@ a.column:hover h3 {
 }
 
 /* ══════════════════════════════════════════════════════════
+   SHOP — Left sidebar TOC
+   ══════════════════════════════════════════════════════════ */
+
+.shop-sidebar {
+  position: fixed;
+  left: 0;
+  top: var(--header-h, 64px);
+  height: calc(100vh - var(--header-h, 64px));
+  width: 120px;
+  background: var(--bg);
+  border-right: 1px solid var(--line);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.shop-sidebar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 1.4rem 1rem 1.4rem 1.4rem;
+  text-decoration: none;
+  color: var(--muted);
+  border-left: 2px solid transparent;
+  transition: color 0.18s, border-color 0.18s, background 0.18s;
+}
+
+.shop-sidebar-item:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.shop-sidebar-item.active {
+  color: var(--text);
+  border-left-color: var(--gold);
+}
+
+.shop-sidebar-num {
+  font-family: var(--serif);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+}
+
+.shop-sidebar-name {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+}
+
+@media (max-width: 900px) {
+  .shop-sidebar { display: none; }
+}
+
+/* ══════════════════════════════════════════════════════════
    SHOP — Category map (orientation overview)
    ══════════════════════════════════════════════════════════ */
 
@@ -1759,7 +1817,7 @@ a.column:hover h3 {
 
 .shop-overview {
   background: #ece4d5;
-  padding: 88px 80px 72px;
+  padding: 88px 80px 72px 140px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1831,7 +1889,7 @@ a.column:hover h3 {
 .cat-header {
   background: #ece4d5;
   border-top: 2px solid rgba(200, 168, 100, 0.4);
-  padding: 36px 80px;
+  padding: 36px 80px 36px 140px;
 }
 
 .cat-header-inner {
@@ -1921,7 +1979,7 @@ a.column:hover h3 {
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
-  padding: 0 96px;
+  padding: 0 96px 0 140px;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
