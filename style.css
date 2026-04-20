@@ -1032,8 +1032,8 @@ a.column:hover h3 {
    ══════════════════════════════════════════════════════════ */
 
 .page-header {
-  background: var(--dark);
-  color: var(--light);
+  background: #ece4d5;
+  color: var(--text);
   position: relative;
 }
 
@@ -1059,15 +1059,15 @@ a.column:hover h3 {
   font-weight: 400;
   line-height: 1.08;
   letter-spacing: -0.03em;
-  color: var(--light);
+  color: var(--text);
 }
 
 .page-header .section-intro {
-  color: rgba(248, 246, 242, 0.72);
+  color: var(--muted);
 }
 
 .page-header .eyebrow {
-  color: rgba(248, 246, 242, 0.45);
+  color: var(--gold);
 }
 
 /* No gap between page-header and adjacent image */
