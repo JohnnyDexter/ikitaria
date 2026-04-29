@@ -2098,10 +2098,13 @@ a.column:hover h3 {
   .nav-toggle {
     cursor: pointer;
     list-style: none;
-    padding: 0.3rem 0.5rem;
+    padding: 0.6rem 0.7rem;
     font-size: 1.2rem;
     color: var(--muted);
     user-select: none;
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
   }
 
   .nav-toggle::-webkit-details-marker,
@@ -2119,7 +2122,7 @@ a.column:hover h3 {
 
   .nav-hamburger[open] > .main-nav {
     position: absolute;
-    left: 0;
+    right: 0;
     top: calc(100% + 0.4rem);
     background: var(--surface);
     border: 1px solid var(--line);
@@ -2158,7 +2161,14 @@ a.column:hover h3 {
   .lang-dropdown {
     position: absolute;
     right: 0;
-    top: 0.75rem;
+    top: 0.55rem;
+  }
+
+  .lang-dropdown > summary {
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0.75rem;
   }
 
   /* Hero: full height, news strip stacks */
@@ -2186,6 +2196,11 @@ a.column:hover h3 {
     padding: 1.4rem 0;
     grid-column: 1 !important;
     grid-row: auto !important;
+  }
+
+  /* Section vertical padding: reduce on mobile */
+  .section {
+    padding: clamp(2.5rem, 10vw, 4.5rem) 0;
   }
 
   /* Hero subtitle spacing */
@@ -2247,6 +2262,11 @@ a.column:hover h3 {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+  }
+
+  /* Footer title: reduce minimum size on mobile */
+  .footer-title {
+    font-size: clamp(2.2rem, 12vw, 4rem);
   }
 
   /* Cookie */
@@ -2345,6 +2365,20 @@ a.column:hover h3 {
 
   .shop-map-card:last-child {
     border-bottom: none;
+  }
+
+  /* Larger touch targets for progress dots on mobile */
+  .h-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    padding: 8px;
+    box-sizing: content-box;
+  }
+
+  .h-dot.active {
+    width: 32px;
+    border-radius: 5px;
   }
 }
 
