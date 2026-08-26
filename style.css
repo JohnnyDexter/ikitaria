@@ -289,6 +289,15 @@ body::after {
   font-weight: 600;
 }
 
+.nav-has-dropdown .nav-dropdown ul li .nav-dropdown-disabled {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--muted);
+  opacity: 0.5;
+  cursor: not-allowed;
+  font-size: 0.92rem;
+}
+
 /* ── Language dropdown ────────────────────────────────────── */
 .lang-dropdown {
   position: relative;
