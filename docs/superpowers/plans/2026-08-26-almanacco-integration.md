@@ -21,7 +21,7 @@
 ### Task 1: Almanaccoリポジトリのビルド設定修正 + Ikitariaへの戻りリンク追加
 
 **Files:**
-- Modify (別リポジトリ `/Users/user/GitHub/Ikitaria/Almanacco`, remote `JohnnyDexter/almanacco`): `astro.config.mjs`
+- Modify (別リポジトリ `/Users/user/GitHub/Ikitaria/almanacco-site`, remote `JohnnyDexter/almanacco`): `astro.config.mjs`
 - Modify: `src/components/Header.astro`(または `Footer.astro`。実際にIkitariaへの戻りリンクを置くのに適した箇所を確認して追加する)
 
 **Interfaces:**
@@ -29,7 +29,7 @@
 
 - [ ] **Step 1: astro.config.mjsのsiteフィールドを修正**
 
-`/Users/user/GitHub/Ikitaria/Almanacco/astro.config.mjs` を開き、以下の1行を変更する:
+`/Users/user/GitHub/Ikitaria/almanacco-site/astro.config.mjs` を開き、以下の1行を変更する:
 
 変更前:
 ```js
@@ -82,7 +82,7 @@ Run: `sed -n '1,80p' src/components/Header.astro`
 
 Run:
 ```bash
-cd /Users/user/GitHub/Ikitaria/Almanacco
+cd /Users/user/GitHub/Ikitaria/almanacco-site
 npm run build
 grep -o '← Ikitaria' dist/ja/index.html dist/it/index.html dist/en/index.html
 grep -o 'https://ikitaria.com/[a-z/]*"' dist/ja/about/index.html dist/it/about/index.html dist/en/about/index.html
@@ -104,7 +104,7 @@ git commit -m "Point site URL to ikitaria.com and add back-link to Ikitaria"
 - Create: `ikitaria-site/almanacco/`(Task 1で生成した `dist/` の中身を丸ごとコピー)
 
 **Interfaces:**
-- Consumes: Task 1で生成された `/Users/user/GitHub/Ikitaria/Almanacco/dist/`
+- Consumes: Task 1で生成された `/Users/user/GitHub/Ikitaria/almanacco-site/dist/`
 - Produces: `ikitaria-site/almanacco/{it,en,ja}/{about,contact,events,journal,sekki,shop}/index.html` を含む静的ファイル一式。他タスクのナビからはこれらのパスへリンクする。
 
 - [ ] **Step 1: distをコピー**
@@ -112,7 +112,7 @@ git commit -m "Point site URL to ikitaria.com and add back-link to Ikitaria"
 ```bash
 mkdir -p /Users/user/GitHub/Ikitaria/ikitaria-site/almanacco
 rm -rf /Users/user/GitHub/Ikitaria/ikitaria-site/almanacco/*
-cp -R /Users/user/GitHub/Ikitaria/Almanacco/dist/. /Users/user/GitHub/Ikitaria/ikitaria-site/almanacco/
+cp -R /Users/user/GitHub/Ikitaria/almanacco-site/dist/. /Users/user/GitHub/Ikitaria/ikitaria-site/almanacco/
 ```
 
 - [ ] **Step 2: 配置結果を確認**
@@ -967,7 +967,7 @@ Ctrl+C
 git -C /Users/user/GitHub/Ikitaria/ikitaria-site add DEV_NOTES.md
 git -C /Users/user/GitHub/Ikitaria/ikitaria-site commit -m "Update DEV_NOTES.md with Almanacco integration session"
 git -C /Users/user/GitHub/Ikitaria/ikitaria-site push origin main --no-verify
-git -C /Users/user/GitHub/Ikitaria/Almanacco push origin main
+git -C /Users/user/GitHub/Ikitaria/almanacco-site push origin main
 ```
 
 - [ ] **Step 7: 本番URLで最終確認**
