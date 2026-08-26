@@ -154,7 +154,29 @@
 
 ---
 
-## ⚠️ 未完了 / 要作業
+## セッション 6 — Almanacco統合 + ヘッダーナビ再設計
+**変更: style.css?v=31 → v=32**
+
+### 実施内容
+- ヘッダーナビを `Home | Chi Siamo | Shop | Contatti` → `Home | Business | Shop(dropdown: Giappone/Italia in arrivo) | Shop Online | Contatti` に再設計
+- `chi-siamo.html` + `shop.html` を統合した `business.html`(IT/EN/JA)を新規作成、旧ページはリダイレクトスタブに変更
+- `JohnnyDexter/almanacco`(Astro製の実店舗Almanaccoサイト)のビルド成果物を `/almanacco/` にベンダリングして配置。以後Almanaccoリポジトリへの運用依存なし(更新時のみ再ビルド・再配置)
+- `style.css` に `.nav-dropdown-disabled` を追加(既存の未使用だった `.nav-has-dropdown`/`.nav-dropdown` CSSを実装に使用)
+- `sitemap.xml` の chi-siamo/shop/about エントリを business.html に統合
+
+### Task 11 — エンドツーエンド検証結果(2026-08-27)
+- リンク切れ機械チェック: 0件(全33 HTMLファイル、almanacco/を除く)
+- ヘッダーナビ順序・Shopドロップダウン(Giappone=クリック可/Italia in arrivo=グレー表示・クリック不可)を IT/EN/JA 全言語で実ブラウザ(Playwright)で確認、期待通り
+- `Giappone` → `almanacco/it/about/`、`Shop Online` → `almanacco/it/shop/` への遷移を確認。Almanaccoデザインは正しく表示
+- `business.html` に Chi Siamo の起源ストーリー・founders(I Fondatori)・原則(Principi Operativi)・旧shopの8事業ライン(Olio EVO/Matcha/Prodotti Brand/Eventi Culturali/Agriturismo/Consulenza Strategica/Marketing/Rappresentanza Commerciale)が全て含まれることを確認
+- `chi-siamo.html` / `shop.html` / `about.html`(IT/EN/JA全ての旧名称)が `business.html` へ即時リダイレクトされることを確認
+- `almanacco/ja/sekki/` のSVGホイール前後ボタンの動作を実ブラウザで確認(処暑→白露→処暑と正しく切り替わる)
+- Almanacco各ページの「← Ikitaria」バックリンクが言語ごとに正しい遷移先(`https://ikitaria.com/{lang}/`)を指すことを確認
+- Almanacco全21ページ(it/en/ja × ルート+about+shop+sekki+journal+events+contact)を全件チェックし、全て200 OK
+- `style.css?v=32` が全HTMLファイルで統一されていることを確認
+- 発見した問題: なし(致命的な問題は0件)
+
+
 
 ### Formspree ID 設定（最重要）
 フォーム送信が現在機能していない。Formspree でアカウント作成 → フォームID取得 → 以下の3ファイルの `YOUR_FORM_ID` を置き換える:
