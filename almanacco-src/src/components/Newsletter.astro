@@ -1,0 +1,77 @@
+---
+import { content, type Lang } from "../i18n/content";
+import { withBase } from "../utils/paths";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = content[lang];
+
+const socials = ["Instagram", "Facebook", "Pinterest"];
+---
+
+<section class="grid lg:grid-cols-2">
+  <div class="flex items-center bg-forest px-6 py-20">
+    <div class="mx-auto max-w-md">
+      <h2 class="font-display text-2xl uppercase tracking-wide text-ivory sm:text-3xl">
+        {t.newsletter.title}
+      </h2>
+      <p class="mt-4 font-subtitle text-lg italic text-ivory/85">
+        {t.newsletter.text}
+      </p>
+
+      <form class="mt-8 flex flex-col gap-3 sm:flex-row" onsubmit="return false">
+        <label class="sr-only" for="newsletter-email">{t.newsletter.placeholder}</label>
+        <input
+          id="newsletter-email"
+          type="email"
+          disabled
+          placeholder={t.newsletter.placeholder}
+          class="w-full border border-ivory/40 bg-transparent px-4 py-3 font-body text-sm text-ivory placeholder:text-ivory/60 disabled:cursor-not-allowed"
+        />
+        <button
+          type="submit"
+          disabled
+          class="shrink-0 border border-ivory/70 px-6 py-3 font-body text-xs uppercase tracking-[0.15em] text-ivory disabled:cursor-not-allowed disabled:opacity-70"
+        >
+          {t.newsletter.ctaLabel}
+        </button>
+      </form>
+      <p class="mt-3 font-body text-xs text-ivory/60">{t.newsletter.disabledNote}</p>
+
+      <div class="mt-10 flex items-center gap-5 text-ivory/70">
+        {socials.map((name) => (
+          <span aria-label={`${name} (${t.newsletter.disabledNote})`} class="cursor-default">
+            {name === "Instagram" && (
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="3" y="3" width="18" height="18" rx="4" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
+              </svg>
+            )}
+            {name === "Facebook" && (
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M14 8h2.5V4.5H14c-2.2 0-4 1.8-4 4V11H8v3.5h2V21h3.5v-6.5H16l.5-3.5h-3V8.5c0-.3.2-.5.5-.5Z" />
+              </svg>
+            )}
+            {name === "Pinterest" && (
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M9.5 18c1-3.5 1.6-6 1.6-6M12.2 6.5c3 0 4.6 1.7 4.6 4 0 3-1.5 5.5-3.8 5.5-1 0-1.8-.6-2-1.3" />
+              </svg>
+            )}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <img
+    src={withBase("/images/02-girasoli-hero.jpg")}
+    alt={t.newsletter.imageAlt}
+    class="hidden h-full min-h-[320px] w-full object-cover lg:block"
+    loading="lazy"
+  />
+</section>

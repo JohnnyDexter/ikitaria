@@ -1,0 +1,45 @@
+---
+import { content, type Lang } from "../i18n/content";
+import { withBase, langHref } from "../utils/paths";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = content[lang];
+---
+
+<section class="border-t border-brass/30">
+  <div class="grid sm:grid-cols-2">
+    <img
+      src={withBase("/images/marche/vigna-filari.jpg")}
+      alt={t.italyJapan.imageAltItaly}
+      class="h-64 w-full object-cover sm:h-[26rem] lg:h-[32rem]"
+      loading="lazy"
+    />
+    {/* TODO: sostituire con foto reale del negozio A29 quando disponibile */}
+    <img
+      src={withBase("/images/fuji-kawaguchiko.jpg")}
+      alt={t.italyJapan.imageAltJapan}
+      class="h-64 w-full object-cover sm:h-[26rem] lg:h-[32rem]"
+      loading="lazy"
+    />
+  </div>
+  <div class="bg-forest px-6 py-20 text-center sm:py-24">
+    <div class="mx-auto max-w-2xl">
+      <h2 class="font-display text-3xl uppercase tracking-wide text-ivory sm:text-4xl">
+        {t.italyJapan.title}
+      </h2>
+      <p class="mt-6 font-subtitle text-xl italic leading-relaxed text-ivory/90 sm:text-2xl">
+        {t.italyJapan.text}
+      </p>
+      <a
+        href={withBase(langHref(lang, "about"))}
+        class="mt-9 inline-block border-b border-ivory/70 font-body text-sm uppercase tracking-[0.15em] text-ivory transition-colors hover:border-ivory hover:text-ivory/80"
+      >
+        {t.italyJapan.ctaLabel} →
+      </a>
+    </div>
+  </div>
+</section>

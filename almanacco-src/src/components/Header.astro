@@ -1,0 +1,200 @@
+---
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import type { SiteContent, Lang } from "../i18n/content";
+import { withBase, langHref } from "../utils/paths";
+
+interface Props {
+  lang: Lang;
+  t: SiteContent;
+  /** Slug della pagina corrente: "" per Home, "shop", "about", "contact". */
+  slug?: string;
+  /** Header trasparente sull'hero (solo Home), diventa solido dopo lo scroll. */
+  transparent?: boolean;
+}
+
+const { lang, t, slug = "", transparent = false } = Astro.props;
+
+const mainNavItems = [
+  { slug: "", label: t.nav.home },
+  { slug: "shop", label: t.nav.shop },
+];
+
+// Voci raggruppate sotto "ALMANACCO" nel menu, coerenti con la colonna
+// omonima già presente nel footer (label non tradotta, per coerenza).
+const almanaccoGroupItems = [
+  { slug: "about", label: t.nav.about },
+  { slug: "contact", label: t.nav.contact },
+];
+
+const isAlmanaccoActive = almanaccoGroupItems.some((item) => item.slug === slug);
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-30 border-b transition-colors duration-300"
+  data-header
+  data-scrolled={transparent ? "false" : "true"}
+  data-transparent={transparent ? "true" : "false"}
+>
+  <div class="mx-auto flex max-w-6xl items-center gap-6 px-6 py-4">
+    <a href={withBase(langHref(lang, ""))} class="flex shrink-0 items-center">
+      <img
+        data-header-logo-dark
+        src={withBase("/logo-swallow.png")}
+        alt="Almanacco"
+        class="h-10 w-auto sm:h-12"
+        width="594"
+        height="563"
+      />
+      <img
+        data-header-logo-light
+        src={withBase("/logo-swallow-light.png")}
+        alt="Almanacco"
+        class="h-10 w-auto sm:h-12"
+        width="594"
+        height="563"
+      />
+    </a>
+
+    <nav
+      aria-label="Sezioni"
+      class="hidden flex-1 items-center justify-center gap-4 font-display text-xs uppercase tracking-[0.1em] lg:flex lg:gap-6"
+    >
+      {mainNavItems.map((item) => (
+        <a
+          href={withBase(langHref(lang, item.slug))}
+          data-header-link
+          class={`transition-colors ${item.slug === slug ? "font-medium" : ""}`}
+          aria-current={item.slug === slug ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+
+      <div class="group relative">
+        <a
+          href={withBase(langHref(lang, "about"))}
+          data-header-link
+          class={`flex items-center gap-1 transition-colors ${isAlmanaccoActive ? "font-medium" : ""}`}
+          aria-current={isAlmanaccoActive ? "page" : undefined}
+          aria-haspopup="true"
+        >
+          ALMANACCO
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </a>
+        <div class="absolute left-1/2 top-full z-40 -translate-x-1/2 pt-3 opacity-0 invisible transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <nav
+            aria-label={`${t.nav.about} / ${t.nav.contact}`}
+            class="flex w-48 flex-col gap-1 border border-brass/30 bg-ivory p-4 text-charcoal shadow-lg"
+          >
+            {almanaccoGroupItems.map((item) => (
+              <a
+                href={withBase(langHref(lang, item.slug))}
+                class={`px-1 py-1.5 tracking-[0.1em] transition-colors hover:text-forest ${item.slug === slug ? "text-forest" : ""}`}
+                aria-current={item.slug === slug ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </nav>
+
+    <div class="ml-auto flex shrink-0 items-center gap-4 md:ml-0">
+      <LanguageSwitcher current={lang} slug={slug} />
+
+      <div class="hidden items-center gap-3 border-l pl-4 sm:flex" data-header-iconbar>
+        <button type="button" disabled aria-label="Cerca (funzione in arrivo)" class="opacity-70" data-header-icon>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="7" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </button>
+        <button type="button" disabled aria-label="Account (funzione in arrivo)" class="opacity-70" data-header-icon>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
+        </button>
+        <button type="button" disabled aria-label="Carrello (funzione in arrivo)" class="opacity-70" data-header-icon>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 8h12l-1 12H7L6 8Z" />
+            <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+          </svg>
+        </button>
+      </div>
+
+      <details class="relative lg:hidden">
+        <summary
+          class="flex cursor-pointer list-none items-center p-1 [&::-webkit-details-marker]:hidden"
+          aria-label="Menu"
+          data-header-icon
+        >
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </summary>
+        <nav
+          aria-label="Sezioni"
+          class="absolute right-0 top-full mt-3 flex w-56 flex-col gap-3 border border-brass/30 bg-ivory p-5 font-display text-xs uppercase tracking-[0.15em] text-charcoal shadow-lg"
+        >
+          {mainNavItems.map((item) => (
+            <a
+              href={withBase(langHref(lang, item.slug))}
+              class={`transition-colors hover:text-forest ${item.slug === slug ? "text-forest" : ""}`}
+              aria-current={item.slug === slug ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+
+          <p class="mt-1 border-t border-brass/20 pt-3 text-[10px] tracking-[0.2em] text-brass-text">
+            ALMANACCO
+          </p>
+          {almanaccoGroupItems.map((item) => (
+            <a
+              href={withBase(langHref(lang, item.slug))}
+              class={`transition-colors hover:text-forest ${item.slug === slug ? "text-forest" : ""}`}
+              aria-current={item.slug === slug ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </details>
+    </div>
+
+    <a
+      class="ikitaria-backlink hidden shrink-0 sm:inline-block"
+      href={lang === "ja" ? "https://ikitaria.com/ja/" : lang === "it" ? "https://ikitaria.com/" : "https://ikitaria.com/en/"}
+    >
+      ← Ikitaria
+    </a>
+  </div>
+</header>
+
+{transparent && (
+  <script>
+    function initTransparentHeader() {
+      const header = document.querySelector<HTMLElement>("[data-header][data-transparent='true']");
+      if (!header) return;
+
+      const threshold = () => Math.min(window.innerHeight * 0.7, 560);
+
+      function update() {
+        const scrolled = window.scrollY > threshold();
+        header!.dataset.scrolled = scrolled ? "true" : "false";
+      }
+
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update);
+    }
+
+    initTransparentHeader();
+  </script>
+)}

@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { content, type Lang, type ProductItem } from "../i18n/content";
+import { withBase } from "../utils/paths";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = content[lang];
+
+/** Slug ASCII stabile per un nome prodotto, usato come id della card in Shop. */
+function productSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+// I 4 prodotti attuali si mappano sulle stesse categorie della griglia in home.
+// "Frantoio Valeri" (olio) e "Pasta Mancini" (pasta) rientrano in Olio & Condimenti;
+// "Cantina Murola" e "Colmone della Marca" (vini) in Vini & Bevande. Le altre due
+// categorie (Ceramica & Artigianato, Il Diario Almanacco) non hanno ancora prodotti reali.
+const oilNames = ["Frantoio Valeri", "Pasta Mancini"];
+const wineNames = ["Cantina Murola", "Colmone della Marca"];
+
+const byName = (names: string[]) => t.prodotti.items.filter((item: ProductItem) => names.includes(item.name));
+
+const groups = [
+  { slug: "oil-condiments", label: t.categories.items[1].title, items: byName(oilNames) },
+  { slug: "wine-beverages", label: t.categories.items[0].title, items: byName(wineNames) },
+  { slug: "ceramics-crafts", label: t.categories.items[2].title, items: [] as ProductItem[] },
+  { slug: "almanacco-diary", label: t.categories.items[3].title, items: [] as ProductItem[] },
+];
+---
+
+<BaseLayout lang={lang} slug="shop">
+  <section class="bg-ivory py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="max-w-2xl">
+        <p class="divider-dot flex items-center gap-2 font-body text-xs uppercase tracking-[0.2em] text-forest">
+          {t.prodotti.kicker}
+        </p>
+        <h1 class="mt-4 font-display text-4xl uppercase tracking-wide text-charcoal sm:text-5xl">
+          {t.prodotti.title}
+        </h1>
+        <p class="mt-6 font-subtitle text-xl italic leading-relaxed text-stone-text">
+          {t.prodotti.intro}
+        </p>
+      </div>
+
+      <div class="mt-16 space-y-20">
+        {groups.map((group) => (
+          <div id={group.slug} class="scroll-mt-28">
+            <h2 class="border-b border-brass/30 pb-3 font-display text-xl uppercase tracking-wide text-charcoal">
+              {group.label}
+            </h2>
+
+            {group.items.length > 0 ? (
+              <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {group.items.map((item) => (
+                  <article id={productSlug(item.name)} class="flex scroll-mt-28 flex-col border border-brass/30 bg-ivory-soft">
+                    {item.image ? (
+                      <img
+                        src={withBase(item.image)}
+                        alt={item.imageAlt ?? item.name}
+                        class="aspect-[4/3] w-full object-cover"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="flex aspect-[4/3] w-full items-center justify-center bg-ivory" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--color-brass)" stroke-width="1.2">
+                          <circle cx="32" cy="32" r="22" />
+                          <circle cx="32" cy="32" r="13" />
+                        </svg>
+                      </div>
+                    )}
+                    <div class="flex flex-col gap-2 p-6">
+                      <span class="font-body text-xs uppercase tracking-[0.15em] text-brass-text">{item.category}</span>
+                      <h3 class="font-subtitle text-xl italic text-charcoal">{item.name}</h3>
+                      <p class="font-body text-sm leading-relaxed text-stone-text">{item.description}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <p class="mt-6 font-body text-sm text-stone-text">{t.comingSoonLabel}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

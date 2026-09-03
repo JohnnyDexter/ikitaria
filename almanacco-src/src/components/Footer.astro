@@ -1,0 +1,96 @@
+---
+import { langs, langLabels, type SiteContent, type Lang } from "../i18n/content";
+import { withBase, langHref } from "../utils/paths";
+
+interface Props {
+  lang: Lang;
+  t: SiteContent;
+  /** Slug della pagina corrente, per restare sulla stessa pagina cambiando lingua. */
+  slug?: string;
+}
+
+const { lang, t, slug = "" } = Astro.props;
+const year = new Date().getFullYear();
+
+const shopHref = withBase(langHref(lang, "shop"));
+
+const shopLinks = t.categories.items.map((item, i) => ({
+  label: item.title,
+  href: `${shopHref}#${["wine-beverages", "oil-condiments", "ceramics-crafts", "almanacco-diary"][i]}`,
+}));
+
+const almanaccoLinks = [
+  { label: t.nav.about, href: withBase(langHref(lang, "about")) },
+  { label: t.nav.contact, href: withBase(langHref(lang, "contact")) },
+];
+
+const languageLinks = langs.map((l) => ({ lang: l, label: langLabels[l], href: withBase(langHref(l, slug)) }));
+
+const paymentBadges = ["Visa", "Mastercard", "Apple Pay", "PayPal"];
+---
+
+<footer class="border-t border-brass/30 bg-ivory text-charcoal">
+  <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-5">
+    <div class="sm:col-span-2 lg:col-span-1">
+      <img src={withBase("/logo-swallow.png")} alt="Almanacco" class="h-10 w-auto" width="594" height="563" />
+      <p class="mt-4 font-display tracking-widest text-charcoal">Almanacco</p>
+      <p class="mt-2 max-w-xs font-body text-xs leading-relaxed text-stone-text">{t.footer.tagline}</p>
+    </div>
+
+    <div>
+      <p class="font-body text-xs uppercase tracking-[0.15em] text-brass-text">{t.nav.shop}</p>
+      <nav class="mt-4 flex flex-col gap-2.5 font-body text-sm text-stone-text">
+        {shopLinks.map((item) => (
+          <a href={item.href} class="w-fit transition-colors hover:text-charcoal">{item.label}</a>
+        ))}
+      </nav>
+    </div>
+
+    <div>
+      <p class="font-body text-xs uppercase tracking-[0.15em] text-brass-text">Almanacco</p>
+      <nav class="mt-4 flex flex-col gap-2.5 font-body text-sm text-stone-text">
+        {almanaccoLinks.map((item) => (
+          <a href={item.href} class="w-fit transition-colors hover:text-charcoal">{item.label}</a>
+        ))}
+      </nav>
+    </div>
+
+    <div>
+      <p class="font-body text-xs uppercase tracking-[0.15em] text-brass-text">{t.footer.languagesLabel}</p>
+      <nav aria-label="Language switcher" class="mt-4 flex flex-col gap-2.5 font-body text-sm text-stone-text">
+        {languageLinks.map((item) =>
+          item.lang === lang ? (
+            <span class="w-fit text-charcoal" aria-current="page">{item.label}</span>
+          ) : (
+            <a href={item.href} class="w-fit transition-colors hover:text-charcoal">{item.label}</a>
+          )
+        )}
+      </nav>
+    </div>
+
+    <div>
+      <p class="font-body text-xs uppercase tracking-[0.15em] text-brass-text">{t.footer.paymentsLabel}</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        {paymentBadges.map((name) => (
+          <span class="flex h-7 items-center border border-brass/40 px-2.5 font-body text-[10px] uppercase tracking-wide text-stone-text">
+            {name}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-brass/20">
+    <div class="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 text-center font-body text-xs text-stone-text sm:flex-row sm:justify-between sm:text-left">
+      <p>&copy; {year} Almanacco. {t.footer.rights}</p>
+      <p>
+        {t.footer.creditPrefix}<a
+          href="https://www.ikitaria.com"
+          target="_blank"
+          rel="noopener"
+          class="text-charcoal underline decoration-brass/50 underline-offset-2 transition-colors hover:text-forest"
+        >IKITARIA</a>{t.footer.creditSuffix}
+      </p>
+    </div>
+  </div>
+</footer>
