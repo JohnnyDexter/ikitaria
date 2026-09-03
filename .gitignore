@@ -3,3 +3,9 @@
 
 # git worktrees (superpowers subagent-driven-development)
 .worktrees/
+
+# Almanacco Astro build artifacts (source lives in almanacco-src/,
+# build output is vendored separately into almanacco/)
+almanacco-src/node_modules/
+almanacco-src/dist/
+almanacco-src/.astro/
