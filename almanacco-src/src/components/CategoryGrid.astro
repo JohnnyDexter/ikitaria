@@ -1,0 +1,82 @@
+---
+import { content, type Lang } from "../i18n/content";
+import { withBase, langHref } from "../utils/paths";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = content[lang];
+const shopHref = withBase(langHref(lang, "shop"));
+---
+
+<section class="border-t border-brass/30 bg-ivory py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="text-center">
+      <p class="divider-dot flex items-center justify-center gap-2 font-body text-xs uppercase tracking-[0.2em] text-forest">
+        {t.categories.kicker}
+      </p>
+      <h2 class="mt-4 font-display text-3xl uppercase tracking-wide text-charcoal sm:text-4xl">
+        {t.categories.title}
+      </h2>
+    </div>
+
+    <div class="mt-12 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+      {t.categories.items.map((item, i) => (
+        <a href={shopHref} class="group block">
+          <div class="relative aspect-square overflow-hidden bg-ivory-soft">
+            {item.image ? (
+              <img
+                src={withBase(item.image)}
+                alt={item.imageAlt ?? item.title}
+                class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ) : i === 2 ? (
+              <>
+                <div class="absolute inset-0 bg-gradient-to-br from-ivory-soft via-ivory to-brass/15" aria-hidden="true"></div>
+                <div
+                  class="absolute inset-0 opacity-[0.18] transition-opacity duration-500 group-hover:opacity-[0.28]"
+                  style="background-image: radial-gradient(var(--color-brass) 1px, transparent 1px); background-size: 15px 15px;"
+                  aria-hidden="true"
+                ></div>
+                <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" width="52" height="52" fill="none" stroke="var(--color-brass)" stroke-width="1.2">
+                    <path d="M22 14h20l-3 12c3 3 5 8 5 13 0 9-6 15-12 15s-12-6-12-15c0-5 2-10 5-13l-3-12Z" />
+                    <path d="M22 14c0-3 2-5 10-5s10 2 10 5" />
+                  </svg>
+                </div>
+                <span class="absolute bottom-3 left-3 border border-brass/40 bg-ivory/85 px-2 py-1 font-body text-[10px] uppercase tracking-[0.15em] text-brass-text">
+                  {t.comingSoonLabel}
+                </span>
+              </>
+            ) : (
+              <>
+                <div class="absolute inset-0 bg-gradient-to-br from-ivory-soft via-ivory to-forest/10" aria-hidden="true"></div>
+                <div
+                  class="absolute inset-0 opacity-[0.15] transition-opacity duration-500 group-hover:opacity-[0.25]"
+                  style="background-image: repeating-linear-gradient(135deg, var(--color-forest) 0, var(--color-forest) 1px, transparent 1px, transparent 15px);"
+                  aria-hidden="true"
+                ></div>
+                <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" width="52" height="52" fill="none" stroke="var(--color-forest)" stroke-width="1.2">
+                    <path d="M14 16c8-3 14-3 18 0v34c-4-3-10-3-18 0V16Z" />
+                    <path d="M50 16c-8-3-14-3-18 0v34c4-3 10-3 18 0V16Z" />
+                  </svg>
+                </div>
+                <span class="absolute bottom-3 left-3 border border-forest/40 bg-ivory/85 px-2 py-1 font-body text-[10px] uppercase tracking-[0.15em] text-forest">
+                  {t.comingSoonLabel}
+                </span>
+              </>
+            )}
+          </div>
+          <h3 class="mt-4 font-display text-base uppercase tracking-wide text-charcoal">{item.title}</h3>
+          <span class="mt-1 flex items-center gap-1 font-body text-xs uppercase tracking-[0.1em] text-forest transition-colors group-hover:text-charcoal">
+            {item.ctaLabel} →
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+// Sfondo decorativo chiaro/etereo condiviso: illustrazione "mappa d'epoca" con i
+// contorni di Italia e Giappone, ramo d'ulivo e ramo di ciliegio, ombre di foglie.
+// Pensato per stare dietro a contenuto testuale scuro (es. l'Hero della Home),
+// riutilizzabile in altre sezioni che vogliono lo stesso registro visivo.
+import { withBase } from "../utils/paths";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<div class={`pointer-events-none absolute inset-0 overflow-hidden bg-ivory ${className}`} aria-hidden="true">
+  <img
+    src={withBase("/images/hero-map-motif.jpg")}
+    alt=""
+    class="absolute inset-0 h-full w-full object-cover"
+    loading="eager"
+  />
+  <slot />
+</div>

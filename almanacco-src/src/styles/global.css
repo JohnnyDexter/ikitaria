@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Nuova direzione visiva: avorio caldo, nero carbone, verde bosco (accenti forti),
+     ottone (dettagli/bordi), terracotta (accento puntuale), grigio pietra (muted). */
+  --color-ivory: #f4f1eb;
+  --color-ivory-soft: #ece5d6;
+  --color-panel: #faf8f3;
+  --color-charcoal: #1f1f1d;
+  --color-forest: #233126;
+  --color-brass: #b08a5a;
+  --color-terracotta: #a46a4c;
+  --color-stone: #b7b2aa;
+  /* Variante leggibile di "pietra" per testo secondario: il colore di brand #B7B2AA
+     ha contrasto troppo basso su fondo avorio per essere usato come testo (~1.9:1). */
+  --color-stone-text: #65594a;
+  /* Varianti leggibili di ottone/terracotta per testo (etichette, kicker): i colori di
+     brand hanno contrasto insufficiente su avorio (~2.8:1 e ~3.9:1, sotto la soglia AA
+     4.5:1 per testo piccolo). Bordi, icone e dettagli decorativi restano su --color-brass
+     e --color-terracotta, dove il contrasto non è testo e la regola AA non si applica. */
+  --color-brass-text: #7d603c;
+  --color-terracotta-text: #83543c;
+
+  /* Cinzel/Cormorant Garamond non coprono i glifi giapponesi: il fallback verso i
+     mincho già in uso mantiene un registro "serif elegante" coerente anche in JA. */
+  --font-display: "Cinzel", "Shippori Mincho", serif;
+  --font-subtitle: "Cormorant Garamond", "Shippori Mincho", serif;
+  --font-body: "Inter", "Noto Sans JP", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+}
+
+/* Focus visibile in tastiera su qualsiasi sfondo: l'anello avorio è leggibile sulle
+   sezioni scure (hero, verde bosco), l'anello verde bosco è leggibile su quelle chiare
+   (avorio). Uno dei due sparisce nel proprio sfondo, l'altro resta sempre visibile. */
+:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--color-ivory),
+    0 0 0 4px var(--color-forest);
+}
+
+::selection {
+  background-color: var(--color-forest);
+  color: var(--color-ivory);
+}
+
+.divider-dot::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: var(--color-terracotta);
+}
+
+/* Header fisso: trasparente sull'hero della Home, solido altrove e dopo lo scroll.
+   L'hero della Home è ora uno sfondo chiaro (BackgroundMotif), non più una foto scura:
+   il testo dell'header resta scuro in entrambi gli stati. */
+[data-header] {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-charcoal);
+}
+
+[data-header][data-scrolled="true"] {
+  background-color: color-mix(in srgb, var(--color-ivory) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-color: color-mix(in srgb, var(--color-brass) 30%, transparent);
+  color: var(--color-charcoal);
+}
+
+[data-header-link] {
+  color: inherit;
+}
+
+[data-header-link]:hover {
+  color: var(--color-forest);
+}
+
+[data-header-link][aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+[data-header-iconbar] {
+  border-color: color-mix(in srgb, currentColor 30%, transparent);
+}
+
+[data-header-icon] {
+  color: inherit;
+}
+
+[data-header-lang-sep] {
+  color: color-mix(in srgb, currentColor 35%, transparent);
+}
+
+[data-header-lang-link] {
+  color: color-mix(in srgb, currentColor 65%, transparent);
+}
+
+[data-header-lang-link]:hover {
+  color: currentColor;
+}
+
+[data-header-lang-current] {
+  color: currentColor;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Il logo chiaro non serve più: anche l'hero della Home (BackgroundMotif) è uno sfondo
+   chiaro, quindi il logo scuro resta leggibile in ogni stato dell'header. */
+[data-header-logo-dark] {
+  display: block;
+}
+
+[data-header-logo-light] {
+  display: none;
+}
+
+.ikitaria-backlink {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+.ikitaria-backlink:hover {
+  opacity: 1;
+  text-decoration: underline;
+}

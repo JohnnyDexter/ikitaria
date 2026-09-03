@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HomeHero from "./HomeHero.astro";
+import CategoryGrid from "./CategoryGrid.astro";
+import ItalyJapan from "./ItalyJapan.astro";
+import Newsletter from "./Newsletter.astro";
+import type { Lang } from "../i18n/content";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<BaseLayout lang={lang} slug="">
+  <HomeHero lang={lang} />
+  <CategoryGrid lang={lang} />
+  <ItalyJapan lang={lang} />
+  <Newsletter lang={lang} />
+</BaseLayout>
