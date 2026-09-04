@@ -10,7 +10,6 @@ lingua di default), italiano (`/it/`) e inglese (`/en/`).
 ```
 src/
   components/     componenti UI e sezioni di pagina (Hero, Storia, Prodotti, ...)
-  data/           dati statici (calendario/sekki)
   i18n/           dizionario dei contenuti tradotti (ja / it / en)
   layouts/        layout HTML condiviso
   pages/
@@ -49,25 +48,28 @@ npm run preview
 
 ## Deploy
 
-Il sito è statico (HTML/CSS/JS), quindi si presta bene a piattaforme di
-hosting statico come **Cloudflare Pages** o **Vercel**.
+Questo progetto vive come sottocartella (`almanacco-src/`) dentro il
+monorepo `ikitaria-site`. Non viene deployato direttamente su Cloudflare
+Pages/Vercel: l'output di `npm run build` (cartella `dist/`) va copiato
+manualmente nella cartella sorella `../almanacco/`, che è quella
+effettivamente servita da GitHub Pages su `ikitaria.com/almanacco/`.
 
-### Cloudflare Pages
+```bash
+cd almanacco-src
+npm install   # solo la prima volta
+npm run build
+rm -rf ../almanacco
+cp -r dist ../almanacco
+cd ..
+git add almanacco-src/ almanacco/
+git commit -m "..."
+```
 
-- Build command: `npm run build`
-- Output directory: `dist`
-- Node version: 20 o superiore
-
-### Vercel
-
-- Framework preset: Astro (rilevato automaticamente)
-- Build command: `npm run build`
-- Output directory: `dist`
+Dettagli sulla struttura del monorepo:
+`../docs/superpowers/specs/2026-09-03-almanacco-monorepo-design.md`.
 
 ## Contenuti
 
 I testi delle tre lingue vivono in `src/i18n/content.ts`: non sono traduzioni
 letterali parola per parola, ma versioni equivalenti nel significato,
-adattate a ciascuna lingua. I dati del calendario agricolo italiano e dei 24
-sekki giapponesi, usati nella "ruota dell'almanacco" della sezione hero, sono
-in `src/data/calendar.ts`.
+adattate a ciascuna lingua.

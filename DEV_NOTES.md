@@ -208,5 +208,20 @@ ikitaria-site/
 ├── favicon.svg
 ├── images/            ← hero画像、olive-oil、matcha、farm、biz、brand各画像
 ├── en/                ← 英語版（about/shop/events/contact/farm/support/brand/faq/thanks/privacy）
-└── ja/                ← 日本語版（about/shop/events/contact/farm/biz/brand/faq/thanks/privacy）
+├── ja/                ← 日本語版（about/shop/events/contact/farm/biz/brand/faq/thanks/privacy）
+├── almanacco-src/     ← Almanaccoショップサイト（Astro 5 + Tailwind v4）のソース一式。編集はここで行う
+└── almanacco/         ← almanacco-src/ のビルド成果物。GitHub Pagesが配信。直接編集しない（CLAUDE.md参照）
 ```
+
+## セッション — Almanaccoモノレポ統合 + サイト構成の簡素化（2026-09-03〜04）
+
+### 実施内容
+1. **二十四節気（sekki）機能を完全削除**: `AlmanacWheel.astro` / `SekkiPage.astro` / `SekkiWidget.astro` / `data/calendar.ts` / `data/sekkiProducts.ts` と3言語の `/sekki/` ページ、関連する全i18nキーを削除。店名「Almanacco」の由来物語（About物語）から二十四節気との対比表現も書き換え
+2. **Journal・Eventsページを削除**: Almanaccoは「実店舗のショップサイト」に用途を絞る方針（Shop機能は将来Ikitaria側のEC実装完了後にそちらへ移行予定）。ヒーローのCTAも「お店を見る」1本に統合
+3. **ワイン産地の文言整合**: ワインはスペイン中心＋イタリア提携生産者、オイルはマルケ州の自社農園、という実際の調達体制に合わせてhero文言・meta descriptionを修正
+4. **Almanaccoのソースを別リポジトリ（`JohnnyDexter/almanacco`）からこのリポジトリの `almanacco-src/` に統合（モノレポ化）**: git履歴は移植せず現ファイルのみコピー。旧リポジトリはpush権限がなく（403）、今後は情報共有用の位置づけとして放置。ビルド＋vendorは手動フロー継続（詳細は `docs/superpowers/specs/2026-09-03-almanacco-monorepo-design.md`）
+
+### 既知の残課題（今回のセッションでは未対応）
+- `almanacco-src/README.md` が統合前（旧sekki機能・旧デプロイ手順）の記述のまま。将来編集する際は要更新
+- `almanacco-src/public/images/events/` 配下の画像10枚（Events削除に伴い未参照）が残存。削除候補
+- Newsletter購読文言（3言語）に "events" への言及が残っている（Events機能削除と不整合）
