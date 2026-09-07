@@ -2166,11 +2166,11 @@ a.column:hover h3 {
     min-width: unset;
   }
 
-  /* Lang dropdown in header top-right */
+  /* Lang dropdown: wraps to its own row on mobile, right-aligned.
+     Must stay out of flow (not position: absolute) so it doesn't
+     overlap the hamburger toggle and steal its tap target. */
   .lang-dropdown {
-    position: absolute;
-    right: 0;
-    top: 0.55rem;
+    margin-left: auto;
   }
 
   .lang-dropdown > summary {
