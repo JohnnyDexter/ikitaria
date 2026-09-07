@@ -266,6 +266,13 @@ body::after {
   z-index: 20;
   white-space: nowrap;
   box-shadow: 0 4px 14px color-mix(in srgb, var(--text), transparent 88%);
+  /* Override .main-nav ul's display:flex/row (and its row-gap/center
+     cross-axis alignment) so dropdown entries stack vertically, full-width —
+     needed as more shop locations are added over time. */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
 }
 
 .nav-has-dropdown .nav-dropdown ul li a {
