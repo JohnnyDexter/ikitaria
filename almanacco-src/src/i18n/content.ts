@@ -184,8 +184,6 @@ export const content: Record<Lang, SiteContent> = {
           imageAlt: "搾油前の摘みたてオリーブ",
           ctaLabel: "オイルを見る",
         },
-        { title: "陶器と手仕事", ctaLabel: "作り手を知る" },
-        { title: "アルマナッコの日記帳", ctaLabel: "日記を読む" },
       ],
     },
     italyJapan: {
@@ -361,8 +359,6 @@ export const content: Record<Lang, SiteContent> = {
           imageAlt: "Olive appena raccolte pronte per la spremitura",
           ctaLabel: "Scopri gli oli",
         },
-        { title: "Ceramica & Artigianato", ctaLabel: "Conosci gli artigiani" },
-        { title: "Il Diario Almanacco", ctaLabel: "Leggi il diario" },
       ],
     },
     italyJapan: {
@@ -541,8 +537,6 @@ export const content: Record<Lang, SiteContent> = {
           imageAlt: "Freshly harvested olives ready for pressing",
           ctaLabel: "Discover the oils",
         },
-        { title: "Ceramics & Crafts", ctaLabel: "Meet the artisans" },
-        { title: "The Almanacco Diary", ctaLabel: "Read the diary" },
       ],
     },
     italyJapan: {

@@ -21,19 +21,16 @@ function productSlug(name: string): string {
 }
 
 // I 4 prodotti attuali si mappano sulle stesse categorie della griglia in home.
-// "Frantoio Valeri" (olio) e "Pasta Mancini" (pasta) rientrano in Olio & Condimenti;
-// "Cantina Murola" e "Colmone della Marca" (vini) in Vini & Bevande. Le altre due
-// categorie (Ceramica & Artigianato, Il Diario Almanacco) non hanno ancora prodotti reali.
+// "Cantina Murola" e "Colmone della Marca" (vini) rientrano in Vini & Bevande;
+// "Frantoio Valeri" (olio) e "Pasta Mancini" (pasta) in Olio & Condimenti.
 const oilNames = ["Frantoio Valeri", "Pasta Mancini"];
 const wineNames = ["Cantina Murola", "Colmone della Marca"];
 
 const byName = (names: string[]) => t.prodotti.items.filter((item: ProductItem) => names.includes(item.name));
 
 const groups = [
-  { slug: "oil-condiments", label: t.categories.items[1].title, items: byName(oilNames) },
   { slug: "wine-beverages", label: t.categories.items[0].title, items: byName(wineNames) },
-  { slug: "ceramics-crafts", label: t.categories.items[2].title, items: [] as ProductItem[] },
-  { slug: "almanacco-diary", label: t.categories.items[3].title, items: [] as ProductItem[] },
+  { slug: "oil-condiments", label: t.categories.items[1].title, items: byName(oilNames) },
 ];
 ---
 

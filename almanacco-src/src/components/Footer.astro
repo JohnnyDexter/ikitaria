@@ -16,7 +16,7 @@ const shopHref = withBase(langHref(lang, "shop"));
 
 const shopLinks = t.categories.items.map((item, i) => ({
   label: item.title,
-  href: `${shopHref}#${["wine-beverages", "oil-condiments", "ceramics-crafts", "almanacco-diary"][i]}`,
+  href: `${shopHref}#${["wine-beverages", "oil-condiments"][i]}`,
 }));
 
 const almanaccoLinks = [
