@@ -6,7 +6,7 @@ import { withBase, langHref } from "../utils/paths";
 interface Props {
   lang: Lang;
   t: SiteContent;
-  /** Slug della pagina corrente: "" per Home, "shop", "about", "contact". */
+  /** Slug della pagina corrente: "" per Home, "shop". */
   slug?: string;
   /** Header trasparente sull'hero (solo Home), diventa solido dopo lo scroll. */
   transparent?: boolean;
@@ -18,15 +18,6 @@ const mainNavItems = [
   { slug: "", label: t.nav.home },
   { slug: "shop", label: t.nav.shop },
 ];
-
-// Voci raggruppate sotto "ALMANACCO" nel menu, coerenti con la colonna
-// omonima già presente nel footer (label non tradotta, per coerenza).
-const almanaccoGroupItems = [
-  { slug: "about", label: t.nav.about },
-  { slug: "contact", label: t.nav.contact },
-];
-
-const isAlmanaccoActive = almanaccoGroupItems.some((item) => item.slug === slug);
 ---
 
 <header
@@ -69,37 +60,6 @@ const isAlmanaccoActive = almanaccoGroupItems.some((item) => item.slug === slug)
           {item.label}
         </a>
       ))}
-
-      <div class="group relative">
-        <a
-          href={withBase(langHref(lang, "about"))}
-          data-header-link
-          class={`flex items-center gap-1 transition-colors ${isAlmanaccoActive ? "font-medium" : ""}`}
-          aria-current={isAlmanaccoActive ? "page" : undefined}
-          aria-haspopup="true"
-        >
-          ALMANACCO
-          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
-        </a>
-        <div class="absolute left-1/2 top-full z-40 -translate-x-1/2 pt-3 opacity-0 invisible transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-          <nav
-            aria-label={`${t.nav.about} / ${t.nav.contact}`}
-            class="flex w-48 flex-col gap-1 border border-brass/30 bg-ivory p-4 text-charcoal shadow-lg"
-          >
-            {almanaccoGroupItems.map((item) => (
-              <a
-                href={withBase(langHref(lang, item.slug))}
-                class={`px-1 py-1.5 tracking-[0.1em] transition-colors hover:text-forest ${item.slug === slug ? "text-forest" : ""}`}
-                aria-current={item.slug === slug ? "page" : undefined}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </div>
     </nav>
 
     <div class="ml-auto flex shrink-0 items-center gap-4 md:ml-0">
@@ -143,19 +103,6 @@ const isAlmanaccoActive = almanaccoGroupItems.some((item) => item.slug === slug)
           class="absolute right-0 top-full mt-3 flex w-56 flex-col gap-3 border border-brass/30 bg-ivory p-5 font-display text-xs uppercase tracking-[0.15em] text-charcoal shadow-lg"
         >
           {mainNavItems.map((item) => (
-            <a
-              href={withBase(langHref(lang, item.slug))}
-              class={`transition-colors hover:text-forest ${item.slug === slug ? "text-forest" : ""}`}
-              aria-current={item.slug === slug ? "page" : undefined}
-            >
-              {item.label}
-            </a>
-          ))}
-
-          <p class="mt-1 border-t border-brass/20 pt-3 text-[10px] tracking-[0.2em] text-brass-text">
-            ALMANACCO
-          </p>
-          {almanaccoGroupItems.map((item) => (
             <a
               href={withBase(langHref(lang, item.slug))}
               class={`transition-colors hover:text-forest ${item.slug === slug ? "text-forest" : ""}`}

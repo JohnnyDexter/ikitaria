@@ -1,0 +1,68 @@
+---
+import { content, type Lang } from "../i18n/content";
+import { withBase } from "../utils/paths";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = content[lang];
+---
+
+<section id="access" class="scroll-mt-24 border-t border-brass/30 bg-ivory py-24">
+  <div class="mx-auto max-w-3xl px-6">
+    <p class="divider-dot flex items-center gap-2 font-body text-xs uppercase tracking-[0.2em] text-forest">
+      {t.contatti.kicker}
+    </p>
+    <h2 class="mt-4 font-display text-3xl uppercase tracking-wide text-charcoal sm:text-4xl">
+      {t.contatti.title}
+    </h2>
+
+    <img
+      src={withBase("/images/contatti/mappa-tsukimidai.jpg")}
+      alt={t.contatti.imageAlt}
+      class="mt-10 w-full border border-brass/30 object-contain bg-ivory-soft"
+      loading="lazy"
+    />
+    <p class="mt-2 text-right font-body text-[11px] text-stone-text/70">{t.contatti.mapCredit}</p>
+
+    <div class="mt-12 grid gap-10 sm:grid-cols-2">
+      <div>
+        <h3 class="font-subtitle text-2xl italic text-charcoal">{t.contatti.shopName}</h3>
+        <p class="mt-4 font-body text-xs uppercase tracking-[0.15em] text-brass-text">{t.contatti.addressLabel}</p>
+        <address class="mt-2 space-y-0.5 font-body text-sm not-italic leading-relaxed text-stone-text">
+          {t.contatti.addressLines.map((line) => (
+            <p>{line}</p>
+          ))}
+        </address>
+
+        <p class="mt-6 font-body text-xs uppercase tracking-[0.15em] text-brass-text">{t.contatti.accessLabel}</p>
+        <p class="mt-2 font-body text-sm leading-relaxed text-stone-text">{t.contatti.accessTrain}</p>
+        <p class="mt-1 font-body text-sm leading-relaxed text-stone-text">{t.contatti.accessParking}</p>
+
+        <p class="mt-6 font-body text-xs uppercase tracking-[0.15em] text-brass-text">{t.contatti.emailLabel}</p>
+        <p class="mt-2 font-body text-sm leading-relaxed">
+          <a
+            href={`mailto:${t.contatti.email}`}
+            class="text-stone-text underline decoration-brass/50 underline-offset-2 transition-colors hover:text-forest"
+          >
+            {t.contatti.email}
+          </a>
+        </p>
+      </div>
+
+      <div>
+        <p class="font-body text-xs uppercase tracking-[0.15em] text-brass-text">{t.contatti.hoursLabel}</p>
+        <p class="mt-2 font-body text-sm leading-relaxed text-stone-text">{t.contatti.hoursValue}</p>
+
+        <p class="mt-6 font-body text-xs uppercase tracking-[0.15em] text-brass-text">{t.contatti.socialLabel}</p>
+        <p class="mt-2 font-body text-sm leading-relaxed text-stone-text">{t.contatti.socialValue}</p>
+      </div>
+    </div>
+
+    <p class="mt-12 border-t border-brass/30 pt-6 font-body text-xs leading-relaxed text-stone-text/80">
+      {t.contatti.note}
+    </p>
+  </div>
+</section>

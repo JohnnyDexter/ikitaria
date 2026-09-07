@@ -35,16 +35,12 @@ export interface SiteContent {
   meta: {
     home: PageMeta;
     shop: PageMeta;
-    about: PageMeta;
-    contact: PageMeta;
   };
   /** Link "Salta al contenuto", visibile solo al focus da tastiera. */
   skipToContent: string;
   nav: {
     home: string;
     shop: string;
-    about: string;
-    contact: string;
   };
   hero: {
     title: string;
@@ -103,6 +99,9 @@ export interface SiteContent {
     shopName: string;
     addressLabel: string;
     addressLines: string[];
+    accessLabel: string;
+    accessTrain: string;
+    accessParking: string;
     emailLabel: string;
     email: string;
     hoursLabel: string;
@@ -143,23 +142,11 @@ export const content: Record<Lang, SiteContent> = {
         description:
           "マルケ州の自社畑と、スペイン・イタリアの提携生産者から届く、エキストラバージンオリーブオイル、ワイン、パスタ。横須賀のALMANACCOで販売中です。",
       },
-      about: {
-        title: "私たちについて | ALMANACCO — 横須賀のイタリア食材店",
-        description:
-          "横須賀の小さな店が、なぜマルケ州の昔ながらの農事暦の名を掲げているのか。ALMANACCOの物語です。",
-      },
-      contact: {
-        title: "お問い合わせ | ALMANACCO — 横須賀のイタリア食材店",
-        description:
-          "横須賀にあるALMANACCOの住所、メールアドレス、アクセス方法のご案内です。",
-      },
     },
     skipToContent: "本文へスキップ",
     nav: {
       home: "ホーム",
       shop: "ショップ",
-      about: "私たちについて",
-      contact: "お問い合わせ",
     },
     hero: {
       title: "Almanacco",
@@ -283,6 +270,10 @@ export const content: Record<Lang, SiteContent> = {
         "神奈川県横須賀市田浦町1-54",
         "月見台住宅 A29",
       ],
+      accessLabel: "来店方法",
+      accessTrain: "電車：JR田浦駅から徒歩約15分",
+      accessParking:
+        "お車：専用駐車場はございません。近隣のコインパーキングをご利用ください。",
       emailLabel: "メール",
       email: "info@ikitaria.com",
       hoursLabel: "営業時間",
@@ -317,23 +308,11 @@ export const content: Record<Lang, SiteContent> = {
         description:
           "Olio extravergine dal nostro uliveto nelle Marche, vino e pasta dai nostri produttori partner tra Spagna e Italia, in vendita nella bottega ALMANACCO a Yokosuka.",
       },
-      about: {
-        title: "Chi siamo | ALMANACCO — Bottega italiana a Yokosuka",
-        description:
-          "La storia di ALMANACCO: perché una bottega a Yokosuka porta il nome del vecchio almanacco contadino delle Marche.",
-      },
-      contact: {
-        title: "Contatti | ALMANACCO — Bottega italiana a Yokosuka",
-        description:
-          "Indirizzo, email e come raggiungere la bottega ALMANACCO a Yokosuka, Giappone.",
-      },
     },
     skipToContent: "Vai al contenuto",
     nav: {
       home: "Home",
       shop: "Shop",
-      about: "Chi siamo",
-      contact: "Contatti",
     },
     hero: {
       title: "Almanacco",
@@ -461,6 +440,10 @@ export const content: Record<Lang, SiteContent> = {
         "1-54 Taura-cho, Yokosuka",
         "Kanagawa 237-0075, Giappone",
       ],
+      accessLabel: "Come raggiungerci",
+      accessTrain: "Treno: 15 minuti a piedi dalla stazione JR di Taura",
+      accessParking:
+        "Auto: non disponiamo di parcheggio proprio, consigliamo i parcheggi a pagamento nelle vicinanze.",
       emailLabel: "Email",
       email: "info@ikitaria.com",
       hoursLabel: "Orari",
@@ -495,23 +478,11 @@ export const content: Record<Lang, SiteContent> = {
         description:
           "Extra virgin olive oil from our own grove in the Marche, wine and pasta from our partner producers across Spain and Italy, available at ALMANACCO in Yokosuka.",
       },
-      about: {
-        title: "About | ALMANACCO — Italian Shop in Yokosuka",
-        description:
-          "The story of ALMANACCO: why a shop in Yokosuka carries the name of the old Marche farmers' almanac.",
-      },
-      contact: {
-        title: "Contact | ALMANACCO — Italian Shop in Yokosuka",
-        description:
-          "Address, email, and how to reach the ALMANACCO shop in Yokosuka, Japan.",
-      },
     },
     skipToContent: "Skip to content",
     nav: {
       home: "Home",
       shop: "Shop",
-      about: "About",
-      contact: "Contact",
     },
     hero: {
       title: "Almanacco",
@@ -639,6 +610,10 @@ export const content: Record<Lang, SiteContent> = {
         "1-54 Taura-cho, Yokosuka",
         "Kanagawa 237-0075, Japan",
       ],
+      accessLabel: "Getting here",
+      accessTrain: "By train: 15-minute walk from JR Taura Station",
+      accessParking:
+        "By car: we don't have our own parking — nearby coin-operated parking lots are recommended.",
       emailLabel: "Email",
       email: "info@ikitaria.com",
       hoursLabel: "Hours",

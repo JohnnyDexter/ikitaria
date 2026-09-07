@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HomeHero from "./HomeHero.astro";
+import AccessSection from "./AccessSection.astro";
 import CategoryGrid from "./CategoryGrid.astro";
 import ItalyJapan from "./ItalyJapan.astro";
+import StorySection from "./StorySection.astro";
 import Newsletter from "./Newsletter.astro";
 import type { Lang } from "../i18n/content";
 
@@ -15,7 +17,9 @@ const { lang } = Astro.props;
 
 <BaseLayout lang={lang} slug="">
   <HomeHero lang={lang} />
+  <AccessSection lang={lang} />
   <CategoryGrid lang={lang} />
   <ItalyJapan lang={lang} />
+  <StorySection lang={lang} />
   <Newsletter lang={lang} />
 </BaseLayout>

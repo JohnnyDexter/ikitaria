@@ -1,6 +1,6 @@
 ---
 import { content, type Lang } from "../i18n/content";
-import { withBase, langHref } from "../utils/paths";
+import { withBase } from "../utils/paths";
 
 interface Props {
   lang: Lang;
@@ -35,7 +35,7 @@ const t = content[lang];
         {t.italyJapan.text}
       </p>
       <a
-        href={withBase(langHref(lang, "about"))}
+        href="#storia"
         class="mt-9 inline-block border-b border-ivory/70 font-body text-sm uppercase tracking-[0.15em] text-ivory transition-colors hover:border-ivory hover:text-ivory/80"
       >
         {t.italyJapan.ctaLabel} →

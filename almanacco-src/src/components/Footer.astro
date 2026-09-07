@@ -19,9 +19,10 @@ const shopLinks = t.categories.items.map((item, i) => ({
   href: `${shopHref}#${["wine-beverages", "oil-condiments"][i]}`,
 }));
 
+const homeHref = withBase(langHref(lang, ""));
 const almanaccoLinks = [
-  { label: t.nav.about, href: withBase(langHref(lang, "about")) },
-  { label: t.nav.contact, href: withBase(langHref(lang, "contact")) },
+  { label: t.contatti.title, href: `${homeHref}#access` },
+  { label: t.storia.title, href: `${homeHref}#storia` },
 ];
 
 const languageLinks = langs.map((l) => ({ lang: l, label: langLabels[l], href: withBase(langHref(l, slug)) }));
