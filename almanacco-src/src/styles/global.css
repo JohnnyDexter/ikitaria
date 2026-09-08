@@ -1,32 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap");
 @import "tailwindcss";
 
 @theme {
-  /* Nuova direzione visiva: avorio caldo, nero carbone, verde bosco (accenti forti),
-     ottone (dettagli/bordi), terracotta (accento puntuale), grigio pietra (muted). */
-  --color-ivory: #f4f1eb;
-  --color-ivory-soft: #ece5d6;
-  --color-panel: #faf8f3;
-  --color-charcoal: #1f1f1d;
+  /* Wondering.jp-inspired direction: near-monochrome grey/white/black base.
+     Brand colors (forest for Almanacco) survive only as a minimal accent —
+     borders, link hover, small details — never as large fills. Token names
+     are kept from the previous palette so component classes don't need
+     renaming; only the values moved to grey. */
+  --color-ivory: #f6f6f4;
+  --color-ivory-soft: #eeeeec;
+  --color-panel: #ffffff;
+  --color-charcoal: #1a1a1a;
   --color-forest: #233126;
-  --color-brass: #b08a5a;
-  --color-terracotta: #a46a4c;
-  --color-stone: #b7b2aa;
-  /* Variante leggibile di "pietra" per testo secondario: il colore di brand #B7B2AA
-     ha contrasto troppo basso su fondo avorio per essere usato come testo (~1.9:1). */
-  --color-stone-text: #65594a;
-  /* Varianti leggibili di ottone/terracotta per testo (etichette, kicker): i colori di
-     brand hanno contrasto insufficiente su avorio (~2.8:1 e ~3.9:1, sotto la soglia AA
-     4.5:1 per testo piccolo). Bordi, icone e dettagli decorativi restano su --color-brass
-     e --color-terracotta, dove il contrasto non è testo e la regola AA non si applica. */
-  --color-brass-text: #7d603c;
-  --color-terracotta-text: #83543c;
+  --color-brass: #b5b5b0;
+  --color-terracotta: #8a8a86;
+  --color-stone: #b5b5b0;
+  --color-stone-text: #6e6e6c;
+  --color-brass-text: #6e6e6c;
+  --color-terracotta-text: #6e6e6c;
 
-  /* Cinzel/Cormorant Garamond non coprono i glifi giapponesi: il fallback verso i
-     mincho già in uso mantiene un registro "serif elegante" coerente anche in JA. */
-  --font-display: "Cinzel", "Shippori Mincho", serif;
-  --font-subtitle: "Cormorant Garamond", "Shippori Mincho", serif;
-  --font-body: "Inter", "Noto Sans JP", sans-serif;
+  /* Unified on a single sans-serif (Outfit) across display/subtitle/body,
+     matching Ikitaria's main site and the wondering.jp reference. */
+  --font-display: "Outfit", "Noto Sans JP", sans-serif;
+  --font-subtitle: "Outfit", "Noto Sans JP", sans-serif;
+  --font-body: "Outfit", "Noto Sans JP", sans-serif;
 }
 
 html {
