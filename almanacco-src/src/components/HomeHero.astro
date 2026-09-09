@@ -1,7 +1,7 @@
 ---
 import { content, type Lang } from "../i18n/content";
 import { withBase, langHref } from "../utils/paths";
-import BackgroundMotif from "./BackgroundMotif.astro";
+import HeroDistortion from "./HeroDistortion.astro";
 
 interface Props {
   lang: Lang;
@@ -12,18 +12,14 @@ const t = content[lang];
 ---
 
 <section class="relative flex min-h-[90vh] items-center justify-center overflow-hidden" data-hero>
-  <BackgroundMotif class="hero-parallax-bg" />
+  <HeroDistortion image="/images/hero-map-motif.jpg" />
 
   <div class="relative z-10 flex flex-col items-center px-6 py-24 text-center">
     <div class="relative flex items-center justify-center" data-hero-reveal style="transition-delay: 0s;">
-      <div
-        class="absolute h-24 w-24 rounded-full border border-brass/40 bg-brass/10 sm:h-28 sm:w-28"
-        aria-hidden="true"
-      ></div>
       <img
         src={withBase("/logo-swallow.png")}
         alt=""
-        class="relative h-16 w-auto sm:h-20"
+        class="relative h-32 w-auto opacity-90 sm:h-48"
         width="594"
         height="563"
       />
@@ -83,10 +79,6 @@ const t = content[lang];
     transform: translateY(0);
   }
 
-  .hero-parallax-bg img {
-    will-change: transform;
-  }
-
   [data-hero-flight-path] {
     transition: stroke-dashoffset 1.4s ease 0.3s;
   }
@@ -116,31 +108,6 @@ const t = content[lang];
     });
 
     if (!prefersReducedMotion) {
-      const bgImg = hero.querySelector<HTMLImageElement>(".hero-parallax-bg img");
-
-      if (bgImg) {
-        let ticking = false;
-
-        const updateParallax = () => {
-          const offset = hero.getBoundingClientRect().top * -0.25;
-          bgImg.style.transform = `translateY(${offset}px)`;
-          ticking = false;
-        };
-
-        window.addEventListener(
-          "scroll",
-          () => {
-            if (!ticking) {
-              requestAnimationFrame(updateParallax);
-              ticking = true;
-            }
-          },
-          { passive: true },
-        );
-
-        updateParallax();
-      }
-
       const flightPath = hero.querySelector<SVGPathElement>("[data-hero-flight-path]");
 
       if (flightPath) {

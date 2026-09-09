@@ -9,9 +9,10 @@
 
 ## 技術的な注意事項
 - Ikitaria本体（ルートの `*.html` / `en/` / `ja/`）はビルドシステムなし。HTML/CSS/JS を直接編集してコミット
-- CSS バージョン: 現在 `style.css?v=4`（変更時は番号を上げる）
+- CSS バージョン: 変更時は全ページの `style.css?v=N` の番号を上げる（キャッシュバスティング）
 - 画像パス: `images/` ディレクトリ（WebP + fallback JPEG 形式）
-- フォーム: Formspree（`contact.html` × 3言語）— **現在 `YOUR_FORM_ID` のままで未設定**
+- フォーム: Formspree（`contact.html` × 3言語、`xqeekgde`のフォームIDで設定済み）
+- `vendor/`: ビルドシステムがない本体サイトのために手動コピーした第三者JS（現在Three.js、`hero-distortion.js`が使用）。`almanacco-src`の`three`バージョンを上げた場合は`vendor/README.md`の手順で再コピーが必要
 
 ## Almanacco（横須賀の実店舗ショップサイト）— `almanacco-src/` と `almanacco/` の関係
 

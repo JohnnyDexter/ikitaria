@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../style.css?v=33" />
+    <link rel="stylesheet" href="../style.css?v=34" />
   
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
@@ -51,6 +51,16 @@
     <main id="content">
       <section class="hero" aria-labelledby="hero-headline-en">
   <div class="hero-main">
+    <div class="hero-distortion" data-hero-distortion data-image="../images/5805513934478887111.jpg">
+      <div class="hero-distortion-fallback" data-distortion-fallback>
+        <div style="background-image:url(../images/5805513934478887111.jpg); background-position: 0% 50%;"></div>
+        <div style="background-image:url(../images/5805513934478887111.jpg); background-position: 50% 50%;"></div>
+        <div style="background-image:url(../images/5805513934478887111.jpg); background-position: 100% 50%;"></div>
+      </div>
+      <canvas class="is-hidden" data-distortion-canvas></canvas>
+      <div class="hero-distortion-divider" style="left:33.333%"></div>
+      <div class="hero-distortion-divider" style="left:66.666%"></div>
+    </div>
     <div class="hero-content">
       <h1 id="hero-headline-en">CONNECT THE DOTS</h1>
       <p class="hero-subtitle">Italy × Japan<br />Strategic Cultural &amp; Business Advisory</p>
@@ -97,6 +107,7 @@
       <section class="section"><div class="container"><p class="eyebrow">OUR ADVANTAGE</p><h2>Why Ikitaria</h2><ol class="why-list"><li class="why-item"><span class="why-number">01</span><div class="why-content"><h4>Direct Presence</h4><p>Operational in Italy and Japan — no intermediaries, no timezone barriers.</p></div></li><li class="why-item"><span class="why-number">02</span><div class="why-content"><h4>Complementary Expertise</h4><p>Italian experience and Japanese sensibility integrated into a single, coherent structure.</p></div></li><li class="why-item"><span class="why-number">03</span><div class="why-content"><h4>Verified Network</h4><p>Partners and contacts selected through years of direct, on-the-ground work.</p></div></li><li class="why-item"><span class="why-number">04</span><div class="why-content"><h4>Selective Approach</h4><p>We work with a limited number of clients to ensure quality, continuity and focus.</p></div></li><li class="why-item"><span class="why-number">05</span><div class="why-content"><h4>Long-Term Vision</h4><p>Not one-off consulting — we build lasting professional relationships over time.</p></div></li></ol><p class="section-intro">Let's start a conversation.</p><a class="cta" href="contact.html">Contact us</a></div></section>
     </main>
     <footer class="site-footer"><div class="container footer-grid"><div><p class="footer-title">IKITARIA</p><p class="footer-copy">Italy – Japan</p><p class="footer-copy">Strategic Cultural &amp; Business Advisory</p></div><nav class="footer-links" aria-label="Footer navigation"><p><a href="business.html">Business</a></p><p><a href="events.html">Events</a></p></nav><div class="footer-links"><p><a href="mailto:info@ikitaria.com">info@ikitaria.com</a></p><p><a href="https://www.instagram.com/ikitaria/" rel="noopener noreferrer" target="_blank">Instagram</a></p><p class="footer-legal"><a href="privacy.html">Privacy Policy</a></p></div></div></footer>
+    <script type="module" src="../hero-distortion.js"></script>
     <script src="../nav.js" defer></script>
 </body>
 </html>

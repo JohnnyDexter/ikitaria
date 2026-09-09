@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=33" />
+    <link rel="stylesheet" href="style.css?v=34" />
   
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -91,7 +91,17 @@
 
     <main id="contenuto">
       <section class="hero" aria-labelledby="hero-headline-it">
-        <div class="hero-main" id="hero-main">
+        <div class="hero-main">
+          <div class="hero-distortion" data-hero-distortion data-image="images/5805513934478887111.jpg">
+            <div class="hero-distortion-fallback" data-distortion-fallback>
+              <div style="background-image:url(images/5805513934478887111.jpg); background-position: 0% 50%;"></div>
+              <div style="background-image:url(images/5805513934478887111.jpg); background-position: 50% 50%;"></div>
+              <div style="background-image:url(images/5805513934478887111.jpg); background-position: 100% 50%;"></div>
+            </div>
+            <canvas class="is-hidden" data-distortion-canvas></canvas>
+            <div class="hero-distortion-divider" style="left:33.333%"></div>
+            <div class="hero-distortion-divider" style="left:66.666%"></div>
+          </div>
           <span class="hero-particle" aria-hidden="true"></span>
           <span class="hero-particle" aria-hidden="true"></span>
           <span class="hero-particle" aria-hidden="true"></span>
@@ -250,23 +260,7 @@
         </div>
       </div>
     </footer>
-    <script>
-      /* Subtle parallax: hero background drifts slower than scroll */
-      (function () {
-        var hero = document.getElementById('hero-main');
-        if (!hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        var ticking = false;
-        window.addEventListener('scroll', function () {
-          if (ticking) return;
-          requestAnimationFrame(function () {
-            var y = window.scrollY * 0.28;
-            hero.style.setProperty('--parallax-y', y + 'px');
-            ticking = false;
-          });
-          ticking = true;
-        }, { passive: true });
-      })();
-    </script>
+    <script type="module" src="hero-distortion.js"></script>
     <script src="nav.js" defer></script>
 </body>
 </html>
