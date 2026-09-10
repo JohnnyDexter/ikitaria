@@ -423,46 +423,47 @@ body::after {
   z-index: -1;
 }
 
-/* Background photo: WebGL distortion (hero-distortion.js) with a static
-   3-panel fallback for prefers-reduced-motion / no-WebGL / pre-JS paint. */
+/* Background photo: each panel is an independent WebGL slideshow
+   (hero-distortion.js) that cross-fades with a distortion effect only
+   during the transition, then settles on a sharp static frame. Falls
+   back to a single static image per panel for prefers-reduced-motion /
+   no-WebGL / pre-JS paint. */
 .hero-distortion {
   position: absolute;
   inset: 0;
   overflow: hidden;
   z-index: -2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   animation: hero-drift 18s ease-in-out infinite alternate;
   will-change: transform;
+}
+
+.hero-distortion-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-distortion-panel + .hero-distortion-panel {
+  border-left: 1px solid rgba(246, 246, 244, 0.35);
 }
 
 .hero-distortion-fallback {
   position: absolute;
   inset: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  background-size: cover;
+  background-position: center;
 }
 
-.hero-distortion-fallback > div {
-  background-size: 300% 100%;
-  background-repeat: no-repeat;
-}
-
-.hero-distortion canvas {
+.hero-distortion-panel canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
 }
 
-.hero-distortion canvas.is-hidden {
+.hero-distortion-panel canvas.is-hidden {
   display: none;
-}
-
-.hero-distortion-divider {
-  position: absolute;
-  inset-block: 0;
-  width: 1px;
-  background: rgba(246, 246, 244, 0.35);
-  z-index: 1;
 }
 
 .hero-content {

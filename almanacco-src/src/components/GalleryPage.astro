@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { content, type Lang } from "../i18n/content";
+import { withBase } from "../utils/paths";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = content[lang];
+---
+
+<BaseLayout lang={lang} slug="gallery">
+  <section class="bg-ivory py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="max-w-2xl">
+        <p class="divider-dot flex items-center gap-2 font-body text-xs uppercase tracking-[0.2em] text-forest">
+          {t.gallery.kicker}
+        </p>
+        <h1 class="mt-4 font-display text-4xl uppercase tracking-wide text-charcoal sm:text-5xl">
+          {t.gallery.title}
+        </h1>
+        <p class="mt-6 font-subtitle text-lg leading-relaxed text-stone-text">
+          {t.gallery.intro}
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {t.gallery.items.map((item) => (
+          <img
+            src={withBase(item.image)}
+            alt={item.alt}
+            class="aspect-[4/3] w-full border border-brass/30 object-cover"
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

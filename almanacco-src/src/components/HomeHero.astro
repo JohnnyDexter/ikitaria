@@ -12,7 +12,7 @@ const t = content[lang];
 ---
 
 <section class="relative flex min-h-[90vh] items-center justify-center overflow-hidden" data-hero>
-  <HeroDistortion image="/images/hero-map-motif.jpg" />
+  <HeroDistortion images={t.gallery.items.map((item) => item.image)} />
 
   <div class="relative z-10 flex flex-col items-center px-6 py-24 text-center">
     <div class="relative flex items-center justify-center" data-hero-reveal style="transition-delay: 0s;">

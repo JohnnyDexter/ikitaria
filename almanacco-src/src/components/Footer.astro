@@ -23,6 +23,7 @@ const homeHref = withBase(langHref(lang, ""));
 const almanaccoLinks = [
   { label: t.contatti.title, href: `${homeHref}#access` },
   { label: t.storia.title, href: `${homeHref}#storia` },
+  { label: t.gallery.title, href: withBase(langHref(lang, "gallery")) },
 ];
 
 const languageLinks = langs.map((l) => ({ lang: l, label: langLabels[l], href: withBase(langHref(l, slug)) }));

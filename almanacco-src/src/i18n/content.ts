@@ -35,18 +35,26 @@ export interface SiteContent {
   meta: {
     home: PageMeta;
     shop: PageMeta;
+    gallery: PageMeta;
   };
   /** Link "Salta al contenuto", visibile solo al focus da tastiera. */
   skipToContent: string;
   nav: {
     home: string;
     shop: string;
+    gallery: string;
   };
   hero: {
     title: string;
     subtitle: string;
     text: string;
     ctaPrimary: string;
+  };
+  gallery: {
+    kicker: string;
+    title: string;
+    intro: string;
+    items: { image: string; alt: string }[];
   };
   categories: {
     kicker: string;
@@ -142,17 +150,48 @@ export const content: Record<Lang, SiteContent> = {
         description:
           "マルケ州の自社畑と、スペイン・イタリアの提携生産者から届く、エキストラバージンオリーブオイル、ワイン、パスタ。横須賀のALMANACCOで販売中です。",
       },
+      gallery: {
+        title: "ギャラリー | ALMANACCO — 横須賀のイタリア食材店",
+        description:
+          "マルケ州の畑やカンティーナ、横須賀の店の様子など、ALMANACCOにまつわる写真のギャラリーです。",
+      },
     },
     skipToContent: "本文へスキップ",
     nav: {
       home: "ホーム",
       shop: "ショップ",
+      gallery: "ギャラリー",
     },
     hero: {
       title: "Almanacco",
       subtitle: "イタリアから、季節とともに。",
       text: "横須賀にあるイタリアの小さな店。自社の畑や提携生産者が手がける、スペインとイタリアのワインとオリーブオイル。",
       ctaPrimary: "お店を見る",
+    },
+    gallery: {
+      kicker: "写真で見る",
+      title: "ギャラリー",
+      intro:
+        "マルケ州の畑やカンティーナ、横須賀の店の様子など、Almanaccoにまつわる風景です。",
+      items: [
+        {
+          image: "/images/hero-map-motif.jpg",
+          alt: "イタリアと日本を描いた地図モチーフのイラスト",
+        },
+        {
+          image: "/images/marche/vigna-filari.jpg",
+          alt: "マルケ州、ぶどう畑の間を通る未舗装の道",
+        },
+        {
+          image: "/images/05-botti-murola.jpg",
+          alt: "カンティーナ・ムローラの樫樽",
+        },
+        {
+          image: "/images/04-olive-valeri.jpg",
+          alt: "搾油前の摘みたてオリーブ",
+        },
+        { image: "/images/fuji-kawaguchiko.jpg", alt: "河口湖から望む富士山" },
+      ],
     },
     categories: {
       kicker: "畑から店先へ",
@@ -308,17 +347,51 @@ export const content: Record<Lang, SiteContent> = {
         description:
           "Olio extravergine dal nostro uliveto nelle Marche, vino e pasta dai nostri produttori partner tra Spagna e Italia, in vendita nella bottega ALMANACCO a Yokosuka.",
       },
+      gallery: {
+        title: "Galleria | ALMANACCO — Bottega italiana a Yokosuka",
+        description:
+          "I campi e le cantine delle Marche, la bottega di Yokosuka: una galleria di immagini legate ad ALMANACCO.",
+      },
     },
     skipToContent: "Vai al contenuto",
     nav: {
       home: "Home",
       shop: "Shop",
+      gallery: "Galleria",
     },
     hero: {
       title: "Almanacco",
       subtitle: "Dall'Italia, attraverso le stagioni.",
       text: "Una bottega italiana a Yokosuka: vini e olio dai nostri vigneti e da produttori partner, tra Spagna e Italia.",
       ctaPrimary: "Scopri la bottega",
+    },
+    gallery: {
+      kicker: "In immagini",
+      title: "Galleria",
+      intro:
+        "I campi e le cantine delle Marche, la bottega di Yokosuka: paesaggi legati ad Almanacco.",
+      items: [
+        {
+          image: "/images/hero-map-motif.jpg",
+          alt: "Illustrazione di una mappa d'epoca con Italia e Giappone",
+        },
+        {
+          image: "/images/marche/vigna-filari.jpg",
+          alt: "Una strada sterrata tra i filari di vigna delle Marche",
+        },
+        {
+          image: "/images/05-botti-murola.jpg",
+          alt: "Botti di rovere nella cantina Murola",
+        },
+        {
+          image: "/images/04-olive-valeri.jpg",
+          alt: "Olive appena raccolte pronte per la spremitura",
+        },
+        {
+          image: "/images/fuji-kawaguchiko.jpg",
+          alt: "Il Monte Fuji visto dal lago Kawaguchiko",
+        },
+      ],
     },
     categories: {
       kicker: "Dal campo alla bottega",
@@ -478,17 +551,51 @@ export const content: Record<Lang, SiteContent> = {
         description:
           "Extra virgin olive oil from our own grove in the Marche, wine and pasta from our partner producers across Spain and Italy, available at ALMANACCO in Yokosuka.",
       },
+      gallery: {
+        title: "Gallery | ALMANACCO — Italian Shop in Yokosuka",
+        description:
+          "Fields and cellars in the Marche, the Yokosuka shop: a gallery of images from ALMANACCO.",
+      },
     },
     skipToContent: "Skip to content",
     nav: {
       home: "Home",
       shop: "Shop",
+      gallery: "Gallery",
     },
     hero: {
       title: "Almanacco",
       subtitle: "From Italy, through the seasons.",
       text: "An Italian shop in Yokosuka: wines and olive oil from our own vineyards and partner producers, across Spain and Italy.",
       ctaPrimary: "Discover the shop",
+    },
+    gallery: {
+      kicker: "In pictures",
+      title: "Gallery",
+      intro:
+        "Fields and cellars in the Marche, the Yokosuka shop: scenes from Almanacco.",
+      items: [
+        {
+          image: "/images/hero-map-motif.jpg",
+          alt: "Illustration of a vintage map with Italy and Japan",
+        },
+        {
+          image: "/images/marche/vigna-filari.jpg",
+          alt: "A dirt road between rows of vines in the Marche",
+        },
+        {
+          image: "/images/05-botti-murola.jpg",
+          alt: "Oak barrels in the Cantina Murola cellar",
+        },
+        {
+          image: "/images/04-olive-valeri.jpg",
+          alt: "Freshly harvested olives ready for pressing",
+        },
+        {
+          image: "/images/fuji-kawaguchiko.jpg",
+          alt: "Mount Fuji seen from Lake Kawaguchiko",
+        },
+      ],
     },
     categories: {
       kicker: "From the field to the shop",
