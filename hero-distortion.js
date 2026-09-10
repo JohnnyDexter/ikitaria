@@ -25,10 +25,16 @@ const VERTEX_SHADER = `
 // reused GLSL utility, not vlag.yokohama's specific shader code).
 // Distortion is scaled by uProgress via sin(progress * PI): zero at
 // the start and end of a transition, peaking in the middle.
+// coverUv reproduces CSS `background-size: cover` — without it the
+// image is stretched to fill the plane's aspect ratio instead of
+// being cropped, which is what made photos look stretched tall.
 const FRAGMENT_SHADER = `
   uniform sampler2D uTextureA;
   uniform sampler2D uTextureB;
   uniform float uProgress;
+  uniform float uPlaneAspect;
+  uniform float uImageAspectA;
+  uniform float uImageAspectB;
   varying vec2 vUv;
 
   vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -60,18 +66,28 @@ const FRAGMENT_SHADER = `
     return 130.0 * dot(m, g);
   }
 
+  vec2 coverUv(vec2 uv, float imageAspect, float planeAspect) {
+    vec2 ratio = imageAspect > planeAspect
+      ? vec2(planeAspect / imageAspect, 1.0)
+      : vec2(1.0, imageAspect / planeAspect);
+    return (uv - 0.5) * ratio + 0.5;
+  }
+
   void main() {
     float intensity = sin(uProgress * 3.14159265);
     float n = snoise(vUv * 3.0) * intensity * 0.09;
-    vec2 uvA = vUv + vec2(n, n * 0.7);
-    vec2 uvB = vUv - vec2(n, n * 0.7);
+    // Apply the noise offset BEFORE the cover-crop transform (in plane-UV
+    // space), so it scales down along with the same crop factor instead of
+    // being amplified when a panel is much narrower than the image.
+    vec2 uvA = coverUv(vUv + vec2(n, n * 0.7), uImageAspectA, uPlaneAspect);
+    vec2 uvB = coverUv(vUv - vec2(n, n * 0.7), uImageAspectB, uPlaneAspect);
     vec4 colorA = texture2D(uTextureA, uvA);
     vec4 colorB = texture2D(uTextureB, uvB);
     gl_FragColor = mix(colorA, colorB, smoothstep(0.0, 1.0, uProgress));
   }
 `;
 
-const SLIDE_INTERVAL_MS = 5000;
+const SLIDE_INTERVAL_MS = 3000;
 const TRANSITION_MS = 1000;
 
 function loadTexture(loader, src) {
@@ -86,6 +102,11 @@ function loadTexture(loader, src) {
       reject,
     );
   });
+}
+
+function imageAspect(texture) {
+  const img = texture.image;
+  return img.width / img.height;
 }
 
 function sleep(ms) {
@@ -111,6 +132,7 @@ async function initPanel(panel) {
 
   const loader = new THREE.TextureLoader();
   const firstTexture = await loadTexture(loader, images[0]);
+  const firstAspect = imageAspect(firstTexture);
 
   const scene = new THREE.Scene();
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
@@ -120,6 +142,9 @@ async function initPanel(panel) {
       uTextureA: { value: firstTexture },
       uTextureB: { value: firstTexture },
       uProgress: { value: 0 },
+      uPlaneAspect: { value: 1 },
+      uImageAspectA: { value: firstAspect },
+      uImageAspectB: { value: firstAspect },
     },
     vertexShader: VERTEX_SHADER,
     fragmentShader: FRAGMENT_SHADER,
@@ -130,6 +155,7 @@ async function initPanel(panel) {
     const { clientWidth, clientHeight } = canvas;
     renderer.setSize(clientWidth, clientHeight, false);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    material.uniforms.uPlaneAspect.value = clientWidth / clientHeight;
   }
 
   // Show the canvas (and hide the fallback) BEFORE measuring it —
@@ -163,6 +189,7 @@ async function initPanel(panel) {
 
     const outgoingTexture = material.uniforms.uTextureA.value;
     material.uniforms.uTextureB.value = nextTexture;
+    material.uniforms.uImageAspectB.value = imageAspect(nextTexture);
 
     await new Promise((resolve) => {
       const start = performance.now();
@@ -180,6 +207,8 @@ async function initPanel(panel) {
     });
 
     material.uniforms.uTextureA.value = nextTexture;
+    material.uniforms.uImageAspectA.value =
+      material.uniforms.uImageAspectB.value;
     material.uniforms.uProgress.value = 0;
     renderer.render(scene, camera);
     // Three.js doesn't free GPU texture memory on GC — without this, an
