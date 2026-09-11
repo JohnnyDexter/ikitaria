@@ -113,11 +113,13 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function initPanel(panel) {
+// Sets up one panel's WebGL scene and shows its first image. Returns
+// panel state for the shared slideshow clock to drive, or null if WebGL
+// / the first texture failed to load (the static fallback stays visible).
+async function setupPanel(panel) {
   const canvas = panel.querySelector("[data-distortion-canvas]");
   const images = panel.dataset.images?.split("|") ?? [];
-  const delay = Number(panel.dataset.delay ?? 0);
-  if (!canvas || images.length === 0) return;
+  if (!canvas || images.length === 0) return null;
 
   let renderer;
   try {
@@ -127,7 +129,7 @@ async function initPanel(panel) {
       antialias: true,
     });
   } catch {
-    return;
+    return null;
   }
 
   const loader = new THREE.TextureLoader();
@@ -169,34 +171,76 @@ async function initPanel(panel) {
   window.addEventListener("resize", resize);
   renderer.render(scene, camera);
 
-  if (images.length < 2) return; // nothing to slide to
+  return { loader, renderer, scene, camera, material, images, index: 0 };
+}
 
-  await sleep(delay);
+// Advances one panel to its next image. Panels are driven by a single
+// shared clock rather than each keeping its own animation timer or
+// sleep/loop — independent per-panel timing drifts apart over time
+// because texture load time varies per image, so panels slowly fall
+// out of sync with each other. Splitting into three phases (load all
+// -> animate all together -> finalize all) keeps every panel's
+// distortion perfectly in lockstep on every tick.
+async function loadNextTexture(state) {
+  if (state.images.length < 2) return null;
+  const nextIndex = (state.index + 1) % state.images.length;
+  try {
+    const texture = await loadTexture(state.loader, state.images[nextIndex]);
+    return { state, nextIndex, texture };
+  } catch {
+    // Broken/unreachable image: skip it instead of retrying it forever.
+    state.index = nextIndex;
+    return null;
+  }
+}
 
-  let index = 0;
+function finishTransition({ state, nextIndex, texture }) {
+  const outgoingTexture = state.material.uniforms.uTextureA.value;
+  state.material.uniforms.uTextureA.value = texture;
+  state.material.uniforms.uImageAspectA.value =
+    state.material.uniforms.uImageAspectB.value;
+  state.material.uniforms.uProgress.value = 0;
+  state.renderer.render(state.scene, state.camera);
+  // Three.js doesn't free GPU texture memory on GC — without this, an
+  // hour-long kiosk/tab session would accumulate one orphaned texture
+  // per transition indefinitely.
+  outgoingTexture.dispose();
+  state.index = nextIndex;
+}
+
+async function runSlideshow(states) {
   for (;;) {
     await sleep(SLIDE_INTERVAL_MS);
-    const nextIndex = (index + 1) % images.length;
 
-    let nextTexture;
-    try {
-      nextTexture = await loadTexture(loader, images[nextIndex]);
-    } catch {
-      // Broken/unreachable image: skip it instead of retrying it forever.
-      index = nextIndex;
-      continue;
+    // Phase 1: load every panel's next texture in parallel first, so a
+    // slow-loading image on one panel doesn't delay only that panel's
+    // animation start relative to the others.
+    const pending = (await Promise.all(states.map(loadNextTexture))).filter(
+      (result) => result !== null,
+    );
+    if (pending.length === 0) continue;
+
+    for (const { state, texture } of pending) {
+      state.material.uniforms.uTextureB.value = texture;
+      state.material.uniforms.uImageAspectB.value = imageAspect(texture);
     }
 
-    const outgoingTexture = material.uniforms.uTextureA.value;
-    material.uniforms.uTextureB.value = nextTexture;
-    material.uniforms.uImageAspectB.value = imageAspect(nextTexture);
-
+    // Phase 2: animate all panels off a single shared clock.
     await new Promise((resolve) => {
       const start = performance.now();
       function step(now) {
         const t = Math.min((now - start) / TRANSITION_MS, 1);
-        material.uniforms.uProgress.value = t;
-        renderer.render(scene, camera);
+        for (const { state } of pending) {
+          try {
+            state.material.uniforms.uProgress.value = t;
+            state.renderer.render(state.scene, state.camera);
+          } catch {
+            // WebGL context lost mid-transition on this panel: skip it and
+            // keep driving the other panels off the shared clock instead of
+            // letting the exception abort step() before resolve() runs,
+            // which would freeze every panel's animation forever.
+          }
+        }
         if (t < 1) {
           requestAnimationFrame(step);
         } else {
@@ -206,16 +250,8 @@ async function initPanel(panel) {
       requestAnimationFrame(step);
     });
 
-    material.uniforms.uTextureA.value = nextTexture;
-    material.uniforms.uImageAspectA.value =
-      material.uniforms.uImageAspectB.value;
-    material.uniforms.uProgress.value = 0;
-    renderer.render(scene, camera);
-    // Three.js doesn't free GPU texture memory on GC — without this, an
-    // hour-long kiosk/tab session would accumulate one orphaned texture
-    // per transition indefinitely.
-    outgoingTexture.dispose();
-    index = nextIndex;
+    // Phase 3: finalize every panel.
+    pending.forEach(finishTransition);
   }
 }
 
@@ -224,9 +260,20 @@ const prefersReducedMotion = window.matchMedia(
 ).matches;
 
 if (!prefersReducedMotion) {
-  document.querySelectorAll("[data-hero-distortion]").forEach((panel) => {
-    initPanel(panel).catch(() => {
-      // WebGL/texture loading failed — the static fallback image stays visible.
+  const panels = Array.from(
+    document.querySelectorAll("[data-hero-distortion]"),
+  );
+  // Each panel's setup is caught individually so one panel's WebGL/texture
+  // failure doesn't take down Promise.all and block every OTHER panel
+  // (which may have set up fine) from ever starting its slideshow.
+  Promise.all(panels.map((panel) => setupPanel(panel).catch(() => null)))
+    .then((results) => {
+      const states = results.filter((state) => state !== null);
+      if (states.length > 0) return runSlideshow(states);
+    })
+    .catch(() => {
+      // WebGL/texture loading failed for at least one panel — its static
+      // fallback stays visible; panels that did set up keep their first
+      // image showing (no slideshow starts for any panel in this case).
     });
-  });
 }

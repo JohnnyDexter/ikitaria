@@ -407,7 +407,7 @@ body::after {
   text-align: center;
   isolation: isolate;
   overflow: hidden;
-  min-height: 100svh;
+  min-height: 50svh;
 }
 
 /* Dark overlay */
