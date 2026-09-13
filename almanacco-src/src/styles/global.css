@@ -59,12 +59,17 @@ body {
 }
 
 /* Header fisso: trasparente sull'hero della Home, solido altrove e dopo lo scroll.
-   L'hero della Home è ora uno sfondo chiaro (BackgroundMotif), non più una foto scura:
-   il testo dell'header resta scuro in entrambi gli stati. */
+   L'hero della Home è di nuovo una foto (HeroDistortion, scurita con un overlay),
+   quindi finché è trasparente il testo dell'header deve essere chiaro per restare
+   leggibile sopra la foto; dopo lo scroll (sfondo avorio solido) torna scuro. */
 [data-header] {
   background-color: transparent;
   border-color: transparent;
   color: var(--color-charcoal);
+}
+
+[data-header][data-transparent="true"][data-scrolled="false"] {
+  color: var(--color-ivory);
 }
 
 [data-header][data-scrolled="true"] {
@@ -113,14 +118,23 @@ body {
   text-underline-offset: 3px;
 }
 
-/* Il logo chiaro non serve più: anche l'hero della Home (BackgroundMotif) è uno sfondo
-   chiaro, quindi il logo scuro resta leggibile in ogni stato dell'header. */
+/* Il logo chiaro serve solo mentre l'header è trasparente sopra la foto scurita
+   della hero della Home; appena l'header diventa solido (scroll, o altre pagine)
+   torna al logo scuro, leggibile sullo sfondo avorio. */
 [data-header-logo-dark] {
   display: block;
 }
 
 [data-header-logo-light] {
   display: none;
+}
+
+[data-header][data-transparent="true"][data-scrolled="false"] [data-header-logo-dark] {
+  display: none;
+}
+
+[data-header][data-transparent="true"][data-scrolled="false"] [data-header-logo-light] {
+  display: block;
 }
 
 .ikitaria-backlink {
