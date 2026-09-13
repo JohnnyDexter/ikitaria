@@ -14,29 +14,33 @@ const t = content[lang];
 <section class="relative flex min-h-[45vh] items-center justify-center overflow-hidden" data-hero>
   <HeroDistortion images={t.gallery.items.map((item) => item.image)} />
 
+  <!-- Darkens the photos just enough for white text/logo to stay readable
+       over bright areas (sky, sunlit walls) without hiding the colors. -->
+  <div class="pointer-events-none absolute inset-0 z-[5] bg-charcoal/35" aria-hidden="true"></div>
+
   <div class="relative z-10 flex flex-col items-center px-6 py-24 text-center">
     <div class="relative flex items-center justify-center" data-hero-reveal style="transition-delay: 0s;">
       <img
-        src={withBase("/logo-swallow.png")}
+        src={withBase("/logo-swallow-light.png")}
         alt=""
         class="relative h-32 w-auto opacity-90 sm:h-48"
         width="594"
         height="563"
       />
     </div>
-    <h1 class="mt-6 font-display text-5xl uppercase tracking-[0.08em] text-charcoal sm:text-6xl" data-hero-reveal style="transition-delay: 0.12s;">
+    <h1 class="mt-6 font-display text-5xl uppercase tracking-[0.08em] text-ivory sm:text-6xl" data-hero-reveal style="transition-delay: 0.12s;">
       {t.hero.title}
     </h1>
-    <p class="mt-5 max-w-lg font-subtitle text-lg uppercase tracking-[0.15em] text-charcoal sm:text-xl" data-hero-reveal style="transition-delay: 0.24s;">
+    <p class="mt-5 max-w-lg font-subtitle text-lg uppercase tracking-[0.15em] text-ivory sm:text-xl" data-hero-reveal style="transition-delay: 0.24s;">
       {t.hero.subtitle}
     </p>
-    <p class="mt-4 max-w-md font-body text-base leading-relaxed text-stone-text sm:text-lg" data-hero-reveal style="transition-delay: 0.36s;">
+    <p class="mt-4 max-w-md font-body text-base leading-relaxed text-ivory-soft/90 sm:text-lg" data-hero-reveal style="transition-delay: 0.36s;">
       {t.hero.text}
     </p>
     <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row" data-hero-reveal style="transition-delay: 0.48s;">
       <a
         href={withBase(langHref(lang, "shop"))}
-        class="inline-block border border-charcoal px-9 py-3.5 font-body text-sm uppercase tracking-[0.15em] text-charcoal transition-colors hover:bg-charcoal hover:text-ivory"
+        class="inline-block border border-ivory px-9 py-3.5 font-body text-sm uppercase tracking-[0.15em] text-ivory transition-colors hover:bg-ivory hover:text-charcoal"
       >
         {t.hero.ctaPrimary} →
       </a>
@@ -54,7 +58,7 @@ const t = content[lang];
         opacity="0.85"
       />
       <image
-        href={withBase("/logo-swallow.png")}
+        href={withBase("/logo-swallow-light.png")}
         x="900"
         y="0"
         width="90"
