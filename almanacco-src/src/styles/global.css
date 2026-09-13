@@ -2,22 +2,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* Wondering.jp-inspired direction: near-monochrome grey/white/black base.
-     Brand colors (forest for Almanacco) survive only as a minimal accent —
-     borders, link hover, small details — never as large fills. Token names
-     are kept from the previous palette so component classes don't need
-     renaming; only the values moved to grey. */
+  /* European-winery direction: warm, ivory-based palette with bottle-green,
+     brass/champagne gold and terracotta accents — evoking wine glass,
+     oak barrels and olive-oil bottles. Brand colors survive as borders,
+     link hover, labels and small details, never as large fills. */
   --color-ivory: #f6f6f4;
   --color-ivory-soft: #eeeeec;
   --color-panel: #ffffff;
   --color-charcoal: #1a1a1a;
   --color-forest: #233126;
-  --color-brass: #b5b5b0;
-  --color-terracotta: #8a8a86;
-  --color-stone: #b5b5b0;
-  --color-stone-text: #6e6e6c;
-  --color-brass-text: #6e6e6c;
-  --color-terracotta-text: #6e6e6c;
+  --color-brass: #b8935a;
+  --color-terracotta: #b5654a;
+  --color-stone: #c9bfae;
+  --color-stone-text: #7a716a;
+  --color-brass-text: #8c6d3f;
+  --color-terracotta-text: #8f4a35;
 
   /* Unified on a single sans-serif (Outfit) across display/subtitle/body,
      matching Ikitaria's main site and the wondering.jp reference. */

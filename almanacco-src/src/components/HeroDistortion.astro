@@ -35,8 +35,8 @@ const panels = Array.from({ length: panelCount }, (_, i) => ({
       data-hero-distortion
       data-images={panel.images.join("|")}
     >
-      <div class="absolute inset-0 bg-cover bg-center grayscale" data-distortion-fallback style={`background-image:url(${panel.images[0]})`}></div>
-      <canvas class="absolute inset-0 hidden h-full w-full grayscale" data-distortion-canvas></canvas>
+      <div class="absolute inset-0 bg-cover bg-center" data-distortion-fallback style={`background-image:url(${panel.images[0]})`}></div>
+      <canvas class="absolute inset-0 hidden h-full w-full" data-distortion-canvas></canvas>
     </div>
   ))}
 </div>
