@@ -175,8 +175,8 @@ export const content: Record<Lang, SiteContent> = {
         "マルケ州の畑やカンティーナ、横須賀の店の様子など、Almanaccoにまつわる風景です。",
       items: [
         {
-          image: "/images/hero-map-motif.jpg",
-          alt: "イタリアと日本を描いた地図モチーフのイラスト",
+          image: "/images/marche/uva-grappoli.jpg",
+          alt: "収穫されたばかりのぶどうの房",
         },
         {
           image: "/images/marche/vigna-filari.jpg",
@@ -190,7 +190,10 @@ export const content: Record<Lang, SiteContent> = {
           image: "/images/04-olive-valeri.jpg",
           alt: "搾油前の摘みたてオリーブ",
         },
-        { image: "/images/fuji-kawaguchiko.jpg", alt: "河口湖から望む富士山" },
+        {
+          image: "/images/marche/paesaggio-collina.jpg",
+          alt: "マルケ州の丘陵地帯に広がる風景",
+        },
       ],
     },
     categories: {
@@ -372,8 +375,8 @@ export const content: Record<Lang, SiteContent> = {
         "I campi e le cantine delle Marche, la bottega di Yokosuka: paesaggi legati ad Almanacco.",
       items: [
         {
-          image: "/images/hero-map-motif.jpg",
-          alt: "Illustrazione di una mappa d'epoca con Italia e Giappone",
+          image: "/images/marche/uva-grappoli.jpg",
+          alt: "Grappoli d'uva appena raccolti",
         },
         {
           image: "/images/marche/vigna-filari.jpg",
@@ -388,8 +391,8 @@ export const content: Record<Lang, SiteContent> = {
           alt: "Olive appena raccolte pronte per la spremitura",
         },
         {
-          image: "/images/fuji-kawaguchiko.jpg",
-          alt: "Il Monte Fuji visto dal lago Kawaguchiko",
+          image: "/images/marche/paesaggio-collina.jpg",
+          alt: "Paesaggio collinare delle Marche",
         },
       ],
     },
@@ -576,8 +579,8 @@ export const content: Record<Lang, SiteContent> = {
         "Fields and cellars in the Marche, the Yokosuka shop: scenes from Almanacco.",
       items: [
         {
-          image: "/images/hero-map-motif.jpg",
-          alt: "Illustration of a vintage map with Italy and Japan",
+          image: "/images/marche/uva-grappoli.jpg",
+          alt: "Freshly harvested grape clusters",
         },
         {
           image: "/images/marche/vigna-filari.jpg",
@@ -592,8 +595,8 @@ export const content: Record<Lang, SiteContent> = {
           alt: "Freshly harvested olives ready for pressing",
         },
         {
-          image: "/images/fuji-kawaguchiko.jpg",
-          alt: "Mount Fuji seen from Lake Kawaguchiko",
+          image: "/images/marche/paesaggio-collina.jpg",
+          alt: "Hillside landscape in the Marche",
         },
       ],
     },
