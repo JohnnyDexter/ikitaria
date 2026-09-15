@@ -11,14 +11,14 @@ const { lang } = Astro.props;
 const t = content[lang];
 ---
 
-<section class="relative flex min-h-[45vh] items-center justify-center overflow-hidden" data-hero>
+<section class="relative flex min-h-[22vh] items-center justify-center overflow-hidden" data-hero>
   <HeroDistortion images={t.gallery.items.map((item) => item.image)} />
 
   <!-- Darkens the photos just enough for white text/logo to stay readable
        over bright areas (sky, sunlit walls) without hiding the colors. -->
   <div class="pointer-events-none absolute inset-0 z-[5] bg-charcoal/35" aria-hidden="true"></div>
 
-  <div class="relative z-10 flex flex-col items-center px-6 py-24 text-center">
+  <div class="relative z-10 flex flex-col items-center px-6 py-12 text-center">
     <div class="relative flex items-center justify-center" data-hero-reveal style="transition-delay: 0s;">
       <img
         src={withBase("/logo-swallow-light.png")}
