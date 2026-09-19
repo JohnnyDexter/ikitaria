@@ -4,7 +4,9 @@
 // images, distorting only DURING each transition (~1s) via simplex
 // noise, then settling back to a sharp static frame — unless the
 // visitor prefers reduced motion or WebGL fails, in which case each
-// panel just shows its first image, static.
+// panel just shows its first image, static. On page load, every panel
+// also plays one distortion pass on its own first image before the
+// slideshow starts, so the hero never just pops in static.
 //
 // This is a vanilla-JS port of almanacco-src/src/components/HeroDistortion.astro
 // (same shaders, same logic) — kept as a separate file because this site has
@@ -208,6 +210,54 @@ function finishTransition({ state, nextIndex, texture }) {
   state.index = nextIndex;
 }
 
+// Drives uProgress 0 -> 1 for every panel in `pending` off a single
+// shared clock, one requestAnimationFrame loop for all of them so their
+// distortion stays perfectly in lockstep.
+async function animateProgress(pending) {
+  await new Promise((resolve) => {
+    const start = performance.now();
+    function step(now) {
+      const t = Math.min((now - start) / TRANSITION_MS, 1);
+      for (const { state } of pending) {
+        try {
+          state.material.uniforms.uProgress.value = t;
+          state.renderer.render(state.scene, state.camera);
+        } catch {
+          // WebGL context lost mid-transition on this panel: skip it and
+          // keep driving the other panels off the shared clock instead of
+          // letting the exception abort step() before resolve() runs,
+          // which would freeze every panel's animation forever.
+        }
+      }
+      if (t < 1) {
+        requestAnimationFrame(step);
+      } else {
+        resolve();
+      }
+    }
+    requestAnimationFrame(step);
+  });
+}
+
+// Plays one distortion pass on page load, using each panel's own first
+// image as both A and B so it settles back onto the same starting frame.
+// Without this the hero would just pop in static and only start
+// distorting at the first slide change 3s later.
+async function playIntroDistortion(states) {
+  const pending = states.map((state) => ({ state }));
+  for (const { state } of pending) {
+    state.material.uniforms.uTextureB.value =
+      state.material.uniforms.uTextureA.value;
+    state.material.uniforms.uImageAspectB.value =
+      state.material.uniforms.uImageAspectA.value;
+  }
+  await animateProgress(pending);
+  for (const state of states) {
+    state.material.uniforms.uProgress.value = 0;
+    state.renderer.render(state.scene, state.camera);
+  }
+}
+
 async function runSlideshow(states) {
   for (;;) {
     await sleep(SLIDE_INTERVAL_MS);
@@ -226,29 +276,7 @@ async function runSlideshow(states) {
     }
 
     // Phase 2: animate all panels off a single shared clock.
-    await new Promise((resolve) => {
-      const start = performance.now();
-      function step(now) {
-        const t = Math.min((now - start) / TRANSITION_MS, 1);
-        for (const { state } of pending) {
-          try {
-            state.material.uniforms.uProgress.value = t;
-            state.renderer.render(state.scene, state.camera);
-          } catch {
-            // WebGL context lost mid-transition on this panel: skip it and
-            // keep driving the other panels off the shared clock instead of
-            // letting the exception abort step() before resolve() runs,
-            // which would freeze every panel's animation forever.
-          }
-        }
-        if (t < 1) {
-          requestAnimationFrame(step);
-        } else {
-          resolve();
-        }
-      }
-      requestAnimationFrame(step);
-    });
+    await animateProgress(pending);
 
     // Phase 3: finalize every panel.
     pending.forEach(finishTransition);
@@ -267,9 +295,11 @@ if (!prefersReducedMotion) {
   // failure doesn't take down Promise.all and block every OTHER panel
   // (which may have set up fine) from ever starting its slideshow.
   Promise.all(panels.map((panel) => setupPanel(panel).catch(() => null)))
-    .then((results) => {
+    .then(async (results) => {
       const states = results.filter((state) => state !== null);
-      if (states.length > 0) return runSlideshow(states);
+      if (states.length === 0) return;
+      await playIntroDistortion(states);
+      return runSlideshow(states);
     })
     .catch(() => {
       // WebGL/texture loading failed for at least one panel — its static
