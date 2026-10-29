@@ -185,6 +185,14 @@ export const content: Record<Lang, SiteContent> = {
           image: "/images/marche/paesaggio-collina.jpg",
           alt: "マルケ州の丘陵地帯に広がる風景",
         },
+        {
+          image: "/images/negozio-vetrina-olive.jpg",
+          alt: "横須賀の店舗のガラス窓に描かれた「Olive oil」の文字",
+        },
+        {
+          image: "/images/negozio-alberi.jpg",
+          alt: "横須賀の店舗近くの木々",
+        },
       ],
     },
     categories: {
@@ -211,7 +219,7 @@ export const content: Record<Lang, SiteContent> = {
       text: "マルケの丘から横須賀の街角まで。時間との向き合い方を教えてくれる産品や物語、日々の所作を集めています。",
       ctaLabel: "私たちについて",
       imageAltItaly: "マルケ州、ぶどう畑の間を通る未舗装の道",
-      imageAltJapan: "河口湖から望む富士山",
+      imageAltJapan: "横須賀の店舗のガラス窓に描かれたオリーブの装飾文字",
     },
     storia: {
       kicker: "NOSAという名前に込めた想い",
@@ -375,6 +383,14 @@ export const content: Record<Lang, SiteContent> = {
           image: "/images/marche/paesaggio-collina.jpg",
           alt: "Paesaggio collinare delle Marche",
         },
+        {
+          image: "/images/negozio-vetrina-olive.jpg",
+          alt: "La scritta «Olive oil» sulla vetrina del negozio di Yokosuka",
+        },
+        {
+          image: "/images/negozio-alberi.jpg",
+          alt: "Gli alberi vicino al negozio di Yokosuka",
+        },
       ],
     },
     categories: {
@@ -402,7 +418,7 @@ export const content: Record<Lang, SiteContent> = {
       text: "Dalle colline delle Marche alle strade di Yokosuka, raccogliamo prodotti, storie e gesti che raccontano un modo diverso di vivere il tempo.",
       ctaLabel: "Scopri chi siamo",
       imageAltItaly: "Una strada sterrata tra i filari di vigna delle Marche",
-      imageAltJapan: "Il Monte Fuji visto dal lago Kawaguchiko",
+      imageAltJapan: "Scritta decorativa sulla vetrina del negozio di Yokosuka",
     },
     storia: {
       kicker: "Cosa significa per noi il nome NOSA",
@@ -570,6 +586,14 @@ export const content: Record<Lang, SiteContent> = {
           image: "/images/marche/paesaggio-collina.jpg",
           alt: "Hillside landscape in the Marche",
         },
+        {
+          image: "/images/negozio-vetrina-olive.jpg",
+          alt: 'The word "Olive oil" painted on the Yokosuka shop\'s window',
+        },
+        {
+          image: "/images/negozio-alberi.jpg",
+          alt: "Trees near the Yokosuka shop",
+        },
       ],
     },
     categories: {
@@ -597,7 +621,7 @@ export const content: Record<Lang, SiteContent> = {
       text: "From the hills of the Marche to the streets of Yokosuka, we gather products, stories, and gestures that speak of a different way to experience time.",
       ctaLabel: "Discover who we are",
       imageAltItaly: "A dirt road between rows of vines in the Marche",
-      imageAltJapan: "Mount Fuji seen from Lake Kawaguchiko",
+      imageAltJapan: "Decorative lettering on the Yokosuka shop's window",
     },
     storia: {
       kicker: "What we mean by the name NOSA",
