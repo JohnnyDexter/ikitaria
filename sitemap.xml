@@ -162,28 +162,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ikitaria.com/nosa/it/events/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/nosa/it/events/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/nosa/en/events/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/nosa/ja/events/"/>
+    <loc>https://ikitaria.com/nosa/it/gallery/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/nosa/it/gallery/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/nosa/en/gallery/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/nosa/ja/gallery/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ikitaria.com/nosa/it/journal/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/nosa/it/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/nosa/en/journal/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/nosa/ja/journal/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ikitaria.com/nosa/it/sekki/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/nosa/it/sekki/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/nosa/en/sekki/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/nosa/ja/sekki/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ikitaria.com/nosa/it/contact/</loc>
@@ -198,18 +182,14 @@
   <url><loc>https://ikitaria.com/nosa/en/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ikitaria.com/nosa/en/about/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://ikitaria.com/nosa/en/shop/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ikitaria.com/nosa/en/events/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://ikitaria.com/nosa/en/journal/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://ikitaria.com/nosa/en/sekki/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://ikitaria.com/nosa/en/gallery/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://ikitaria.com/nosa/en/contact/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 
   <!-- ── NOSA (Japanese) ──────────────────────────────── -->
   <url><loc>https://ikitaria.com/nosa/ja/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ikitaria.com/nosa/ja/about/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://ikitaria.com/nosa/ja/shop/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ikitaria.com/nosa/ja/events/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://ikitaria.com/nosa/ja/journal/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://ikitaria.com/nosa/ja/sekki/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://ikitaria.com/nosa/ja/gallery/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://ikitaria.com/nosa/ja/contact/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 
 </urlset>
