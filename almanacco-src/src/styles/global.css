@@ -92,10 +92,6 @@ body {
   text-underline-offset: 6px;
 }
 
-[data-header-iconbar] {
-  border-color: color-mix(in srgb, currentColor 30%, transparent);
-}
-
 [data-header-icon] {
   color: inherit;
 }

@@ -5,7 +5,6 @@ import AccessSection from "./AccessSection.astro";
 import CategoryGrid from "./CategoryGrid.astro";
 import ItalyJapan from "./ItalyJapan.astro";
 import StorySection from "./StorySection.astro";
-import Newsletter from "./Newsletter.astro";
 import type { Lang } from "../i18n/content";
 
 interface Props {
@@ -21,5 +20,4 @@ const { lang } = Astro.props;
   <CategoryGrid lang={lang} />
   <ItalyJapan lang={lang} />
   <StorySection lang={lang} />
-  <Newsletter lang={lang} />
 </BaseLayout>

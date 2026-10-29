@@ -27,12 +27,10 @@ const nosaLinks = [
 ];
 
 const languageLinks = langs.map((l) => ({ lang: l, label: langLabels[l], href: withBase(langHref(l, slug)) }));
-
-const paymentBadges = ["Visa", "Mastercard", "Apple Pay", "PayPal"];
 ---
 
 <footer class="border-t border-brass/30 bg-ivory text-charcoal">
-  <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-5">
+  <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
     <div class="sm:col-span-2 lg:col-span-1">
       <img src={withBase("/logo-swallow.png")} alt="NOSA" class="h-10 w-auto" width="594" height="563" />
       <p class="mt-4 font-display tracking-widest text-charcoal">NOSA</p>
@@ -68,17 +66,6 @@ const paymentBadges = ["Visa", "Mastercard", "Apple Pay", "PayPal"];
           )
         )}
       </nav>
-    </div>
-
-    <div>
-      <p class="font-body text-xs uppercase tracking-[0.15em] text-brass-text">{t.footer.paymentsLabel}</p>
-      <div class="mt-4 flex flex-wrap gap-2">
-        {paymentBadges.map((name) => (
-          <span class="flex h-7 items-center border border-brass/40 px-2.5 font-body text-[10px] uppercase tracking-wide text-stone-text">
-            {name}
-          </span>
-        ))}
-      </div>
     </div>
   </div>
 

@@ -75,14 +75,6 @@ export interface SiteContent {
     imageAltItaly: string;
     imageAltJapan: string;
   };
-  newsletter: {
-    title: string;
-    text: string;
-    placeholder: string;
-    ctaLabel: string;
-    disabledNote: string;
-    imageAlt: string;
-  };
   storia: {
     kicker: string;
     title: string;
@@ -126,7 +118,6 @@ export interface SiteContent {
     tagline: string;
     rights: string;
     languagesLabel: string;
-    paymentsLabel: string;
     /** Testo prima del link "IKITARIA" nel credito di fondo pagina. */
     creditPrefix: string;
     /** Testo dopo il link "IKITARIA" (può essere vuoto). */
@@ -221,14 +212,6 @@ export const content: Record<Lang, SiteContent> = {
       ctaLabel: "私たちについて",
       imageAltItaly: "マルケ州、ぶどう畑の間を通る未舗装の道",
       imageAltJapan: "河口湖から望む富士山",
-    },
-    newsletter: {
-      title: "季節は移ろい、物語は続く。",
-      text: "店からのお知らせ、新着入荷、生産者やイベントの情報。",
-      placeholder: "メールアドレス",
-      ctaLabel: "登録する",
-      disabledNote: "登録機能は近日公開です",
-      imageAlt: "夕暮れのマルケのひまわり畑",
     },
     storia: {
       kicker: "NOSAという名前に込めた想い",
@@ -330,7 +313,6 @@ export const content: Record<Lang, SiteContent> = {
       tagline: "マルケの畑から、横須賀の暮らしへ。",
       rights: "All rights reserved.",
       languagesLabel: "言語",
-      paymentsLabel: "お支払い方法（近日対応）",
       creditPrefix: "NOSA は ",
       creditSuffix: " のプロジェクトです",
     },
@@ -421,14 +403,6 @@ export const content: Record<Lang, SiteContent> = {
       ctaLabel: "Scopri chi siamo",
       imageAltItaly: "Una strada sterrata tra i filari di vigna delle Marche",
       imageAltJapan: "Il Monte Fuji visto dal lago Kawaguchiko",
-    },
-    newsletter: {
-      title: "Le stagioni cambiano. Le storie continuano.",
-      text: "Novità dalla bottega, nuovi arrivi, produttori ed eventi.",
-      placeholder: "La tua email",
-      ctaLabel: "Iscriviti",
-      disabledNote: "Iscrizione in arrivo",
-      imageAlt: "Campo di girasoli delle Marche al tramonto",
     },
     storia: {
       kicker: "Cosa significa per noi il nome NOSA",
@@ -534,7 +508,6 @@ export const content: Record<Lang, SiteContent> = {
       tagline: "Dai campi delle Marche, alla vita di Yokosuka.",
       rights: "Tutti i diritti riservati.",
       languagesLabel: "Lingue",
-      paymentsLabel: "Metodi di pagamento (in arrivo)",
       creditPrefix: "NOSA è un progetto di ",
       creditSuffix: "",
     },
@@ -625,14 +598,6 @@ export const content: Record<Lang, SiteContent> = {
       ctaLabel: "Discover who we are",
       imageAltItaly: "A dirt road between rows of vines in the Marche",
       imageAltJapan: "Mount Fuji seen from Lake Kawaguchiko",
-    },
-    newsletter: {
-      title: "The seasons change. The stories continue.",
-      text: "News from the shop, new arrivals, producers, and events.",
-      placeholder: "Your email",
-      ctaLabel: "Subscribe",
-      disabledNote: "Sign-up coming soon",
-      imageAlt: "A sunflower field in the Marche at sunset",
     },
     storia: {
       kicker: "What we mean by the name NOSA",
@@ -738,7 +703,6 @@ export const content: Record<Lang, SiteContent> = {
       tagline: "From the fields of the Marche, to life in Yokosuka.",
       rights: "All rights reserved.",
       languagesLabel: "Languages",
-      paymentsLabel: "Payment methods (coming soon)",
       creditPrefix: "NOSA is a project by ",
       creditSuffix: "",
     },
