@@ -141,19 +141,19 @@ export const content: Record<Lang, SiteContent> = {
     htmlLang: "ja",
     meta: {
       home: {
-        title: "ALMANACCO（アルマナッコ）— 横須賀のイタリア食材店 | IKITARIA",
+        title: "NOSA — 横須賀のイタリア食材店 | IKITARIA",
         description:
-          "ALMANACCOは、スペインとイタリアのワイン、マルケ州のオリーブオイル、工芸品、季節の物語を届ける、横須賀のイタリア食材店です。",
+          "NOSAは、スペインとイタリアのワイン、マルケ州のオリーブオイル、工芸品、季節の物語を届ける、横須賀のイタリア食材店です。",
       },
       shop: {
-        title: "商品 | ALMANACCO — 横須賀のイタリア食材店",
+        title: "商品 | NOSA — 横須賀のイタリア食材店",
         description:
-          "マルケ州の自社畑と、スペイン・イタリアの提携生産者から届く、エキストラバージンオリーブオイル、ワイン、パスタ。横須賀のALMANACCOで販売中です。",
+          "マルケ州の自社畑と、スペイン・イタリアの提携生産者から届く、エキストラバージンオリーブオイル、ワイン、パスタ。横須賀のNOSAで販売中です。",
       },
       gallery: {
-        title: "ギャラリー | ALMANACCO — 横須賀のイタリア食材店",
+        title: "ギャラリー | NOSA — 横須賀のイタリア食材店",
         description:
-          "マルケ州の畑やカンティーナ、横須賀の店の様子など、ALMANACCOにまつわる写真のギャラリーです。",
+          "マルケ州の畑やカンティーナ、横須賀の店の様子など、NOSAにまつわる写真のギャラリーです。",
       },
     },
     skipToContent: "本文へスキップ",
@@ -163,7 +163,7 @@ export const content: Record<Lang, SiteContent> = {
       gallery: "ギャラリー",
     },
     hero: {
-      title: "Almanacco",
+      title: "NOSA",
       subtitle: "イタリアから、季節とともに。",
       text: "横須賀にあるイタリアの小さな店。自社の畑や提携生産者が手がける、スペインとイタリアのワインとオリーブオイル。",
       ctaPrimary: "お店を見る",
@@ -172,7 +172,7 @@ export const content: Record<Lang, SiteContent> = {
       kicker: "写真で見る",
       title: "ギャラリー",
       intro:
-        "マルケ州の畑やカンティーナ、横須賀の店の様子など、Almanaccoにまつわる風景です。",
+        "マルケ州の畑やカンティーナ、横須賀の店の様子など、NOSAにまつわる風景です。",
       items: [
         {
           image: "/images/marche/uva-grappoli.jpg",
@@ -231,18 +231,18 @@ export const content: Record<Lang, SiteContent> = {
       imageAlt: "夕暮れのマルケのひまわり畑",
     },
     storia: {
-      kicker: "なぜ「アルマナッコ」なのか",
+      kicker: "NOSAという名前に込めた想い",
       title: "物語",
       paragraphs: [
-        "アルマナッコ（almanacco）とは、イタリアの農村で昔から使われてきた「暦」のこと。種をまく日、収穫の時期、村の祭りの予定までもが、一冊の暦に書き込まれていました。マルケ州の農家にとって、それは単なるカレンダーではなく、土地と共に生きるための知恵の記録でした。",
-        "私たちの店の名前を「Almanacco」としたのは、この暦が教えてくれる知恵——季節を見失わずに生きること——を大切にしたかったからです。横須賀で暮らす私たちが、マルケ州の畑で摘まれたオリーブとぶどうを、季節の言葉とともにお届けする。それが、この小さな店の役目だと思っています。",
+        "「NOSA」という言葉そのものに、決まった意味はありません。けれど私たちがこの名前に込めたのは、誰か特定の物語ではなく、「人生」そのものへの想いです。大切にしてきた記憶を、ここで生き続けさせること。",
+        "横須賀のこの小さな店が、マルケ州の畑で摘まれたオリーブとぶどうを届けながら、これから出会う人々と、良い形で交わっていく場所になれたら。それが、NOSAという名前に込めた願いです。",
       ],
       imageAlt: "マルケ州の丘陵地帯を望む風景",
       foundersCaption: "共同創業者のジョバンニとイクヤ",
       foundersImageAlt: "マルケ州イエージ駅にて、ジョバンニとイクヤ",
       behindScenesKicker: "舞台裏",
       behindScenesNote:
-        "Almanaccoの店舗は現在準備中です。この写真は工事中の様子で、完成した店内ではありません。",
+        "NOSAの店舗は現在準備中です。この写真は工事中の様子で、完成した店内ではありません。",
       behindScenesImages: [
         {
           src: "/images/about/cantiere-gazebo.jpg",
@@ -305,7 +305,7 @@ export const content: Record<Lang, SiteContent> = {
     contatti: {
       kicker: "お店へ",
       title: "アクセス",
-      shopName: "Almanacco",
+      shopName: "NOSA",
       addressLabel: "住所",
       addressLines: [
         "〒237-0075",
@@ -323,16 +323,15 @@ export const content: Record<Lang, SiteContent> = {
       socialLabel: "SNS",
       socialValue: "近日公開予定",
       note: "営業時間・SNSアカウントは現在準備中です。決まり次第、こちらに掲載いたします。",
-      imageAlt:
-        "月見台複合施設の案内マップ。Almanacco（A29）の位置を含む区画一覧",
+      imageAlt: "月見台複合施設の案内マップ。NOSA（A29）の位置を含む区画一覧",
       mapCredit: "マップ提供：月見台",
     },
     footer: {
-      tagline: "マルケの畑から、横須賀の暦へ。",
+      tagline: "マルケの畑から、横須賀の暮らしへ。",
       rights: "All rights reserved.",
       languagesLabel: "言語",
       paymentsLabel: "お支払い方法（近日対応）",
-      creditPrefix: "Almanacco は ",
+      creditPrefix: "NOSA は ",
       creditSuffix: " のプロジェクトです",
     },
     comingSoonLabel: "近日公開",
@@ -341,19 +340,19 @@ export const content: Record<Lang, SiteContent> = {
     htmlLang: "it",
     meta: {
       home: {
-        title: "ALMANACCO — Bottega italiana a Yokosuka | IKITARIA",
+        title: "NOSA — Bottega italiana a Yokosuka | IKITARIA",
         description:
-          "ALMANACCO è una bottega italiana a Yokosuka dedicata a vini di Spagna e Italia, olio delle Marche, artigianato e storie di stagione.",
+          "NOSA è una bottega italiana a Yokosuka dedicata a vini di Spagna e Italia, olio delle Marche, artigianato e storie di stagione.",
       },
       shop: {
-        title: "Prodotti | ALMANACCO — Bottega italiana a Yokosuka",
+        title: "Prodotti | NOSA — Bottega italiana a Yokosuka",
         description:
-          "Olio extravergine dal nostro uliveto nelle Marche, vino e pasta dai nostri produttori partner tra Spagna e Italia, in vendita nella bottega ALMANACCO a Yokosuka.",
+          "Olio extravergine dal nostro uliveto nelle Marche, vino e pasta dai nostri produttori partner tra Spagna e Italia, in vendita nella bottega NOSA a Yokosuka.",
       },
       gallery: {
-        title: "Galleria | ALMANACCO — Bottega italiana a Yokosuka",
+        title: "Galleria | NOSA — Bottega italiana a Yokosuka",
         description:
-          "I campi e le cantine delle Marche, la bottega di Yokosuka: una galleria di immagini legate ad ALMANACCO.",
+          "I campi e le cantine delle Marche, la bottega di Yokosuka: una galleria di immagini legate a NOSA.",
       },
     },
     skipToContent: "Vai al contenuto",
@@ -363,7 +362,7 @@ export const content: Record<Lang, SiteContent> = {
       gallery: "Galleria",
     },
     hero: {
-      title: "Almanacco",
+      title: "NOSA",
       subtitle: "Dall'Italia, attraverso le stagioni.",
       text: "Una bottega italiana a Yokosuka: vini e olio dai nostri vigneti e da produttori partner, tra Spagna e Italia.",
       ctaPrimary: "Scopri la bottega",
@@ -372,7 +371,7 @@ export const content: Record<Lang, SiteContent> = {
       kicker: "In immagini",
       title: "Galleria",
       intro:
-        "I campi e le cantine delle Marche, la bottega di Yokosuka: paesaggi legati ad Almanacco.",
+        "I campi e le cantine delle Marche, la bottega di Yokosuka: paesaggi legati a NOSA.",
       items: [
         {
           image: "/images/marche/uva-grappoli.jpg",
@@ -432,18 +431,18 @@ export const content: Record<Lang, SiteContent> = {
       imageAlt: "Campo di girasoli delle Marche al tramonto",
     },
     storia: {
-      kicker: "Perché si chiama Almanacco",
+      kicker: "Cosa significa per noi il nome NOSA",
       title: "Storia",
       paragraphs: [
-        "Nelle campagne italiane, l'almanacco era il libro dove si annotava tutto: il giorno buono per la semina, i tempi della raccolta, le feste del paese. Per i contadini delle Marche non era un semplice calendario, ma il modo in cui si teneva memoria del rapporto con la terra, stagione dopo stagione.",
-        "Abbiamo chiamato questo negozio Almanacco per portare con noi questo modo di guardare il tempo: non perdere il filo delle stagioni. Da Yokosuka, portiamo l'olio e il vino raccolti nei campi delle Marche insieme al racconto delle stagioni che li hanno fatti nascere: è questo, in fondo, il senso di questa piccola bottega.",
+        "La parola «NOSA» non ha un significato letterale. Ma il nome che abbiamo scelto non racconta una storia qualunque: racconta la vita stessa. Tenere vive le memorie che contano.",
+        "Vogliamo che questa piccola bottega a Yokosuka, portando l'olio e il vino raccolti nei campi delle Marche, diventi un luogo dove le persone buone si incontrano, guardando al futuro. È questo il desiderio che abbiamo messo nel nome NOSA.",
       ],
       imageAlt: "Vista panoramica delle colline marchigiane",
       foundersCaption: "Giovanni e Ikuya, co-fondatori di IKITARIA",
       foundersImageAlt: "Giovanni e Ikuya alla stazione di Jesi, nelle Marche",
       behindScenesKicker: "Dietro le quinte",
       behindScenesNote:
-        "Il negozio Almanacco è in fase di allestimento: queste foto raccontano il cantiere, non ancora il negozio finito.",
+        "Il negozio NOSA è in fase di allestimento: queste foto raccontano il cantiere, non ancora il negozio finito.",
       behindScenesImages: [
         {
           src: "/images/about/cantiere-gazebo.jpg",
@@ -509,7 +508,7 @@ export const content: Record<Lang, SiteContent> = {
     contatti: {
       kicker: "Vieni a trovarci",
       title: "Contatti",
-      shopName: "Almanacco",
+      shopName: "NOSA",
       addressLabel: "Indirizzo",
       addressLines: [
         "A29 Tsukimidai Jutaku",
@@ -528,15 +527,15 @@ export const content: Record<Lang, SiteContent> = {
       socialValue: "In arrivo",
       note: "Orari di apertura e canali social sono ancora in definizione: saranno pubblicati qui appena disponibili.",
       imageAlt:
-        "Mappa del complesso Tsukimidai, con la posizione di Almanacco (A29) tra le altre unità",
+        "Mappa del complesso Tsukimidai, con la posizione di NOSA (A29) tra le altre unità",
       mapCredit: "Mappa gentilmente concessa da Tsukimidai",
     },
     footer: {
-      tagline: "Dai campi delle Marche all'almanacco di Yokosuka.",
+      tagline: "Dai campi delle Marche, alla vita di Yokosuka.",
       rights: "Tutti i diritti riservati.",
       languagesLabel: "Lingue",
       paymentsLabel: "Metodi di pagamento (in arrivo)",
-      creditPrefix: "Almanacco è un progetto di ",
+      creditPrefix: "NOSA è un progetto di ",
       creditSuffix: "",
     },
     comingSoonLabel: "In arrivo",
@@ -545,19 +544,19 @@ export const content: Record<Lang, SiteContent> = {
     htmlLang: "en",
     meta: {
       home: {
-        title: "ALMANACCO — Italian Shop in Yokosuka | IKITARIA",
+        title: "NOSA — Italian Shop in Yokosuka | IKITARIA",
         description:
-          "ALMANACCO is an Italian shop in Yokosuka devoted to wine from Spain and Italy, olive oil from the Marche, craft, and seasonal stories.",
+          "NOSA is an Italian shop in Yokosuka devoted to wine from Spain and Italy, olive oil from the Marche, craft, and seasonal stories.",
       },
       shop: {
-        title: "Products | ALMANACCO — Italian Shop in Yokosuka",
+        title: "Products | NOSA — Italian Shop in Yokosuka",
         description:
-          "Extra virgin olive oil from our own grove in the Marche, wine and pasta from our partner producers across Spain and Italy, available at ALMANACCO in Yokosuka.",
+          "Extra virgin olive oil from our own grove in the Marche, wine and pasta from our partner producers across Spain and Italy, available at NOSA in Yokosuka.",
       },
       gallery: {
-        title: "Gallery | ALMANACCO — Italian Shop in Yokosuka",
+        title: "Gallery | NOSA — Italian Shop in Yokosuka",
         description:
-          "Fields and cellars in the Marche, the Yokosuka shop: a gallery of images from ALMANACCO.",
+          "Fields and cellars in the Marche, the Yokosuka shop: a gallery of images from NOSA.",
       },
     },
     skipToContent: "Skip to content",
@@ -567,7 +566,7 @@ export const content: Record<Lang, SiteContent> = {
       gallery: "Gallery",
     },
     hero: {
-      title: "Almanacco",
+      title: "NOSA",
       subtitle: "From Italy, through the seasons.",
       text: "An Italian shop in Yokosuka: wines and olive oil from our own vineyards and partner producers, across Spain and Italy.",
       ctaPrimary: "Discover the shop",
@@ -576,7 +575,7 @@ export const content: Record<Lang, SiteContent> = {
       kicker: "In pictures",
       title: "Gallery",
       intro:
-        "Fields and cellars in the Marche, the Yokosuka shop: scenes from Almanacco.",
+        "Fields and cellars in the Marche, the Yokosuka shop: scenes from NOSA.",
       items: [
         {
           image: "/images/marche/uva-grappoli.jpg",
@@ -636,11 +635,11 @@ export const content: Record<Lang, SiteContent> = {
       imageAlt: "A sunflower field in the Marche at sunset",
     },
     storia: {
-      kicker: "Why we're called Almanacco",
+      kicker: "What we mean by the name NOSA",
       title: "Story",
       paragraphs: [
-        "In the Italian countryside, the almanacco (almanac) was the book where everything was written down: the right day for sowing, the time for harvest, the village festivals. For farming families in the Marche, it wasn't just a calendar — it was how the relationship with the land was remembered, season after season.",
-        "We named this shop Almanacco to carry that same way of paying attention to time: never losing track of the seasons. From Yokosuka, we bring olive oil and wine harvested in the fields of the Marche, together with the story of the seasons that shaped them — that, in the end, is what this small shop is about.",
+        "The word \"NOSA\" carries no literal meaning. But the name we chose isn't about any one story — it's about life itself. Keeping the memories that matter alive.",
+        "We hope this small shop in Yokosuka — bringing olive oil and wine harvested in the fields of the Marche — can become a place where good people cross paths, looking toward the future. That's the wish we put into the name NOSA.",
       ],
       imageAlt: "Panoramic view of the Marche hills",
       foundersCaption: "Giovanni and Ikuya, co-founders of IKITARIA",
@@ -648,7 +647,7 @@ export const content: Record<Lang, SiteContent> = {
         "Giovanni and Ikuya at the Jesi train station, in the Marche",
       behindScenesKicker: "Behind the scenes",
       behindScenesNote:
-        "The Almanacco shop is still being built: these photos show the work in progress, not the finished shop.",
+        "The NOSA shop is still being built: these photos show the work in progress, not the finished shop.",
       behindScenesImages: [
         {
           src: "/images/about/cantiere-gazebo.jpg",
@@ -713,7 +712,7 @@ export const content: Record<Lang, SiteContent> = {
     contatti: {
       kicker: "Come visit us",
       title: "Contact",
-      shopName: "Almanacco",
+      shopName: "NOSA",
       addressLabel: "Address",
       addressLines: [
         "A29 Tsukimidai Jutaku",
@@ -732,15 +731,15 @@ export const content: Record<Lang, SiteContent> = {
       socialValue: "Coming soon",
       note: "Opening hours and social channels are still being finalized and will be published here as soon as they're ready.",
       imageAlt:
-        "Map of the Tsukimidai complex, showing Almanacco's location (A29) among the other units",
+        "Map of the Tsukimidai complex, showing NOSA's location (A29) among the other units",
       mapCredit: "Map kindly provided by Tsukimidai",
     },
     footer: {
-      tagline: "From the fields of the Marche to the Yokosuka almanac.",
+      tagline: "From the fields of the Marche, to life in Yokosuka.",
       rights: "All rights reserved.",
       languagesLabel: "Languages",
       paymentsLabel: "Payment methods (coming soon)",
-      creditPrefix: "Almanacco is a project by ",
+      creditPrefix: "NOSA is a project by ",
       creditSuffix: "",
     },
     comingSoonLabel: "Coming soon",

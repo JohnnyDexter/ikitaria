@@ -14,23 +14,26 @@
 - フォーム: Formspree（`contact.html` × 3言語、`xqeekgde`のフォームIDで設定済み）
 - `vendor/`: ビルドシステムがない本体サイトのために手動コピーした第三者JS（現在Three.js、`hero-distortion.js`が使用）。`almanacco-src`の`three`バージョンを上げた場合は`vendor/README.md`の手順で再コピーが必要
 
-## Almanacco（横須賀の実店舗ショップサイト）— `almanacco-src/` と `almanacco/` の関係
+## NOSA（横須賀の実店舗ショップサイト、旧名 Almanacco）— `almanacco-src/` と `nosa/` の関係
 
-Almanacco は Astro 5 + Tailwind v4 のサブプロジェクトで、このリポジトリにモノレポとして統合されている（旧 `JohnnyDexter/almanacco` リポジトリは情報共有用の位置づけで、開発の主体はこちらに移した）。
+店名は2026年10月に「Almanacco」から「NOSA」に変更された。ソースディレクトリ名 `almanacco-src/` は歴史的な名残で、店名とは無関係（リネームによる影響範囲が大きいため維持）。
+
+NOSA は Astro 5 + Tailwind v4 のサブプロジェクトで、このリポジトリにモノレポとして統合されている（旧 `JohnnyDexter/almanacco` リポジトリは情報共有用の位置づけで、開発の主体はこちらに移した）。
 
 - **`almanacco-src/`** = Astroソース一式（`src/`, `package.json`, `astro.config.mjs` 等）。**編集はここで行う**
-- **`almanacco/`** = `almanacco-src/` をビルドした静的HTML/CSS/JS成果物。GitHub Pages が実際に配信する場所。**直接編集しない**（次のビルドで上書きされ、変更がサイレントに失われる）
-- `astro.config.mjs` の `base: "/almanacco"` は変更しないこと（公開URL `ikitaria.com/almanacco/...` が変わる）
+- **`nosa/`** = `almanacco-src/` をビルドした静的HTML/CSS/JS成果物。GitHub Pages が実際に配信する場所（`ikitaria.com/nosa/...`）。**直接編集しない**（次のビルドで上書きされ、変更がサイレントに失われる）
+- **`almanacco/`** = 旧URL（`ikitaria.com/almanacco/...`）からのリダイレクト専用スタブ（meta refresh）。ビルド成果物ではなく手動生成した16ファイルのみ。中身を直接編集しない
+- `astro.config.mjs` の `base: "/nosa"` は変更しないこと（公開URL `ikitaria.com/nosa/...` が変わる）
 
-**Almanaccoの変更を反映する手順（手動、自動化なし）:**
+**NOSAの変更を反映する手順（手動、自動化なし）:**
 ```bash
 cd almanacco-src
 npm install   # 初回のみ
 npm run build
-rm -rf ../almanacco
-cp -r dist ../almanacco
+rm -rf ../nosa
+cp -r dist ../nosa
 cd ..
-git add almanacco-src/ almanacco/
+git add almanacco-src/ nosa/
 git commit -m "..."
 ```
 

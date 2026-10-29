@@ -1,7 +1,7 @@
-# Almanacco
+# NOSA
 
-Sito del negozio **Almanacco** (Yokosuka, Giappone), che porta olio extravergine
-d'oliva e vino delle Marche in Giappone. Costruito con [Astro](https://astro.build)
+Sito del negozio **NOSA** (ex Almanacco, Yokosuka, Giappone), che porta olio
+extravergine d'oliva e vino delle Marche in Giappone. Costruito con [Astro](https://astro.build)
 e [Tailwind CSS v4](https://tailwindcss.com), in tre lingue: giapponese (`/ja/`,
 lingua di default), italiano (`/it/`) e inglese (`/en/`).
 
@@ -48,20 +48,21 @@ npm run preview
 
 ## Deploy
 
-Questo progetto vive come sottocartella (`almanacco-src/`) dentro il
+Questo progetto vive come sottocartella (`almanacco-src/` — nome storico
+della cartella sorgente, non più legato al nome del negozio) dentro il
 monorepo `ikitaria-site`. Non viene deployato direttamente su Cloudflare
 Pages/Vercel: l'output di `npm run build` (cartella `dist/`) va copiato
-manualmente nella cartella sorella `../almanacco/`, che è quella
-effettivamente servita da GitHub Pages su `ikitaria.com/almanacco/`.
+manualmente nella cartella sorella `../nosa/`, che è quella
+effettivamente servita da GitHub Pages su `ikitaria.com/nosa/`.
 
 ```bash
 cd almanacco-src
 npm install   # solo la prima volta
 npm run build
-rm -rf ../almanacco
-cp -r dist ../almanacco
+rm -rf ../nosa
+cp -r dist ../nosa
 cd ..
-git add almanacco-src/ almanacco/
+git add almanacco-src/ nosa/
 git commit -m "..."
 ```
 

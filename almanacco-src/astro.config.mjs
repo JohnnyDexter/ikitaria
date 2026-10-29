@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
-const base = "/almanacco";
+const base = "/nosa";
 
 export default defineConfig({
   site: "https://ikitaria.com",
