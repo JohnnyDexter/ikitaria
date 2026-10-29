@@ -136,80 +136,80 @@
     <changefreq>monthly</changefreq><priority>0.8</priority>
   </url>
 
-  <!-- ── Almanacco (Italian, canonical) ───────────────────── -->
+  <!-- ── NOSA (Italian, canonical) ───────────────────── -->
   <url>
-    <loc>https://ikitaria.com/almanacco/it/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/almanacco/it/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/almanacco/en/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/almanacco/ja/"/>
+    <loc>https://ikitaria.com/nosa/it/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/nosa/it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/nosa/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/nosa/ja/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ikitaria.com/almanacco/it/about/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/almanacco/it/about/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/almanacco/en/about/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/almanacco/ja/about/"/>
+    <loc>https://ikitaria.com/nosa/it/about/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/nosa/it/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/nosa/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/nosa/ja/about/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ikitaria.com/almanacco/it/shop/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/almanacco/it/shop/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/almanacco/en/shop/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/almanacco/ja/shop/"/>
+    <loc>https://ikitaria.com/nosa/it/shop/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/nosa/it/shop/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/nosa/en/shop/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/nosa/ja/shop/"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ikitaria.com/almanacco/it/events/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/almanacco/it/events/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/almanacco/en/events/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/almanacco/ja/events/"/>
+    <loc>https://ikitaria.com/nosa/it/events/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/nosa/it/events/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/nosa/en/events/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/nosa/ja/events/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ikitaria.com/almanacco/it/journal/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/almanacco/it/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/almanacco/en/journal/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/almanacco/ja/journal/"/>
+    <loc>https://ikitaria.com/nosa/it/journal/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/nosa/it/journal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/nosa/en/journal/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/nosa/ja/journal/"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ikitaria.com/almanacco/it/sekki/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/almanacco/it/sekki/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/almanacco/en/sekki/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/almanacco/ja/sekki/"/>
+    <loc>https://ikitaria.com/nosa/it/sekki/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/nosa/it/sekki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/nosa/en/sekki/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/nosa/ja/sekki/"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ikitaria.com/almanacco/it/contact/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/almanacco/it/contact/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/almanacco/en/contact/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/almanacco/ja/contact/"/>
+    <loc>https://ikitaria.com/nosa/it/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ikitaria.com/nosa/it/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ikitaria.com/nosa/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ikitaria.com/nosa/ja/contact/"/>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
-  <!-- ── Almanacco (English) ───────────────────────────────── -->
-  <url><loc>https://ikitaria.com/almanacco/en/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://ikitaria.com/almanacco/en/about/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://ikitaria.com/almanacco/en/shop/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ikitaria.com/almanacco/en/events/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://ikitaria.com/almanacco/en/journal/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://ikitaria.com/almanacco/en/sekki/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://ikitaria.com/almanacco/en/contact/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <!-- ── NOSA (English) ───────────────────────────────── -->
+  <url><loc>https://ikitaria.com/nosa/en/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ikitaria.com/nosa/en/about/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ikitaria.com/nosa/en/shop/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ikitaria.com/nosa/en/events/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ikitaria.com/nosa/en/journal/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://ikitaria.com/nosa/en/sekki/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://ikitaria.com/nosa/en/contact/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 
-  <!-- ── Almanacco (Japanese) ──────────────────────────────── -->
-  <url><loc>https://ikitaria.com/almanacco/ja/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://ikitaria.com/almanacco/ja/about/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://ikitaria.com/almanacco/ja/shop/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ikitaria.com/almanacco/ja/events/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://ikitaria.com/almanacco/ja/journal/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://ikitaria.com/almanacco/ja/sekki/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://ikitaria.com/almanacco/ja/contact/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <!-- ── NOSA (Japanese) ──────────────────────────────── -->
+  <url><loc>https://ikitaria.com/nosa/ja/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ikitaria.com/nosa/ja/about/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ikitaria.com/nosa/ja/shop/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ikitaria.com/nosa/ja/events/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ikitaria.com/nosa/ja/journal/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://ikitaria.com/nosa/ja/sekki/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://ikitaria.com/nosa/ja/contact/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 
 </urlset>

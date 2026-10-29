@@ -23,6 +23,7 @@ NOSA は Astro 5 + Tailwind v4 のサブプロジェクトで、このリポジ�
 - **`almanacco-src/`** = Astroソース一式（`src/`, `package.json`, `astro.config.mjs` 等）。**編集はここで行う**
 - **`nosa/`** = `almanacco-src/` をビルドした静的HTML/CSS/JS成果物。GitHub Pages が実際に配信する場所（`ikitaria.com/nosa/...`）。**直接編集しない**（次のビルドで上書きされ、変更がサイレントに失われる）
 - **`almanacco/`** = 旧URL（`ikitaria.com/almanacco/...`）からのリダイレクト専用スタブ（meta refresh）。ビルド成果物ではなく手動生成した16ファイルのみ。中身を直接編集しない
+  - ⚠️ **自動で同期されない**: `nosa/` にページを追加・削除・リネームしても、このスタブは追従しない。将来ページ構成を変える場合は、ここに対応するリダイレクトの要否を都度手動で確認すること
 - `astro.config.mjs` の `base: "/nosa"` は変更しないこと（公開URL `ikitaria.com/nosa/...` が変わる）
 
 **NOSAの変更を反映する手順（手動、自動化なし）:**
