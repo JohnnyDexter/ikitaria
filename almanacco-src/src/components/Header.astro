@@ -27,23 +27,8 @@ const mainNavItems = [
   data-transparent={transparent ? "true" : "false"}
 >
   <div class="mx-auto flex max-w-6xl items-center gap-6 px-6 py-4">
-    <a href={withBase(langHref(lang, ""))} class="flex shrink-0 items-center">
-      <img
-        data-header-logo-dark
-        src={withBase("/logo-swallow.png")}
-        alt="NOSA"
-        class="h-10 w-auto sm:h-12"
-        width="594"
-        height="563"
-      />
-      <img
-        data-header-logo-light
-        src={withBase("/logo-swallow-light.png")}
-        alt="NOSA"
-        class="h-10 w-auto sm:h-12"
-        width="594"
-        height="563"
-      />
+    <a href={withBase(langHref(lang, ""))} class="flex shrink-0 items-center font-display text-lg uppercase tracking-widest">
+      NOSA
     </a>
 
     <nav
